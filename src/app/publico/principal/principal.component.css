@@ -1,0 +1,40 @@
+
+  
+  .single-feature ul {
+    text-align: left;
+    list-style-type: disc; /* Muestra viñetas */
+    padding-left: 20px; /* Añade espacio a la izquierda */
+    margin: 0;
+  }
+  
+  .single-feature li {
+    margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+  }
+
+  .mat-h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 16px;
+  }
+
+  .mat-h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 8px 0;
+    color: #78b363; /* Cambia este color según tu tema */
+  }
+
+  .asterisk {
+    color: red; /* Cambia el color del asterisco a rojo */
+    font-weight: bold; /* Opcional: para hacer el asterisco en negrita */
+  }
+
+  .color-button {
+    background-color: #24c8c9 !important;
+    color: #ffffff !important; /* Color blanco para el texto */
+  }
+  
+  
+  

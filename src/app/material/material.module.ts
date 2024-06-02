@@ -17,7 +17,7 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSortModule} from '@angular/material/sort';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
-
+import {MatListModule} from '@angular/material/list';
 
 @NgModule({
   exports: [
@@ -38,7 +38,8 @@ import { MatSelectModule } from '@angular/material/select';
     MatSortModule,
     FormsModule,
     ReactiveFormsModule,
-    MatSelectModule
+    MatSelectModule,
+    MatListModule
   ],
   declarations: [],
   imports: [
