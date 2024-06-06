@@ -1,35 +1,49 @@
   
   <!-- ========================= hero-5 start ========================= -->
-  <div class="hero-section hero-style-5 img-bg" style="background-image: url('assets/principal/img/hero/hero-5/hero-bg.svg')">
+  <div class="hero-section hero-style-5 img-bg" [style.background-image]="'url(assets/principal/img/hero/hero-5/iadata.svg)'">
     <div class="container">
       <div class="row">
         <div class="col-lg-6">
           <div class="hero-content-wrapper">
-            <h2 class="mb-30 wow fadeInUp" data-wow-delay=".2s">You're Using Free Lite Version</h2>
-            <p class="mb-30 wow fadeInUp" data-wow-delay=".4s">Please purchase full version of the template to get all sections and permission to use with commercial projects.</p>
-            <a href="#0" class="button button-lg radius-50 wow fadeInUp" data-wow-delay=".6s">Get Started <i class="lni lni-chevron-right"></i> </a>
-            <button mat-flat-button color="warn">Warn</button>
-            <button mat-raised-button color="primary">Primary</button>
+            <h2 class="mb-4 mat-display-3">IADATA PERÚ</h2>
+            <h4 class="mb-4 mat-display-1">¡Avanzando juntos hacia un futuro digital más brillante!</h4>
+            <h3>Nos encontramos en Lima, Ayacucho y Huancavelica</h3>
+            <mat-list>
+              <mat-list-item>
+                <span matListItemTitle>
+                  <button mat-raised-button class="mb-2"><span class="material-icons">spatial_audio</span> Consultar</button>
+                </span>
+              </mat-list-item>
+              <mat-list-item>
+                <button mat-raised-button class="mb-2"><span class="material-icons">calendar_month</span> Agendar Reunión</button>
+              </mat-list-item>
+              <mat-list-item>
+                <button mat-raised-button class="mb-2"><span class="material-icons">hail</span> Solicitar Soporte Técnico de Computadora a Domicilio</button>
+              </mat-list-item>
+            </mat-list>
           </div>
         </div>
         <div class="col-lg-6 align-self-end">
-          <div class="hero-image wow fadeInUp" data-wow-delay=".5s">
+          <div class="hero-image">
             <img src="assets/principal/img/hero/hero-5/hero-img.svg" alt="">
           </div>
         </div>
       </div>
     </div>
   </div>
+  
+  
+
   <!-- ========================= hero-5 end ========================= -->
 
-  <!-- ========================= feature style-5 start ========================= -->
-  <section id="feature" class="feature-section feature-style-5">
+  <!-- ========================= seccion de servicios ========================= -->
+  <section id="servicios" class="feature-section feature-style-5">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-8">
           <div class="section-title text-center mb-60">
-            <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Specializing In</h3>
-            <p class="wow fadeInUp" data-wow-delay=".4s">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+              <h1 class="mat-h1">Servicios</h1>
+            <p class="wow fadeInUp" data-wow-delay=".4s"><strong>IADATA PERÚ</strong> se dedica a construir y proporcionar soluciones de software innovadoras y de alta calidad, diseñadas para empoderar tanto a empresas privadas como a entidades públicas. Los servicios que ofrece IADATA PERÚ incluyen:</p>
           </div>
         </div>
       </div>
@@ -44,8 +58,28 @@
                 </svg>                  
             </div>
             <div class="content">
-              <h5>Graphics Design</h5>
-              <p>Short description for the ones who look for something new.</p>
+              <h5 class="mat-h5">Venta de Sistemas</h5>
+              <p>Venta de software para gestión empresarial, aplicaciones industriales y soluciones tecnológicas para mejorar la eficiencia y productividad.</p>
+              <ul>
+                <h4>Sistemas en Venta:</h4>
+                <li>Sistema de Hospital (Colas, HIS, LIS, RIS Y PACS)</li>
+                <li>Sistema de Farmacia y Botica <span class="asterisk">*</span></li>
+                <li>Sistema de Restaurante o recreos <span class="asterisk">*</span></li>
+                <li>Sistema para tienda de Ropas y Zapatillas <span class="asterisk">*</span></li>
+                <li>Sistema de Constructura</li>
+                <li>Sistema de venta Inmuebles</li>
+                <li>Sistema para Municipalidades (Sistema de Agua, sistema de Autovaluo, Registro Civil y Transito)</li>
+                <li>Portal de Transparencia de Municipalidades</li>
+              </ul>
+              <small><span class="asterisk">* Con o sin Facturación Electronico 
+                <img src="assets/principal/img/sunat.jpg" alt="Logo SUNAT" style="width: 60px; height: auto;">
+                </span>
+              </small>
+              <div class="d-flex justify-content-center mt-3">
+                <button mat-raised-button color="primary" class="mx-1 color-button"><span class="material-icons">spatial_audio</span> Consultar</button>
+                <a mat-raised-button color="primary" class="mx-1 color-button" [routerLink]="'venta-sistema'"><span class="material-icons">bookmarks</span> Ver Catálogo</a>
+                <button mat-raised-button color="primary" class="mx-1 color-button"><span class="material-icons">calendar_month</span> Agendar reunión</button>
+              </div>
             </div>
           </div>
         </div>
@@ -58,8 +92,12 @@
                 </svg> 
             </div>
             <div class="content">
-              <h5>Print Design</h5>
-              <p>Short description for the ones who look for something new.</p>
+              <h5 class="mat-h5">Consultoria y Desarrollo de Sistemas</h5>
+              <p>Nos enfocamos en la esencia de su negocio para ofrecer soluciones a medida que se alineen perfectamente con sus objetivos y desafíos específicos. Desde el análisis inicial hasta la implementación y más allá, trabajamos en estrecha colaboración con usted para diseñar, desarrollar y mantener sistemas que no solo satisfagan sus necesidades actuales, sino que también impulsen su crecimiento futuro. Con un enfoque centrado en la excelencia técnica y el compromiso con su éxito, estamos aquí para llevar su visión a la realidad tecnológica.</p>
+              <div class="d-flex justify-content-center mt-3">
+                <button mat-raised-button color="primary" class="mx-2 color-button"><span class="material-icons">spatial_audio</span> Consultar</button>
+                <button mat-raised-button color="primary" class="mx-2 color-button"><span class="material-icons">calendar_month</span> Agendar reunión</button>
+              </div>
             </div>
           </div>
         </div>
@@ -69,101 +107,40 @@
               <i class="lni lni-stats-up"></i>
               <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
                 <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
-                </svg> 
+              </svg> 
             </div>
             <div class="content">
-              <h5>Business Analysis</h5>
-              <p>Short description for the ones who look for something new.</p>
+              <h5 class="mat-h5">Soporte Técnico de computadoras a Domicilio</h5>
+              <p>Servicio de asistencia técnica rápida a domicilio, ahorrando tiempo al cliente.</p>
+              <ul>
+                <h4>Servicios Incluyen:</h4>
+                <li>Formateo y mantenimiento de Computadoras y Laptops</li>
+                <li>Instalación de Windows 11, 10, 8 y 7</li>
+                <li>Instalación de Progrmas Drivers, juegos, antivirus y otros</li>
+                <li>Optimizamos tu PC y limpieza de virus</li>
+                <li>Repotenciamiento de tu Computadora, Laptops y venta de accesorios</li>
+                <li>Asesoria y armado de computadoras Gamer</li>
+                <li>Instalación y mantenimiento de Redes</li>
+                <li>Limpiesa y configuración de periféricos, Impresoras y escaner</li>
+              </ul>
+              <div class="d-flex justify-content-center mt-3">
+                <button mat-raised-button color="primary" class="mx-2 color-button"><span class="material-icons">spatial_audio</span> Consultar</button>
+                <a mat-raised-button color="primary" class="mx-2 color-button" [routerLink]="'servicio-tecnico'"><span class="material-icons">perm_media</span> Fidelidad</a>
+                <button mat-raised-button color="primary" class="mx-2 color-button"><span class="material-icons">hail</span> Solicitar</button>
+              </div>
             </div>
           </div>
         </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-feature wow fadeInUp" data-wow-delay=".2s">
-            <div class="icon">
-              <i class="lni lni-code-alt"></i>
-              <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
-                </svg> 
-            </div>
-            <div class="content">
-              <h5>Web Development</h5>
-              <p>Short description for the ones who look for something new.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-feature wow fadeInUp" data-wow-delay=".4s">
-            <div class="icon">
-              <i class="lni lni-lock"></i>
-              <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
-                </svg> 
-            </div>
-            <div class="content">
-              <h5>Best Security</h5>
-              <p>Short description for the ones who look for something new.</p>
-            </div>
-          </div>
-        </div>
-        <div class="col-lg-4 col-md-6">
-          <div class="single-feature wow fadeInUp" data-wow-delay=".6s">
-            <div class="icon">
-              <i class="lni lni-code"></i>
-              <svg width="110" height="72" viewBox="0 0 110 72" fill="none" xmlns="http://www.w3.org/2000/svg">
-                <path d="M110 54.7589C110 85.0014 85.3757 66.2583 55 66.2583C24.6243 66.2583 0 85.0014 0 54.7589C0 24.5164 24.6243 0 55 0C85.3757 0 110 24.5164 110 54.7589Z" fill="#EBF4FF"/>
-                </svg> 
-            </div>
-            <div class="content">
-              <h5>Web Design</h5>
-              <p>Short description for the ones who look for something new.</p>
-            </div>
-          </div>
-        </div>
+        
+       
       </div>
 
     </div>
   </section>
   <!-- ========================= feature style-5 end ========================= -->
 
-  <!-- ========================= about style-4 start ========================= -->
-  <section id="about" class="about-section about-style-4">
-    <div class="container">
-      <div class="row align-items-center">
-        <div class="col-xl-5 col-lg-6">
-          <div class="about-content-wrapper">
-            <div class="section-title mb-30">
-              <h3 class="mb-25 wow fadeInUp" data-wow-delay=".2s">The future of designing starts here</h3>
-              <p class="wow fadeInUp" data-wow-delay=".3s">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed,</p>
-            </div>
-            <ul>
-              <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"></i>
-                Stop wasting time and money designing and managing a website that doesn’t get results.
-              </li>
-              <li class="wow fadeInUp" data-wow-delay=".4s">
-                <i class="lni lni-checkmark-circle"></i>
-                Stop wasting time and money designing and managing.
-              </li>
-              <li class="wow fadeInUp" data-wow-delay=".45s">
-                <i class="lni lni-checkmark-circle"></i>
-                Stop wasting time and money designing and managing a website that doesn’t get results.
-              </li>
-            </ul>
-            <a href="#0" class="button button-lg radius-10 wow fadeInUp" data-wow-delay=".5s">Learn More</a>
-          </div>
-        </div>
-        <div class="col-xl-7 col-lg-6">
-          <div class="about-image text-lg-right wow fadeInUp" data-wow-delay=".5s">
-            <img src="assets/img/about/about-4/about-img.svg" alt="">
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-  <!-- ========================= about style-4 end ========================= -->
-
-  <!-- ========================= pricing style-4 start ========================= -->
-  <section id="pricing" class="pricing-section pricing-style-4 bg-light">
+  <!-- ========================= seccion de planes ========================= -->
+  <section id="planes" class="pricing-section pricing-style-4 bg-light">
     <div class="container">
       <div class="row align-items-center">
         <div class="col-xl-5 col-lg-6">
@@ -226,8 +203,47 @@
   </section>
   <!-- ========================= pricing style-4 end ========================= -->
 
-  <!-- ========================= contact-style-3 start ========================= -->
-  <section id="contact" class="contact-section contact-style-3">
+  <!-- ========================= about style-4 start ========================= -->
+  <section id="about" class="about-section about-style-4">
+    <div class="container">
+      <div class="row align-items-center">
+        <div class="col-xl-5 col-lg-6">
+          <div class="about-content-wrapper">
+            <div class="section-title mb-30">
+              <h3 class="mb-25 wow fadeInUp" data-wow-delay=".2s">The future of designing starts here</h3>
+              <p class="wow fadeInUp" data-wow-delay=".3s">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed,</p>
+            </div>
+            <ul>
+              <li class="wow fadeInUp" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle"></i>
+                Stop wasting time and money designing and managing a website that doesn’t get results.
+              </li>
+              <li class="wow fadeInUp" data-wow-delay=".4s">
+                <i class="lni lni-checkmark-circle"></i>
+                Stop wasting time and money designing and managing.
+              </li>
+              <li class="wow fadeInUp" data-wow-delay=".45s">
+                <i class="lni lni-checkmark-circle"></i>
+                Stop wasting time and money designing and managing a website that doesn’t get results.
+              </li>
+            </ul>
+            <a href="#0" class="button button-lg radius-10 wow fadeInUp" data-wow-delay=".5s">Learn More</a>
+          </div>
+        </div>
+        <div class="col-xl-7 col-lg-6">
+          <div class="about-image text-lg-right wow fadeInUp" data-wow-delay=".5s">
+            <img src="assets/img/about/about-4/about-img.svg" alt="">
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+  <!-- ========================= about style-4 end ========================= -->
+
+  
+
+  <!-- ========================= Seccionde contacto ========================= -->
+  <section id="contacto" class="contact-section contact-style-3">
     <div class="container">
       <div class="row justify-content-center">
         <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-10">
