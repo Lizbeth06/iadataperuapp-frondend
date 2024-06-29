@@ -18,6 +18,7 @@ import { MatSortModule} from '@angular/material/sort';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
 import {MatListModule} from '@angular/material/list';
+import {MatButtonToggleModule} from '@angular/material/button-toggle';
 
 @NgModule({
   exports: [
@@ -39,7 +40,8 @@ import {MatListModule} from '@angular/material/list';
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
-    MatListModule
+    MatListModule,
+    MatButtonToggleModule
   ],
   declarations: [],
   imports: [

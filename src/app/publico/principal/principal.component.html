@@ -5,19 +5,18 @@
       <div class="row">
         <div class="col-lg-6">
           <div class="hero-content-wrapper">
-            <h2 class="mb-4 mat-display-3">IADATA PERÚ</h2>
-            <h4 class="mb-4 mat-display-1">¡Avanzando juntos hacia un futuro digital más brillante!</h4>
-            <h3>Nos encontramos en Lima, Ayacucho y Huancavelica</h3>
+            <h1 class="mb-4 mat-display-1"><strong>¡Avanzando juntos hacia un futuro digital más brillante!</strong></h1>
+            <h3>Nos encontramos con oficina en Lima, Ayacucho y Huancavelica</h3>
             <mat-list>
-              <mat-list-item>
+              <mat-list-item (click)="redirigirAWhatsApp()">
                 <span matListItemTitle>
                   <button mat-raised-button class="mb-2"><span class="material-icons">spatial_audio</span> Consultar</button>
                 </span>
               </mat-list-item>
-              <mat-list-item>
+              <mat-list-item (click)="redirigirAWhatsApp()">
                 <button mat-raised-button class="mb-2"><span class="material-icons">calendar_month</span> Agendar Reunión</button>
               </mat-list-item>
-              <mat-list-item>
+              <mat-list-item (click)="redirigirAWhatsApp()">
                 <button mat-raised-button class="mb-2"><span class="material-icons">hail</span> Solicitar Soporte Técnico de Computadora a Domicilio</button>
               </mat-list-item>
             </mat-list>
@@ -25,7 +24,7 @@
         </div>
         <div class="col-lg-6 align-self-end">
           <div class="hero-image">
-            <img src="assets/principal/img/hero/hero-5/hero-img.svg" alt="">
+            <img src="assets/principal/img/presentacion5.png" alt="" height="620px">
           </div>
         </div>
       </div>
@@ -43,7 +42,7 @@
         <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-8">
           <div class="section-title text-center mb-60">
               <h1 class="mat-h1">Servicios</h1>
-            <p class="wow fadeInUp" data-wow-delay=".4s"><strong>IADATA PERÚ</strong> se dedica a construir y proporcionar soluciones de software innovadoras y de alta calidad, diseñadas para empoderar tanto a empresas privadas como a entidades públicas. Los servicios que ofrece IADATA PERÚ incluyen:</p>
+            <p class="wow fadeInUp" data-wow-delay=".4s" style="text-align: justify;"><strong>IADATA PERÚ</strong> se dedica a construir y proporcionar soluciones de software innovadoras y de alta calidad, diseñadas para empoderar tanto a empresas privadas como a entidades públicas. Los servicios que ofrece IADATA PERÚ incluyen:</p>
           </div>
         </div>
       </div>
@@ -59,7 +58,7 @@
             </div>
             <div class="content">
               <h5 class="mat-h5">Venta de Sistemas</h5>
-              <p>Venta de software para gestión empresarial, aplicaciones industriales y soluciones tecnológicas para mejorar la eficiencia y productividad.</p>
+              <p style="text-align: justify;">Venta de software para gestión empresarial, aplicaciones industriales y soluciones tecnológicas para mejorar la eficiencia y productividad.</p>
               <ul>
                 <h4>Sistemas en Venta:</h4>
                 <li>Sistema de Hospital (Colas, HIS, LIS, RIS Y PACS)</li>
@@ -75,10 +74,11 @@
                 <img src="assets/principal/img/sunat.jpg" alt="Logo SUNAT" style="width: 60px; height: auto;">
                 </span>
               </small>
+              
               <div class="d-flex justify-content-center mt-3">
-                <button mat-raised-button color="primary" class="mx-1 color-button"><span class="material-icons">spatial_audio</span> Consultar</button>
-                <a mat-raised-button color="primary" class="mx-1 color-button" [routerLink]="'venta-sistema'"><span class="material-icons">bookmarks</span> Ver Catálogo</a>
-                <button mat-raised-button color="primary" class="mx-1 color-button"><span class="material-icons">calendar_month</span> Agendar reunión</button>
+                <button mat-raised-button (click)="redirigirAWhatsApp()" color="primary" class="mx-1 color-button btn-small"><span class="material-icons">spatial_audio</span> Consultar</button>
+                <a mat-raised-button color="primary" class="mx-1 color-button btn-small" [routerLink]="'venta-sistema'"><span class="material-icons">bookmarks</span> Ver Catálogo</a>
+                <button mat-raised-button (click)="redirigirAWhatsApp()" color="primary" class="mx-1 color-button btn-small"><span class="material-icons">calendar_month</span> Agendar reunión</button>
               </div>
             </div>
           </div>
@@ -93,10 +93,10 @@
             </div>
             <div class="content">
               <h5 class="mat-h5">Consultoria y Desarrollo de Sistemas</h5>
-              <p>Nos enfocamos en la esencia de su negocio para ofrecer soluciones a medida que se alineen perfectamente con sus objetivos y desafíos específicos. Desde el análisis inicial hasta la implementación y más allá, trabajamos en estrecha colaboración con usted para diseñar, desarrollar y mantener sistemas que no solo satisfagan sus necesidades actuales, sino que también impulsen su crecimiento futuro. Con un enfoque centrado en la excelencia técnica y el compromiso con su éxito, estamos aquí para llevar su visión a la realidad tecnológica.</p>
+              <p style="text-align: justify;">Nos enfocamos en la esencia de su negocio para ofrecer soluciones a medida que se alineen perfectamente con sus objetivos y desafíos específicos. Desde el análisis inicial hasta la implementación y más allá, trabajamos en estrecha colaboración con usted para diseñar, desarrollar y mantener sistemas que no solo satisfagan sus necesidades actuales, sino que también impulsen su crecimiento futuro. Con un enfoque centrado en la excelencia técnica y el compromiso con su éxito, estamos aquí para llevar su visión a la realidad tecnológica.</p>
               <div class="d-flex justify-content-center mt-3">
-                <button mat-raised-button color="primary" class="mx-2 color-button"><span class="material-icons">spatial_audio</span> Consultar</button>
-                <button mat-raised-button color="primary" class="mx-2 color-button"><span class="material-icons">calendar_month</span> Agendar reunión</button>
+                <button (click)="redirigirAWhatsApp()" mat-raised-button color="primary" class="mx-2 color-button btn-small"><span class="material-icons">spatial_audio</span> Consultar</button>
+                <button (click)="redirigirAWhatsApp()" mat-raised-button color="primary" class="mx-2 color-button btn-small"><span class="material-icons">calendar_month</span> Agendar reunión</button>
               </div>
             </div>
           </div>
@@ -111,7 +111,7 @@
             </div>
             <div class="content">
               <h5 class="mat-h5">Soporte Técnico de computadoras a Domicilio</h5>
-              <p>Servicio de asistencia técnica rápida a domicilio, ahorrando tiempo al cliente.</p>
+              <p style="text-align: justify;">Servicio de asistencia técnica rápida a domicilio, ahorrando tiempo al cliente.</p>
               <ul>
                 <h4>Servicios Incluyen:</h4>
                 <li>Formateo y mantenimiento de Computadoras y Laptops</li>
@@ -124,9 +124,9 @@
                 <li>Limpiesa y configuración de periféricos, Impresoras y escaner</li>
               </ul>
               <div class="d-flex justify-content-center mt-3">
-                <button mat-raised-button color="primary" class="mx-2 color-button"><span class="material-icons">spatial_audio</span> Consultar</button>
-                <a mat-raised-button color="primary" class="mx-2 color-button" [routerLink]="'servicio-tecnico'"><span class="material-icons">perm_media</span> Fidelidad</a>
-                <button mat-raised-button color="primary" class="mx-2 color-button"><span class="material-icons">hail</span> Solicitar</button>
+                <button (click)="redirigirAWhatsApp()" mat-raised-button color="primary" class="mx-2 color-button btn-small"><span class="material-icons">spatial_audio</span> Consultar</button>
+                <a mat-raised-button color="primary" class="mx-2 color-button btn-small" [routerLink]="'servicio-tecnico'"><span class="material-icons">perm_media</span> Fidelidad</a>
+                <button (click)="redirigirAWhatsApp()" mat-raised-button color="primary" class="mx-2 color-button btn-small"><span class="material-icons">hail</span> Solicitar</button>
               </div>
             </div>
           </div>
@@ -140,107 +140,375 @@
   <!-- ========================= feature style-5 end ========================= -->
 
   <!-- ========================= seccion de planes ========================= -->
-  <section id="planes" class="pricing-section pricing-style-4 bg-light">
+
+  <section id="planes">
     <div class="container">
-      <div class="row align-items-center">
-        <div class="col-xl-5 col-lg-6">
-          <div class="section-title mb-60">
-            <h3 class="mb-15 wow fadeInUp" data-wow-delay=".2s">Pricing Plan</h3>
-            <p class="wow fadeInUp" data-wow-delay=".4s">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
-          </div>
+      <div class="row">
+        <div class="section-title text-center mb-1">
+          <h1 class="mat-h2 my-custom-heading">Conoce Nuestros Planes de Sistema POS</h1>
         </div>
-        <div class="col-xl-7 col-lg-6">
-          <div class="pricing-active-wrapper wow fadeInUp" data-wow-delay=".4s">
-            <div class="pricing-active">
-              <div class="single-pricing-wrapper">
-                <div class="single-pricing">
-                  <h6>Basic Design</h6>
-                  <h4>Web Design</h4>
-                  <h3>$ 29.00</h3>
-                  <ul>
-                    <li>Carefully crafted components</li>
-                    <li>Amazing page examples</li>
-                    <li>Super friendly support team</li>
-                    <li>Awesome Support</li>
-                  </ul>
-                  <a href="#0" class="button radius-30">Get Started</a>
-                </div>
+        <p>
+          <span class="custom-mark-container"><mark class="custom-mark"><strong>Un solo pago por tu sistema, sin cuotas mensuales de por vida.</strong></mark></span>
+        </p>
+        
+      </div>
+      <div class="row align-items-center">
+        <div class="col-xl-3 col-lg-3">
+         
+            <img src="assets/principal/img/sorpresa1.jpg" alt="image" height="200px">
+            <p  style="text-align: justify;">
+              En <strong>IAData Perú</strong>, nos especializamos en ofrecer soluciones integrales de facturación electrónica y sistemas de punto de venta (POS) diseñados para satisfacer las necesidades de negocios de todos los tamaños en Perú. Cumplimos con las normativas de la SUNAT y te proporcionamos herramientas innovadoras para optimizar tus operaciones comerciales.
+            </p>
+            
+      
+        </div> 
+        <div class="col-xl-9 col-lg-9">
+          <div class="model_container modelcontainer">
+            <div class="card__container swiper"> 
+              <div class="card__content"> 
+                 <div class="swiper-wrapper">
+                    <article class="card__article_plan swiper-slide">  
+                       <div class="card__data__precio"> 
+                          <div class="price-tag">s/. 2099.99</div> 
+                          <h2 class="card__name">Plan <br>Básico</h2>
+                          <div class="card__description">
+                          
+                            <ul style="text-align: left;">
+                              <li class="wow fadeInUp" data-wow-delay=".35s">
+                                <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Punto de venta para Celular, Tablet y PC (POS)</li>
+                              <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Gestión de inventario (1 almacén)</li>
+                              <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Módulo de compra</li>
+                              <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Reporte de ingreso y gastos</li>
+                              <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Movimientos</li>
+                              <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Impresión de comandos</li>
+                              <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Comando de Pedidos</li>
+                              <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Hasta 6 usuarios</li>
+                              <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Hasta 1 sucursal</li>
+                              <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Emisión de Ticket</li>
+                            </ul>
+                            <br>
+                            <a mat-raised-button class="mat-button radius-30" href="https://wa.me/+51900696971" target="_blank"><span class="material-icons">touch_app</span> Adquirir</a>
+                          </div>
+                       </div>
+                    </article>
+
+                    <article class="card__article_plan swiper-slide">        
+                        <div class="card__data__precio">
+                          <div class="price-tag">s/. 3460.00</div>
+                          <div class="promotion-alert" style="background-color: #DDA0DD; color: white; padding: 5px; border-radius: 5px; text-align: center; margin-bottom: 10px;">
+                            En promoción
+                          </div>
+                          <h2 class="card__name">Plan <br>Emprendedor</h2>
+                          <div class="card__description">
+                          
+                            <ul style="text-align: left;">
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Punto de venta para Celular, Tablet y PC (POS)</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Gestión de inventario (2 almacenes)</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Módulo de compra</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Reporte avanzado</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Movimientos</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Impresión de comandos</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Comando de Pedidos</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Entrega y gestión del delivery</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Hasta 15 usuarios</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Hasta 2 sucursales</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Facturación electrónica SUNAT</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Emisión de Ticket, Boleta y Factura</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Emisión de XML, validar CDR y anular o devolución de comprobante</li>
+                              <li class="wow fadeInUp" data-wow-delay=".35s">
+                                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Emisión de cotización y notas de débito</li>
+                            </ul>
+                            <br>
+                            <a mat-raised-button class="mat-button radius-30" href="https://wa.me/+51900696971" target="_blank"><span class="material-icons">touch_app</span> Adquirir</a>
+                        </div>
+                        </div>
+                    </article>
+        
+                    <article class="card__article_plan swiper-slide">        
+                      <div class="card__data__precio">
+                        <div class="price-tag">s/. 4700.00</div>
+                         <h2 class="card__name">Plan <br>Empresarial</h2>
+                         <div class="card__description">
+                         
+                          <ul style="text-align: left;">
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                                  <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Punto de venta para Celular, Tablet y PC (POS)</li>
+                                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                                    <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Gestión de inventario (5 almacenes)</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Módulo de compra</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Reporte avanzado</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Movimientos</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Impresión de comandos</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Comando de Pedidos</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Entrega y gestión del delivery</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Usuarios ilimitados</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Hasta 5 sucursales</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Facturación electrónica SUNAT</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Emisión de Ticket, Boleta y Factura</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Emisión de XML, validar CDR y anular o devolución de comprobante</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Emisión de cotización y notas de débito</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Ranking de clientes</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Reporte de atenciones de los trabajadores</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Ventas por categoría y productos</li>
+                                <li class="wow fadeInUp" data-wow-delay=".35s">
+                            <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Kardex y alertas de stock</li>
+                            <li class="wow fadeInUp" data-wow-delay=".35s">
+                              <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Transferencia entre almacenes</li>
+                          </ul>
+                          <br>
+                            <a mat-raised-button class="mat-button radius-30" href="https://wa.me/+51900696971" target="_blank"><span class="material-icons">touch_app</span> Adquirir</a>
+                       </div>
+                      </div>
+                    </article>
+                    
+                 </div>
               </div>
-              <div class="single-pricing-wrapper">
-                <div class="single-pricing">
-                  <h6>Standard Design</h6>
-                  <h4>Web Development</h4>
-                  <h3>$ 89.00</h3>
-                  <ul>
-                    <li>Carefully crafted components</li>
-                    <li>Amazing page examples</li>
-                    <li>Super friendly support team</li>
-                    <li>Awesome Support</li>
-                  </ul>
-                  <a href="#0" class="button radius-30">Get Started</a>
-                </div>
-              </div>
-              <div class="single-pricing-wrapper">
-                <div class="single-pricing">
-                  <h6>Pro Design</h6>
-                  <h4>Design & Develop</h4>
-                  <h3>$ 199.00</h3>
-                  <ul>
-                    <li>Carefully crafted components</li>
-                    <li>Amazing page examples</li>
-                    <li>Super friendly support team</li>
-                    <li>Awesome Support</li>
-                  </ul>
-                  <a href="#0" class="button radius-30">Get Started</a>
-                </div>
+       
+              <!-- Navigation buttons -->
+              <div class="swiper-button-next">
+                 <i class="ri-arrow-right-s-line"></i>
               </div>
               
-            </div>
+              <div class="swiper-button-prev">
+                 <i class="ri-arrow-left-s-line"></i>
+              </div>    
+              <!-- Pagination -->
+              <div class="swiper-pagination"></div>
+           </div>
           </div>
+          
         </div>
       </div>
     </div>
   </section>
-  <!-- ========================= pricing style-4 end ========================= -->
-
+  
   <!-- ========================= about style-4 start ========================= -->
-  <section id="about" class="about-section about-style-4">
+  <section id="clientes" class="about-section about-style-4">
     <div class="container">
       <div class="row align-items-center">
-        <div class="col-xl-5 col-lg-6">
+        <div class="col-xl-12 col-lg-12">
           <div class="about-content-wrapper">
-            <div class="section-title mb-30">
-              <h3 class="mb-25 wow fadeInUp" data-wow-delay=".2s">The future of designing starts here</h3>
-              <p class="wow fadeInUp" data-wow-delay=".3s">Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed,</p>
+            <div class="section-title text-center mb-1">
+              <h1 class="mat-h1">Nuestros Clientes Satisfechos</h1>
+              <p class="wow fadeInUp" data-wow-delay=".4s" style="text-align: justify;">En cada paso de nuestro camino, tu satisfacción es nuestro compromiso, nuestros principales clientes </p>
             </div>
-            <ul>
-              <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"></i>
-                Stop wasting time and money designing and managing a website that doesn’t get results.
-              </li>
-              <li class="wow fadeInUp" data-wow-delay=".4s">
-                <i class="lni lni-checkmark-circle"></i>
-                Stop wasting time and money designing and managing.
-              </li>
-              <li class="wow fadeInUp" data-wow-delay=".45s">
-                <i class="lni lni-checkmark-circle"></i>
-                Stop wasting time and money designing and managing a website that doesn’t get results.
-              </li>
-            </ul>
-            <a href="#0" class="button button-lg radius-10 wow fadeInUp" data-wow-delay=".5s">Learn More</a>
-          </div>
-        </div>
-        <div class="col-xl-7 col-lg-6">
-          <div class="about-image text-lg-right wow fadeInUp" data-wow-delay=".5s">
-            <img src="assets/img/about/about-4/about-img.svg" alt="">
+            <div class="table-responsive">
+              <table cellspacing="0" width="100%">
+                <thead>
+                  <tr align="center">
+                    <th>
+                      <img src="https://seeklogo.com/images/G/gobierno-regional-ayacucho-logo-DD36F95A75-seeklogo.com.png?v=638252741160000000" alt="Logo Empresa 1" class="logoimg">
+                      <p class="logo-name">Gobierno Regional de Ayacucho</p>
+                    </th>
+                    <th>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzvJdC_XO0nGmMI5Jn47f4bx7Vas4TuivKmaD_i2OKaEo_kqomBEYkNTvTQvqbx5mdNKk&usqp=CAU" alt="Logo Empresa 2" class="logoimg">
+                      <p class="logo-name">Municiplaidad Distrital de Pichari</p>
+                    </th>
+                    <th>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2PdVJLFjwaE3Mkh4hIOUkikGtjFEqH4voxw&s" alt="Logo Empresa 2" class="logoimg">
+                      <p class="logo-name">Dirección Regional de Transportes y Comuniaciones de Huancavelica</p>
+                    </th>
+                    <th>
+                      <img src="https://www.drtcayacucho.gob.pe/iconos/LOGO%20DRTCA.png" alt="Logo Empresa 2" class="logoimg">
+                      <p class="logo-name">Dirección Regional de Transportes y Comunicaciones de Ayacucho</p>
+                    </th>
+                    <th>
+                      <img src="https://www.contrataciones.pe/organizaciones/licitaciones-municipalidad-santillana.png" alt="Logo Empresa 2" class="logoimg">
+                      <p class="logo-name">Municiplaidad Distrital de Santillana</p>
+                    </th>
+                  </tr>
+                  <tr align="center">
+                    <th>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs3pMtEmhn3UpimvBqwkpQuJJOftrAutIZqg&s" alt="Logo Empresa 2" class="logoimg">
+                      <p class="logo-name">Municiplaidad Distrital de Accomarca</p>
+                    </th>
+                    <th>
+                      <img src="https://yt3.googleusercontent.com/ytc/AIdro_kiIOKH4z3ffMrAAKLcDoHs6AVZ46EFyroMLSRhZEfMFA=s900-c-k-c0x00ffffff-no-rj" alt="Logo Empresa 2" class="logoimg">
+                      <p class="logo-name">Colegio Logic School - Ayacucho</p>
+                    </th>
+                    <th>
+                      <img src="../../../assets/principal/img/colegiogerman.png" alt="Logo Empresa 2" class="logoimg">
+                      <p class="logo-name">Colegio German Caro Rios - Ayacucho</p>
+                    </th>
+                    <th>
+                      <img src="https://farmacia-linea.edsincloud.com/dashboardintra/fotos/WhatsApp%20Image%202020-08-19%20at%2010.55.50.jpeg" alt="Logo Empresa 2"  height="40px" style="border-radius: 0%;">
+                      <p class="logo-name">Farmacia en Linea - Ayacucho</p>
+                    </th>
+                    <th>
+                      <img src="https://farmaciavo.edsincloud.com/dashboardintra/fotos/LOGO%20NEGRO_page-0001.jpg" alt="Logo Empresa 2" height="40px" style="border-radius: 0%;">
+                      <p class="logo-name">Farmacia en V&O - Ayacucho</p>
+                    </th>
+                  </tr>
+                  <tr align="center">
+                    <th>
+                      
+                    </th>
+                    <th>
+                      <img src="https://medicmas.edsincloud.com/dashboardintra/fotos/WhatsApp%20Image%202021-08-18%20at%2010.21.38%20AM.jpeg" alt="Logo Empresa 2" height="40px" style="border-radius: 0%;">
+                      <p class="logo-name">Farmacia Medic Más - Ayacucho</p>
+                    </th>
+                    <th>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkATt--yEyN2ACYSHKjjmDniSM2zfcE_GZQQ&s" alt="Logo Empresa 2" class="logoimg">
+                      <p class="logo-name"> Chifa y Polleria Kay Ken</p>
+                    </th>
+                    <th>
+                      <img src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRySQlmb3f67UmK8jexFboM50TPg1PnI70NWw&s" alt="Logo Empresa 2" height="90px" style="border-radius: 0%;">
+                      <p class="logo-name">Chifa Polleria D'Kay Ken</p>
+                    </th>
+                    <th>
+                      
+                    </th>
+                    
+                  </tr>
+                </thead>
+               
+              </table>
+            </div>
+            
+          
+            
           </div>
         </div>
       </div>
     </div>
   </section>
+  
   <!-- ========================= about style-4 end ========================= -->
 
-  
+  <section id="especialistas" class="feature-section feature-style-5">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="section-title text-center mb-1"> 
+            <h1 class="mat-h1">Nuestros Especialistas</h1>
+          <p class="wow fadeInUp" data-wow-delay=".4s" style="text-align: justify;"><strong>IADATA PERÚ</strong> se dedica a construir y proporcionar soluciones de software innovadoras y de alta calidad, diseñadas para empoderar tanto a empresas privadas como a entidades públicas. Los servicios que ofrece IADATA PERÚ incluyen:</p>
+        </div> 
+        
+        <div class="col-lg-12 col-md-12">
+          <div class="model_container modelcontainer">
+            <div class="card__container swiper"> 
+              <div class="card__content">
+                 <div class="swiper-wrapper">  
+                    <article class="card__article swiper-slide">
+                       <div class="card__image">  
+                          <img src="assets/principal/img/yonny.png" alt="image" class="card__img img-card">
+                          <div class="card__shadow"></div>
+                       </div>
+        
+                       <div class="card__data">
+                          <h3 class="card__name"><strong><i class="fab fa-linkedin"></i> Yonny Huarancca</strong></h3>
+                          <p class="card__description">
+                            CEO y desarrollador Full Stack con experiencia en desarrollo integral de soluciones tecnológicas
+                          </p>
+        
+                          <a href="#" class="card__button">Contactar</a>
+                       </div>
+                    </article>
+        
+                    <article class="card__article swiper-slide">
+                       <div class="card__image">
+                          <img src="assets/principal/img/jorgecontreras.png" alt="image" class="card__img img-card">
+                          <div class="card__shadow"></div>
+                       </div> 
+        
+                       <div class="card__data">
+                          <h3 class="card__name"><strong><i class="fab fa-linkedin"></i> Jorge Contreras</strong></h3>
+                          <p class="card__description">
+                            Experto en consultoría integral en ventas y administración tributaria de SUNAT en Perú
+                          </p>
+        
+                          <a href="#" class="card__button">Contactar</a>
+                       </div>
+                    </article>  
+                    
+                    <article class="card__article swiper-slide">
+                      <div class="card__image">
+                         <img src="assets/principal/img/lizbeth.png" alt="image" class="card__img img-card">
+                         <div class="card__shadow"></div>
+                      </div>
+       
+                      <div class="card__data">
+                         <h3 class="card__name"><strong><i class="fab fa-linkedin"></i> Lizbeth Infante </strong></h3>
+                         <p class="card__description">
+                          Desarrollador Frontend especializado en interfaces intuitivas e innovadoras 
+                         </p>
+       
+                         <a href="#" class="card__button">Contactar</a>
+                      </div>
+                   </article>
+        
+                    <article class="card__article swiper-slide">
+                       <div class="card__image"> 
+                          <img src="assets/principal/img/marcelino.png" alt="image" class="card__img img-card">
+                          <div class="card__shadow"></div>
+                       </div>
+        
+                       <div class="card__data">
+                          <h3 class="card__name"><strong><i class="fab fa-linkedin"></i> Marce Centeno</strong></h3>
+                          <p class="card__description">
+                            Experto en consultoría integral en ventas con amplia experiencia en diseño UX/UI 
+                          </p>
+        
+                          <a href="#" class="card__button">Contactar</a>
+                       </div>
+                    </article>
+        
+                 
+                 </div>
+              </div>
+       
+              <!-- Navigation buttons -->
+              <div class="swiper-button-next">
+                 <i class="ri-arrow-right-s-line"></i>
+              </div>
+              
+              <div class="swiper-button-prev">
+                 <i class="ri-arrow-left-s-line"></i>
+              </div>    
+              <!-- Pagination -->
+              <div class="swiper-pagination"></div>
+           </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
 
   <!-- ========================= Seccionde contacto ========================= -->
   <section id="contacto" class="contact-section contact-style-3">
@@ -248,8 +516,8 @@
       <div class="row justify-content-center">
         <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-10">
           <div class="section-title text-center mb-50">
-            <h3 class="mb-15">Get in touch</h3>
-            <p>Stop wasting time and money designing and managing a website that doesn’t get results. Happiness guaranteed!</p>
+            <h3 class="mb-15">Ponerse en contacto</h3>
+            <p>No pierdas Tiempo y contacte con nosotros!</p>
           </div>
         </div>
       </div>
@@ -290,7 +558,7 @@
                 </div>
                 <div class="col-md-12">
                   <div class="form-button">
-                    <button type="submit" class="button"> <i class="lni lni-telegram-original"></i> Submit</button>
+                    <button type="submit" class="button"> <i class="lni lni-telegram-original"></i> Enviar</button>
                   </div>
                 </div>
               </div>
@@ -308,8 +576,7 @@
                     <i class="lni lni-phone"></i>
                   </div>
                   <div class="text">
-                    <p>0045939863784</p>
-                    <p>+004389478327</p>
+                    <p>+51 900696971</p>
                   </div>
                 </div>
               </div>
@@ -319,8 +586,7 @@
                     <i class="lni lni-envelope"></i>
                   </div>
                   <div class="text">
-                    <p>yourmail.com</p>
-                    <p>admin.com</p>
+                    <p>{{ 'iadataperu@gmail.com' }}</p>
                   </div>
                 </div>
               </div>
@@ -330,7 +596,7 @@
                     <i class="lni lni-map-marker"></i>
                   </div>
                   <div class="text">
-                    <p>John's House, 13/5 Road, Sidny United State Of America</p>
+                    <p>Nos encuestra en Lima - Ayacucho - Huancavelica</p>
                   </div>
                 </div>
               </div>
@@ -343,16 +609,21 @@
   </section>
   <!-- ========================= contact-style-3 end ========================= -->
 
+  
+   
   <!-- ========================= clients-logo start ========================= -->
-  <section class="clients-logo-section pt-100 pb-100">
+  <section class="clients-logo-section pt-200 pb-200">
     <div class="container">
       <div class="row">
-        <div class="col-lg-12">
-          <div class="client-logo wow fadeInUp" data-wow-delay=".2s">
-            <img src="assets/img/clients/brands.svg" alt="" class="w-100">
-          </div>
-        </div>
+        
       </div>
     </div>
   </section>
   <!-- ========================= clients-logo end ========================= -->
+ 
+
+
+  
+    
+ 
+
