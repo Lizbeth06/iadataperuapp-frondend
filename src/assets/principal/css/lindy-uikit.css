@@ -658,7 +658,7 @@ p {
 .hero-section-wrapper-5 .hero-style-5 {
   position: relative;
   z-index: 1;
-  padding: 270px 0 140px;
+  padding: 90px 0 155px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
@@ -950,15 +950,7 @@ p {
   color: #2F80ED;
 }
 
-.pricing-style-4 .pricing-active .single-pricing ul {
-  margin-bottom: 30px;
-}
 
-.pricing-style-4 .pricing-active .single-pricing ul li {
-  font-size: 16px;
-  line-height: 34px;
-  margin-bottom: 12px;
-}
 
 /* ============================= 
     ABOUT-4 CSS
