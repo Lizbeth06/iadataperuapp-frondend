@@ -21,3 +21,5 @@ describe('PrincipalComponent', () => {
     expect(component).toBeTruthy();
   });
 });
+
+
