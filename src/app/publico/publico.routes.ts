@@ -4,6 +4,10 @@ import { NosotrosComponent } from './nosotros/nosotros.component';
 import { VentaSistemaComponent } from './venta-sistema/venta-sistema.component';
 import { ConsultoriaDesarrolloComponent } from './consultoria-desarrollo/consultoria-desarrollo.component';
 import { ServicioTecnicoComponent } from './servicio-tecnico/servicio-tecnico.component';
+import { ProductoComponent } from './producto/producto.component';
+
+
+
 
 export const PUBLICO_ROUTES: Routes = [
     {
@@ -13,6 +17,10 @@ export const PUBLICO_ROUTES: Routes = [
     {
         path:'nosotros',
         component: NosotrosComponent
+    },
+    {
+        path:'producto',
+        component: ProductoComponent
     },
     {
         path:'venta-sistema',
