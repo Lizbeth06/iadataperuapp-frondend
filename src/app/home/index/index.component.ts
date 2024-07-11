@@ -22,10 +22,10 @@ export class IndexComponent {
 
     // Redirigir al usuario a WhatsApp
     window.open(enlaceWhatsApp, '_blank');
-  } 
+  }
 
 
-  images: string[] = ['assets/principal/img/presentacion7.png', 'assets/principal/img/presentacion.png', 'assets/principal/img/presentacion1.png'];
+  images: string[] = ['assets/principal/img/presentacion8.png', 'assets/principal/img/presentacion9.png', 'assets/principal/img/presentacion1.png'];
   currentImage: string = this.images[0]; // Inicialmente muestra la primera imagen
   currentIndex: number = 0;
 
@@ -42,7 +42,8 @@ export class IndexComponent {
   openModal(event: MouseEvent): void {
     // Abre el modal al pasar el mouse
     const dialogRef = this.dialog.open(ModalunoComponent, {
-      width: '500px',
+      width: '1000px',
+      panelClass: 'custom-modalbox'
       // Otros ajustes según tus necesidades (tamaño, datos a pasar, etc.)
     });
 
