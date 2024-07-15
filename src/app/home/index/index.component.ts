@@ -4,6 +4,9 @@ import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../material/material.module';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalunoComponent } from './modaluno/modaluno.component';
+import { ModalconsultoriaComponent } from './modalconsultoria/modalconsultoria.component';
+import { ModalsoportetecnicoComponent } from './modalsoportetecnico/modalsoportetecnico.component';
+import { ModalaccesoriosComponent } from './modalaccesorios/modalaccesorios.component';
 
 @Component({
   selector: 'app-index',
@@ -44,7 +47,42 @@ export class IndexComponent {
     const dialogRef = this.dialog.open(ModalunoComponent, {
       width: '1000px',
       panelClass: 'custom-modalbox'
-      // Otros ajustes según tus necesidades (tamaño, datos a pasar, etc.)
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('El modal se cerró');
+    });
+  }
+
+  openModal2(event: MouseEvent): void {
+    // Abre el modal al pasar el mouse
+    const dialogRef = this.dialog.open(ModalconsultoriaComponent, {
+      width: '1000px',
+      panelClass: 'custom-modalbox'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('El modal se cerró');
+    });
+  }
+
+  openModal3(event: MouseEvent): void {
+    // Abre el modal al pasar el mouse
+    const dialogRef = this.dialog.open(ModalsoportetecnicoComponent, {
+      width: '1000px',
+      panelClass: 'custom-modalbox'
+    });
+
+    dialogRef.afterClosed().subscribe(result => {
+      console.log('El modal se cerró');
+    });
+  }
+
+  openModal4(event: MouseEvent): void {
+    // Abre el modal al pasar el mouse
+    const dialogRef = this.dialog.open(ModalaccesoriosComponent, {
+      width: '1000px',
+      panelClass: 'custom-modalbox'
     });
 
     dialogRef.afterClosed().subscribe(result => {

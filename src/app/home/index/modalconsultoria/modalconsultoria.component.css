@@ -1,0 +1,40 @@
+
+.color_modal {
+    background: linear-gradient(to bottom, #000000, #003300); /* Fondo de degradado */
+    color: #ffffff; /* Color de texto blanco */
+  }
+  
+  .color_modal button {
+    background:#ffffff;
+    color: #000000 !important; /* Color de texto del botón blanco */
+  }
+  
+  .ctexto-blanco {
+    color:#ffffff;
+  }
+  
+  .icono-componente{
+    color:#ffffff;
+    font-size: 36px;
+  }
+  
+  .texto-componente{
+    color:#0ae98a;
+    font-size: 11.5px;
+  }
+  
+  .example-card {
+    background-color: #24385b; /* Color de fondo inicial */
+    transition: background-color 0.3s ease; /* Transición suave para el cambio de color */
+  }
+  
+  /* Estilo del card al pasar el mouse */
+  .example-card:hover {
+    background-color: #485d7e; /* Nuevo color de fondo al pasar el mouse */
+  }
+  
+  .centrar-botones {
+    display: flex;
+    justify-content: center; /* Centra los elementos horizontalmente */
+  }
+  
