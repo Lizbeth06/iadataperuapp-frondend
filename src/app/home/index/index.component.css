@@ -1,0 +1,250 @@
+
+  .Title_Title_principal {
+    color: #fff;
+    font-size: 2.5rem;
+    line-height: 3rem;
+  }
+
+  .Title_Title {
+    color: #fff;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+  .Title_Title2 {
+    color: #46e3e3;
+    font-size: 2.25rem;
+    line-height: 3rem;
+}
+
+  .single-feature ul {
+    text-align: left;
+    list-style-type: disc; /* Muestra viñetas */
+    padding-left: 20px; /* Añade espacio a la izquierda */
+    margin: 0;
+  }
+
+  .single-feature li {
+    margin-bottom: 10px; /* Espacio entre los elementos de la lista */
+  }
+
+  .mat-h1 {
+    font-size: 2.5rem;
+    font-weight: 400;
+    margin: 0;
+    padding: 16px;
+  }
+
+  .mat-h5 {
+    font-size: 1.25rem;
+    font-weight: 500;
+    margin: 0;
+    padding: 8px 0;
+    color: #78b363; /* Cambia este color según tu tema */
+  }
+
+  .asterisk {
+    color: red; /* Cambia el color del asterisco a rojo */
+    font-weight: bold; /* Opcional: para hacer el asterisco en negrita */
+  }
+
+  .color-button {
+    background-color: #24c8c9 !important;
+    color: #ffffff !important; /* Color blanco para el texto */
+  }
+
+  .btn-small {
+    font-size: 13px; /* Ajusta el tamaño del texto */
+  }
+
+  .btn-small .material-icons {
+    font-size: 16px; /* Ajusta el tamaño del ícono */
+    margin-right: 5px; /* Espacio entre el ícono y el texto */
+  }
+
+  .price-tag {
+        position: absolute;
+        top: 10px; /* Ajusta la posición vertical según sea necesario */
+        right: 10px; /* Ajusta la posición horizontal según sea necesario */
+        background-color: #ff0404; /* Color de fondo del botón */
+        color: white; /* Color del texto */
+        padding: 5px 10px; /* Espaciado interno */
+        border-radius: 50%; /* Botón circular */
+        width: 60px; /* Ancho */
+    height: 60px;
+        font-size: 12px; /* Tamaño del texto */
+    }
+
+    .mat-button {
+        position: relative; /* Para que el botón mantenga su posición */
+        z-index: 1; /* Asegura que el botón esté sobre el precio */
+    }
+
+  .my-custom-heading {
+    font-size: 32px; /* Tamaño de letra personalizado */
+  }
+
+  .custom-mark-container {
+    display: inline-block;
+    background-color: yellow;
+    padding: 0.1em 0.2em;
+    border-radius: 0.2em;
+  }
+
+  .custom-mark {
+    color: #000;
+    background: transparent;
+  }
+
+  .Title_Title__0JGzy {
+    color: #0ae98a;
+  }
+
+  .card__article_plan {
+    position: relative;
+    background-image: url('../../../assets/principal/img/plan1.jpg');
+    background-size: cover; /* Ajusta la imagen para cubrir todo el contenedor */
+    background-position: center; /* Centra la imagen */
+    padding: 0px; /* Ajusta según tu diseño */
+    /*width: 300px;  Remove after adding swiper js */
+    border-radius: 1.25rem;
+    overflow: hidden;
+  }
+
+  .carddata_precio {
+    background-color: #59a53d;
+
+
+  }
+
+
+  .logoimg {
+    width: 100px; /* Ajusta el tamaño según sea necesario */
+    height: 100px;
+    border-radius: 50%; /* Para hacer el logo circular */
+  }
+
+  .clients-logo-section {
+    background-image: url('../../../assets/principal/img/caja2.jpg');
+    background-size: cover; /* Para cubrir toda la sección */
+    background-position: center; /* Alinea la imagen al centro */
+    /* Opcional: puedes ajustar otras propiedades como el tamaño y posición */
+}
+
+.card-grid {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: 20px;
+  justify-items: center;
+}
+
+.card {
+  width: 100%;
+
+}
+
+.card-header {
+  background-color: #f0f0f0; /* Color de fondo del header */
+  padding: 10px;
+  text-align: center;
+}
+
+.card1h {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;
+  background-color: #66b167; /* Color de fondo para Tarjeta 1 */
+}
+
+.card2h {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;
+  background-color: #ef802d; /* Color de fondo para Tarjeta 2 */
+}
+
+.card3h {
+  display: flex;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;
+  background-color: #e52247; /* Color de fondo para Tarjeta 3 */
+}
+
+.price {
+  font-weight: bold;
+  margin-top: 10px;
+}
+
+.card1 {
+  position: relative;
+  background: linear-gradient(rgba(7, 56, 3, 0.5), rgba(27, 167, 24, 0.5)), url('../../../assets/principal/img/plan1.jpg');
+  background-size: cover;
+  background-position: center;
+}
+
+.card1 p {
+  /* Ajustes de estilo para el texto dentro de la tarjeta */
+  color: white; /* Color de texto blanco para contrastar con el fondo oscuro */
+  padding: 10px; /* Espaciado interno para mejorar la legibilidad */
+}
+
+
+.plan-titulo {
+  color: white;
+  font-size: 33px;
+  line-height: 40px;
+  text-shadow: 3px 3px 5px #707070;
+  font-weight: 900;
+  padding: 0;
+}
+
+.precio-regular {
+  color: white;
+  font-size: 18px;
+  font-weight: 600;
+}
+
+.precio-precio {
+  font-size: 64px;
+  font-weight: 900;
+  display: flex;
+  margin-top: 15px;
+  align-items: center;
+  justify-content: center;
+}
+
+.moneda {
+  font-size: 37px;
+  font-weight: 700;
+}
+
+.datos-precio {
+  font-size: 18px;
+  padding: 20px 20px 0;
+}
+
+.ideal {
+  font-size: 16px;
+  line-height: 20px;
+  font-weight: 600;
+  margin: 20px 0 25px;
+  justify-content: center; /* Centrar horizontalmente */
+  align-items: center;
+}
+
+.precio-promo {
+  margin-top: 5px;
+
+}
+
+.example-card {
+  max-width: 400px;
+  margin-bottom: 8px;
+}
+
+.large-imagelogo{
+  width: 100%;
+  height: 80px;
+}
+
+

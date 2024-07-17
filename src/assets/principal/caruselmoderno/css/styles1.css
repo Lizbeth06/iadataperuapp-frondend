@@ -115,7 +115,7 @@
   width: initial;
   height: initial;
   font-size: 3rem;
-  color: var(--second-color);
+  color: hsl(0, 0%, 100%);
   display: none;
 }
 

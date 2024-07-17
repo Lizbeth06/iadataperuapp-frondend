@@ -1,0 +1,8 @@
+.ctexto-blanco {
+    color:#ffffff; 
+  } 
+
+  .logo_header {
+    display: flex;
+    justify-content: center;
+  }

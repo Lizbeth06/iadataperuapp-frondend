@@ -1,6 +1,6 @@
 /* =========== GOOGLE FONTS ========= */
 @import url("https://fonts.googleapis.com/css2?family=Fira+Sans:wght@300;400;500;600;700;800;900&family=Heebo:wght@300;400;500;600;700;800;900&display=swap");
-/* ============================= 
+/* =============================
     COMMON CSS
 ================================ */
 html {
@@ -61,7 +61,7 @@ button {
   background: rgba(47, 128, 237, 0.8);
 }
 
-/* ============================= 
+/* =============================
     PRELOADER CSS
 ================================ */
 .preloader {
@@ -215,7 +215,7 @@ button {
   }
 }
 
-/* ============================= 
+/* =============================
     TYPOGRAPHY CSS
 ================================ */
 h1, h2, h3, h4, h5, h6,
@@ -296,7 +296,7 @@ p {
   margin-bottom: 0px;
 }
 
-/* ============================= 
+/* =============================
     BUTTONS CSS
 ================================ */
 .button {
@@ -365,7 +365,7 @@ p {
   font-weight: 400;
 }
 
-/* ============================= 
+/* =============================
     HEADER-6 CSS
 ================================ */
 .header {
@@ -388,7 +388,7 @@ p {
 
 .header.header-6 .header-action a {
   font-size: 16px;
-  color: #585978;
+  color: #ffffff;
   padding: 12px;
 }
 
@@ -485,7 +485,7 @@ p {
 .header.header-6 .navbar-nav .nav-item a {
   font-size: 16px;
   font-weight: 500;
-  color: #585978;
+  color: #ffffff;
   transition: all 0.3s ease-out 0s;
   padding: 7px 15px;
   margin: 0 3px;
@@ -628,7 +628,7 @@ p {
   top: -5px;
 }
 
-/* ============================= 
+/* =============================
     HERO-5 CSS
 ================================ */
 .hero-section-wrapper-5 {
@@ -651,14 +651,14 @@ p {
   left: 0;
   width: 100%;
   z-index: 2;
-  background: #ffffff;
+  background: #0c5d3f;
   box-shadow: 0px 0px 5px rgba(0, 0, 0, 0.1);
 }
 
 .hero-section-wrapper-5 .hero-style-5 {
   position: relative;
   z-index: 1;
-  padding: 90px 0 155px;
+  padding: 225px 0 0px;
 }
 
 @media only screen and (min-width: 1200px) and (max-width: 1399px) {
@@ -786,7 +786,7 @@ p {
   bottom: 0;
 }
 
-/* ============================= 
+/* =============================
     FEATURE-5 CSS
 ================================ */
 .feature-style-5 {
@@ -795,12 +795,13 @@ p {
 }
 
 .feature-style-5 .single-feature {
-  padding: 60px 35px;
+  background: #ffffff;
+  padding: 10px 62px;
   border-radius: 30px;
   margin-bottom: 50px;
-  box-shadow: 0px 5px 25px rgba(218, 211, 211, 0.3);
+  box-shadow: 0px 5px 25px rgba(255, 255, 255, 0.3);
   text-align: center;
-  border-bottom: 5px solid #585978;
+  border-bottom: 5px solid #ffffff;
   transition: all 0.3s ease-out 0s;
 }
 
@@ -816,7 +817,7 @@ p {
   justify-content: center;
   align-items: center;
   margin: auto;
-  margin-bottom: 20px;
+  margin-bottom: 0px;
   position: relative;
   width: 110px;
   height: 100px;
@@ -832,10 +833,10 @@ p {
 
 .feature-style-5 .single-feature .content h5 {
   font-weight: 600;
-  margin-bottom: 25px;
+  margin-bottom: 0px;
 }
 
-/* ============================= 
+/* =============================
     PRICING-4 CSS
 ================================ */
 .pricing-style-4 {
@@ -952,7 +953,7 @@ p {
 
 
 
-/* ============================= 
+/* =============================
     ABOUT-4 CSS
 ================================ */
 .about-style-4 {
@@ -991,7 +992,7 @@ p {
 }
 
 
-/* ============================= 
+/* =============================
     CONTACT-3 CSS
 ================================ */
 .contact-style-3 {
@@ -1115,7 +1116,7 @@ p {
   font-size: 24px;
 }
 
-/* ============================= 
+/* =============================
     FOOTER-4 CSS
 ================================ */
 .footer-style-4 {
@@ -1209,7 +1210,7 @@ p {
   font-size: 14px;
   font-weight: 500;
   text-align: center;
-  color: rgba(88, 89, 120, 0.6);
+  color: #ffffff;
 }
 
 .footer-style-4 .copyright-wrapper p a {
@@ -1252,7 +1253,7 @@ p {
   color: rgba(255, 255, 255, 0.8);
 }
 
-/* ============================= 
+/* =============================
     DEFAULT CSS
 ================================ */
 .img-bg {

@@ -14,16 +14,16 @@ describe('AppComponent', () => {
     expect(app).toBeTruthy();
   });
 
-  it(`should have the 'iadata_app' title`, () => {
+  it(`should have the 'iadataperu-frondend' title`, () => {
     const fixture = TestBed.createComponent(AppComponent);
     const app = fixture.componentInstance;
-    expect(app.title).toEqual('iadata_app');
+    expect(app.title).toEqual('iadataperu-frondend');
   });
 
   it('should render title', () => {
     const fixture = TestBed.createComponent(AppComponent);
     fixture.detectChanges();
     const compiled = fixture.nativeElement as HTMLElement;
-    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, iadata_app');
+    expect(compiled.querySelector('h1')?.textContent).toContain('Hello, iadataperu-frondend');
   });
 });
