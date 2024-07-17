@@ -3,7 +3,7 @@
   "version": 1,
   "newProjectRoot": "projects",
   "projects": {
-    "iadata_app": {
+    "iadataperu-frondend": {
       "projectType": "application",
       "schematics": {},
       "root": "",
@@ -13,7 +13,7 @@
         "build": {
           "builder": "@angular-devkit/build-angular:application",
           "options": {
-            "outputPath": "dist/iadata_app",
+            "outputPath": "dist/iadataperu-frondend",
             "index": "src/index.html",
             "browser": "src/main.ts",
             "polyfills": [
@@ -28,12 +28,7 @@
               "@angular/material/prebuilt-themes/indigo-pink.css",
               "src/styles.css"
             ],
-            "scripts": [],
-            "server": "src/main.server.ts",
-            "prerender": true,
-            "ssr": {
-              "entry": "server.ts"
-            }
+            "scripts": []
           },
           "configurations": {
             "production": {
@@ -63,10 +58,10 @@
           "builder": "@angular-devkit/build-angular:dev-server",
           "configurations": {
             "production": {
-              "buildTarget": "iadata_app:build:production"
+              "buildTarget": "iadataperu-frondend:build:production"
             },
             "development": {
-              "buildTarget": "iadata_app:build:development"
+              "buildTarget": "iadataperu-frondend:build:development"
             }
           },
           "defaultConfiguration": "development"
@@ -74,7 +69,7 @@
         "extract-i18n": {
           "builder": "@angular-devkit/build-angular:extract-i18n",
           "options": {
-            "buildTarget": "iadata_app:build"
+            "buildTarget": "iadataperu-frondend:build"
           }
         },
         "test": {
@@ -100,6 +95,6 @@
     }
   },
   "cli": {
-    "analytics": "354fc215-b287-4ef3-9c09-50cf1946bb50"
+    "analytics": "6b07f9bf-e058-4e75-8f9e-93e80fd4a2b1"
   }
 }
