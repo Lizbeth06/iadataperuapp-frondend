@@ -5,11 +5,8 @@
   .logo_header {
     display: flex;
     justify-content: center;
-<<<<<<< HEAD
-=======
   }
 
   .color_textomenu {
     color:#000000; 
->>>>>>> 67e78b478a587f3a0ff1411cfd031731a5b47566
-  }
+}
