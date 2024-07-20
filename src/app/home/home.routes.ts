@@ -6,6 +6,12 @@ import { ConsultoriaComponent } from './consultoria/consultoria.component';
 import { ServicioTecnicoComponent } from './servicio-tecnico/servicio-tecnico.component';
 import { VentaAccesoriosComponent } from './venta-accesorios/venta-accesorios.component';
 import { VentaSistemasComponent } from './venta-sistemas/venta-sistemas.component';
+<<<<<<< HEAD
+=======
+import { CursoComponent } from './curso/curso.component';
+import { TallerComponent } from './taller/taller.component';
+import { MicertificadoComponent } from './micertificado/micertificado.component';
+>>>>>>> 67e78b478a587f3a0ff1411cfd031731a5b47566
 
 export const HOME_ROUTES: Routes = [
     {
@@ -35,5 +41,20 @@ export const HOME_ROUTES: Routes = [
     {
         path: 'venta-sistemas',
         component: VentaSistemasComponent
+<<<<<<< HEAD
+=======
+    },
+    {
+        path: 'curso',
+        component: CursoComponent
+    },
+    {
+        path: 'taller',
+        component: TallerComponent
+    },
+    {
+        path: 'micertificado',
+        component: MicertificadoComponent
+>>>>>>> 67e78b478a587f3a0ff1411cfd031731a5b47566
     }
 ];
