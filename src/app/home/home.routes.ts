@@ -6,6 +6,9 @@ import { ConsultoriaComponent } from './consultoria/consultoria.component';
 import { ServicioTecnicoComponent } from './servicio-tecnico/servicio-tecnico.component';
 import { VentaAccesoriosComponent } from './venta-accesorios/venta-accesorios.component';
 import { VentaSistemasComponent } from './venta-sistemas/venta-sistemas.component';
+import { CursoComponent } from './curso/curso.component';
+import { TallerComponent } from './taller/taller.component';
+import { MicertificadoComponent } from './micertificado/micertificado.component';
 
 export const HOME_ROUTES: Routes = [
     {
@@ -35,5 +38,17 @@ export const HOME_ROUTES: Routes = [
     {
         path: 'venta-sistemas',
         component: VentaSistemasComponent
+    },
+    {
+        path: 'curso',
+        component: CursoComponent
+    },
+    {
+        path: 'taller',
+        component: TallerComponent
+    },
+    {
+        path: 'micertificado',
+        component: MicertificadoComponent
     }
 ];

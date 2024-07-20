@@ -6,3 +6,7 @@
     display: flex;
     justify-content: center;
   }
+
+  .color_textomenu {
+    color:#000000; 
+  }
