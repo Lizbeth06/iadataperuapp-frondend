@@ -1,0 +1,51 @@
+.feature-section {
+    padding: 100px 0;
+}
+
+.nav-link {
+    background-color: transparent;
+    color: white;
+    border: 1px solid white;
+    margin-bottom: 10px;
+    transition: background-color 0.3s, color 0.3s;
+    font-size: 1.2em; /* Aumenta el tamaño de la letra */
+    padding: 15px; /* Añade espacio interior */
+}
+
+.nav-link:hover, .nav-link.active {
+    background-color: rgb(247, 250, 247);
+    color: rgb(0, 0, 0);
+    border: 1px solid white;
+}
+
+.tab-content.color_modal {
+    background: linear-gradient(to bottom, #000000, #003300);
+    color: #ffffff;
+    padding: 20px;
+    border-radius: 5px;
+    margin-left: 20px;
+    width: 100%;
+    margin-top: 20px; /* Añade espacio superior */
+}
+
+.tab-pane p {
+    margin-bottom: 15px;
+    font-size: 1.1em; /* Aumenta el tamaño de la letra */
+    text-align: justify; /* Justificar texto */
+}
+
+.icon-turquoise {
+    color: #40E0D0;
+    margin-right: 10px;
+    font-size: 1.5em; /* Aumenta el tamaño del icono */
+}
+
+.nav-link.active i, .nav-link:hover i {
+    color: rgb(0, 0, 0);
+}
+
+.nav-link.active, .nav-link:hover {
+    color: rgb(0, 100, 0); /* Verde */
+    font-size: 1.3em; /* Aumenta el tamaño de la letra cuando está activa o se pasa el ratón */
+}
+
