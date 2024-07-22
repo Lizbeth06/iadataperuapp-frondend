@@ -40,6 +40,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     overflow-x: hidden;
   }
 
+  .page_iadata6 {
+    background-image: url('../src/assets/img/fondocurso2.jpg');
+    background-size: cover; /* Ajusta el tamaño de la imagen para cubrir toda la sección */
+    background-position: center; /* Centra la imagen dentro de la sección */
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+}
+
   .ctexto-blanco {
     color:#ffffff;
   }

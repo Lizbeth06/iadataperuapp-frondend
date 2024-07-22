@@ -1,0 +1,79 @@
+.Title_Title_principal {
+    color: #ffffff;
+    font-size: 3.5rem;
+    line-height: 3rem;
+}
+
+.Title_subtitulo {
+    color: #ffffff;
+    font-size: 1.25rem;
+    line-height: 3rem;
+  }
+  
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.feature-curso {
+    background: #ffffff;
+    /* padding: 10px 62px; */
+    border-radius: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0px 5px 25px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    border-bottom: 5px solid #ffffff;
+    transition: all 0.3s ease-out 0s;
+}
+
+.single-curso {
+    border-color: #59a53d;
+    box-shadow: 0px 8px 25px rgba(47, 128, 237, 0.35);
+}
+
+.curso-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-details {
+    flex: 1;
+}
+
+.right-details {
+    flex: 1;
+    text-align: right;
+}
+
+.p-noplan {
+    align-items: center;
+    color: #87909d;
+    display: flex;
+    font-size: .75rem;
+    font-weight: 400;
+    gap: .5rem;
+    letter-spacing: .019rem;
+    letter-spacing: .3px;
+    line-height: 1.125rem;
+    text-decoration: none;
+    text-transform: none;
+    margin: 0;
+  }
+
+  .centered-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.centered-buttons {
+    display: flex;
+    align-items: center; /* Centra los botones horizontalmente */
+}
+
+.centered-buttons button {
+    margin-right: 10px; /* Espacio entre los botones (opcional) */
+}
+
+
+
