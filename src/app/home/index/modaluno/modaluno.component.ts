@@ -20,14 +20,16 @@ import { RouterLink } from '@angular/router';
   styleUrl: './modaluno.component.css'
 })
 export class ModalunoComponent {
-  redirigirAWhatsApp(): void {
-    // Definir el número de teléfono o enlace de WhatsApp
-    let telefono = '+51930794100'; // Aquí pon el número de teléfono o enlace de WhatsApp
+  
+  redirigirAWhatsAppConsultarVS(): void {
+    let telefono = '51930794100'; // Aquí pon el número de teléfono o enlace de WhatsApp
+    let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, quisiera saber más sobre el *servicios o venta de software personalizado* que ofrecen para mi negocio o empresa`;
+    window.open(enlaceWhatsApp, '_blank');
+  }
 
-    // Construir el enlace de WhatsApp
-    let enlaceWhatsApp = `https://wa.me/${telefono}`;
-
-    // Redirigir al usuario a WhatsApp
+  redirigirAWhatsAppARVS(): void {
+    let telefono = '51930794100'; // Aquí pon el número de teléfono o enlace de WhatsApp
+    let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, me gustaría *agendar una reunión* para hablar sobre los *servicios o la venta de software personalizado* que ofrecen para mi negocio o empresa.`;
     window.open(enlaceWhatsApp, '_blank');
   }
 

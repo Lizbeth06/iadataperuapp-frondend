@@ -18,14 +18,51 @@ import { ModalaccesoriosComponent } from './modalaccesorios/modalaccesorios.comp
 export class IndexComponent {
   redirigirAWhatsApp(): void {
     // Definir el número de teléfono o enlace de WhatsApp
-    let telefono = '+51930794100'; // Aquí pon el número de teléfono o enlace de WhatsApp
+    let telefono = '51930794100';
 
     // Construir el enlace de WhatsApp
-    let enlaceWhatsApp = `https://wa.me/${telefono}`;
+    let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, me gustaría recibir más detalles sobre los servicios que ofrecen.`;
 
     // Redirigir al usuario a WhatsApp
     window.open(enlaceWhatsApp, '_blank');
   }
+
+  redirigirAWhatsAppAR(): void {
+    // Definir el número de teléfono o enlace de WhatsApp
+    let telefono = '51930794100';
+
+    // Construir el enlace de WhatsApp
+    let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, estoy interesado en *programar una reunión*.`;
+
+    // Redirigir al usuario a WhatsApp
+    window.open(enlaceWhatsApp, '_blank');
+  }
+
+  redirigirAWhatsAppST(): void {
+    let telefono = '51930794100';
+    let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, estoy interesado en recibir información sobre el servicio de *Soporte Técnico a domicilio* que ofrecen`;
+    window.open(enlaceWhatsApp, '_blank');
+  }
+
+  redirigirAWhatsAppPlan1(): void {
+    let telefono = '51930794100';
+    let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, ¿podrían proporcionarme información sobre el *Plan Básico* de Facturación Electrónica?`;
+    window.open(enlaceWhatsApp, '_blank');
+  }
+
+  redirigirAWhatsAppPlan2(): void {
+    let telefono = '51930794100';
+    let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, ¿podrían proporcionarme información sobre el *Plan Emprendedor* de Facturación Electrónica?`;
+    window.open(enlaceWhatsApp, '_blank');
+  }
+
+  redirigirAWhatsAppPlan3(): void {
+    let telefono = '51930794100';
+    let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, ¿podrían proporcionarme información sobre el *Plan Empresial* de Facturación Electrónica?`;
+    window.open(enlaceWhatsApp, '_blank');
+  }
+
+
 
 
   images: string[] = ['assets/principal/img/presentacion8.png', 'assets/principal/img/presentacion9.png', 'assets/principal/img/presentacion1.png'];

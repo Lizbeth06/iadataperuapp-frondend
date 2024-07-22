@@ -1,0 +1,80 @@
+.curso-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-details {
+    flex: 1;
+}
+
+.right-details {
+    flex: 1;
+    text-align: right;
+}
+
+.p-noplan {
+    align-items: center;
+    color: #87909d;
+    display: flex;
+    font-size: .75rem;
+    font-weight: 400;
+    gap: .5rem;
+    letter-spacing: .019rem;
+    letter-spacing: .3px;
+    line-height: 1.125rem;
+    text-decoration: none;
+    text-transform: none;
+    margin: 0;
+  }
+
+.Title_Title {
+    color: #ffffff;
+    font-size: 2.5rem;
+    line-height: 3rem;
+}
+
+.Title_subtitulo {
+    color: #ffffff;
+    text-align: justify;
+}
+
+.color_texto {
+    color: #ffffff;
+}
+
+
+  .breadcrumb,
+  .breadcrumb-item,
+  .breadcrumb-item a,
+  .breadcrumb-item::before,
+  .breadcrumb-item::after {
+    color: #78b363;
+  }
+
+  .profile-container {
+    display: flex;
+    align-items: center;
+  }
+  
+  .profile-picture {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%; /* Hace la imagen redonda */
+    overflow: hidden; /* Asegura que la imagen no se desborde */
+    margin-right: 20px;
+    border: 2px solid #fff; /* Borde blanco de 2px */
+    box-shadow: 0 0 5px rgba(0, 0, 0, 0.1); /* Sombra suave */
+  }
+  
+  .profile-picture img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover; /* Para ajustar la imagen dentro del círculo */
+  }
+  
+  .profile-info {
+    display: flex;
+    flex-direction: column;
+    margin: 0;
+  }
+  

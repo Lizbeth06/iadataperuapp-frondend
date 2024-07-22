@@ -1,4 +1,5 @@
 
+  @defer () {
   <!-- ========================= hero-5 start ========================= -->
   <div class="hero-section hero-style-5 img-bg page_iadata"  [style.background-image]="'url(assets/principal/img/hero/hero-5/iadata2.svg)'">
     <div class="container">
@@ -14,10 +15,10 @@
                   <button mat-raised-button class="mb-2"><span class="material-icons">spatial_audio</span> Consultar</button>
                 </span>
               </mat-list-item>
-              <mat-list-item (click)="redirigirAWhatsApp()">
+              <mat-list-item (click)="redirigirAWhatsAppAR()">
                 <button mat-raised-button class="mb-2"><span class="material-icons">calendar_month</span> Agendar Reunión</button>
               </mat-list-item>
-              <mat-list-item (click)="redirigirAWhatsApp()">
+              <mat-list-item (click)="redirigirAWhatsAppST()">
                 <button mat-raised-button class="mb-2"><span class="material-icons">hail</span> Solicitar Soporte Técnico de Computadora a Domicilio</button>
               </mat-list-item>
             </mat-list>
@@ -177,56 +178,56 @@
             <mat-card-content class="card1">
               <p class="ideal">Ideal para quien solo quiere vender y  gestionar tu Inventario</p>
               <p class="precio-promo">Precio SUPER PROMO</p>
-              <p class="precio-precio"><span class="moneda">S/</span>2099<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+              <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>2099<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
 
               <ul style="text-align: left; color: white;">
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Punto de venta para Celular, Tablet y PC (POS)</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Gestión de inventario (1 almacén)</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Módulo de compra</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Reporte de ingreso y gastos</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Movimientos</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Impresión de comandos</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Comando de Pedidos</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                    <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Entrega y gestión del delivery</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Hasta 6 usuarios</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Hasta 1 sucursal</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Emisión de Ticket</li>
-                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Punto de venta para Celular, Tablet y PC (POS)</li>
+                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                 <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Gestión de inventario (1 almacén)</li>
+                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Módulo de compra</li>
+                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Reporte de ingreso y gastos</li>
+                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Movimientos</li>
+                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Impresión de comandos</li>
+                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Comando de Pedidos</li>
+                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                    <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Entrega y gestión del delivery</li>
+                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Hasta 6 usuarios</li>
+                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Hasta 1 sucursal</li>
+                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Emisión de Ticket</li>
+                  <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                     <i class="lni lni-cross-circle" style="margin-right: 10px;color:#fe672e;"></i>Emisión de Boleta y Factura</li>
 
-                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                  <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
 
                     <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Emisión de XML, validar CDR y anular o devolución de comprobante</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
+                <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                   <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Emisión de cotización y notas de débito</li>
 
-                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                  <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                     <i class="lni lni-cross-circle" style="margin-right: 10px; color:#fe672e;"></i>Ranking de clientes
                   </li>
-                      <li class="wow fadeInUp" data-wow-delay=".35s">
+                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                   <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Reporte de atenciones de los trabajadores</li>
-                      <li class="wow fadeInUp" data-wow-delay=".35s">
+                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                   <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Ventas por categoría y productos</li>
-                      <li class="wow fadeInUp" data-wow-delay=".35s">
+                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                   <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Kardex y alertas de stock</li>
-                      <li class="wow fadeInUp" data-wow-delay=".35s">
+                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                   <i class="lni lni-cross-circle" style="margin-right: 10px;color:#fe672e;"></i>Transferencia entre almacenes</li>
               </ul>
               <br>
-              <mat-list-item (click)="redirigirAWhatsApp()">
+              <mat-list-item (click)="redirigirAWhatsAppPlan1()">
                 <span matListItemTitle class="d-flex justify-content-center align-items-center">
-                  <button mat-raised-button class="mb-2"><span class="material-icons">touch_app</span> Adquirir</button>
+                  <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
                 </span>
               </mat-list-item>
             </mat-card-content>
@@ -243,54 +244,54 @@
             <mat-card-content class="card1">
               <p class="ideal">Ideal para quienes necesitan cumplir con la SUNAT, controlar su Inventario y venta</p>
               <p class="precio-promo">Precio SUPER PROMO</p>
-              <p class="precio-precio"><span class="moneda">S/</span>3460<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+              <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>3460<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
 
               <ul style="text-align: left;color: white;">
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Punto de venta para Celular, Tablet y PC (POS)</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Gestión de inventario (2 almacenes)</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Módulo de compra</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Reporte avanzado</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Movimientos</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Impresión de comandos</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Comando de Pedidos</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Entrega y gestión del delivery</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Hasta 15 usuarios</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Hasta 2 sucursales</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Facturación electrónica SUNAT</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Emisión de Ticket, Boleta y Factura</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Emisión de XML, validar CDR y anular o devolución de comprobante</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Punto de venta para Celular, Tablet y PC (POS)</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Gestión de inventario (2 almacenes)</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Módulo de compra</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Reporte avanzado</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Movimientos</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Impresión de comandos</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Comando de Pedidos</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Entrega y gestión del delivery</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Hasta 15 usuarios</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Hasta 2 sucursales</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Facturación electrónica SUNAT</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Emisión de Ticket, Boleta y Factura</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Emisión de XML, validar CDR y anular o devolución de comprobante</li>
+                <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                   <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Emisión de cotización y notas de débito</li>
 
-                  <li class="wow fadeInUp" data-wow-delay=".35s">
+                  <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                     <i class="lni lni-cross-circle" style="margin-right: 10px; color:#fe672e;"></i>Ranking de clientes
                   </li>
-                      <li class="wow fadeInUp" data-wow-delay=".35s">
+                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                   <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Reporte de atenciones de los trabajadores</li>
-                      <li class="wow fadeInUp" data-wow-delay=".35s">
+                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                   <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Ventas por categoría y productos</li>
-                      <li class="wow fadeInUp" data-wow-delay=".35s">
+                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                   <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Kardex y alertas de stock</li>
-                      <li class="wow fadeInUp" data-wow-delay=".35s">
+                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
                   <i class="lni lni-cross-circle" style="margin-right: 10px;color:#fe672e;"></i>Transferencia entre almacenes</li>
               </ul>
               <br>
-              <mat-list-item (click)="redirigirAWhatsApp()">
+              <mat-list-item (click)="redirigirAWhatsAppPlan2()">
                 <span matListItemTitle class="d-flex justify-content-center align-items-center">
-                  <button mat-raised-button class="mb-2"><span class="material-icons">touch_app</span> Adquirir</button>
+                  <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
                 </span>
               </mat-list-item>
             </mat-card-content>
@@ -307,52 +308,52 @@
             <mat-card-content class="card1">
               <p class="ideal">Ideal para quien necesita controlar y gestionar hasta el último detalle</p>
               <p class="precio-promo">Precio SUPER PROMO</p>
-              <p class="precio-precio"><span class="moneda">S/</span>4700<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+              <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>4700<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
 
               <ul style="text-align: left;color: white;">
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                      <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Punto de venta para Celular, Tablet y PC (POS)</li>
-                      <li class="wow fadeInUp" data-wow-delay=".35s">
-                        <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Gestión de inventario (5 almacenes)</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Módulo de compra</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Reporte avanzado</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Movimientos</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Impresión de comandos</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Comando de Pedidos</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Entrega y gestión del delivery</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Usuarios ilimitados</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Hasta 5 sucursales</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Facturación electrónica SUNAT</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Emisión de Ticket, Boleta y Factura</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Emisión de XML, validar CDR y anular o devolución de comprobante</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Emisión de cotización y notas de débito</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Ranking de clientes</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Reporte de atenciones de los trabajadores</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Ventas por categoría y productos</li>
-                    <li class="wow fadeInUp" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle"  style="margin-right: 10px;"></i>Kardex y alertas de stock</li>
-                <li class="wow fadeInUp" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle" style="margin-right: 10px;"></i>Transferencia entre almacenes</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy Title_Title__0JGzy"  style="margin-right: 10px;"></i>Punto de venta para Celular, Tablet y PC (POS)</li>
+                      <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                        <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Gestión de inventario (5 almacenes)</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Módulo de compra</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Reporte avanzado</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Movimientos</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Impresión de comandos</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Comando de Pedidos</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Entrega y gestión del delivery</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Usuarios ilimitados</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Hasta 5 sucursales</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Facturación electrónica SUNAT</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Emisión de Ticket, Boleta y Factura</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Emisión de XML, validar CDR y anular o devolución de comprobante</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Emisión de cotización y notas de débito</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Ranking de clientes</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Reporte de atenciones de los trabajadores</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Ventas por categoría y productos</li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Kardex y alertas de stock</li>
+                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Transferencia entre almacenes</li>
               </ul>
               <br>
-              <mat-list-item (click)="redirigirAWhatsApp()">
+              <mat-list-item (click)="redirigirAWhatsAppPlan3()">
                 <span matListItemTitle class="d-flex justify-content-center align-items-center">
-                  <button mat-raised-button class="mb-2"><span class="material-icons">touch_app</span> Adquirir</button>
+                  <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
                 </span>
               </mat-list-item>
 
@@ -370,7 +371,8 @@
         <div class="col-xl-12 col-lg-12">
           <div class="about-content-wrapper">
             <div class="section-title text-center mb-1">
-              <h1 class="Title_Title"><strong>Nuestros Clientes Satisfechos</strong></h1>
+              <h1 class="Title_Title"><strong>Somos una Empresa de Confianza</strong></h1>
+              <h4 class="Title_Title">Lo dicen nuestros clientes</h4>
               <p class="wow fadeInUp Title_Title__0JGzy" data-wow-delay=".4s" style="text-align: justify;">En cada paso de nuestro camino, tu satisfacción es nuestro compromiso, nuestros principales clientes. </p>
             </div>
 
@@ -383,8 +385,8 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title>Gobierno Regional de Ayacucho</mat-card-title>
-                            <img mat-card-sm-image src="https://seeklogo.com/images/G/gobierno-regional-ayacucho-logo-DD36F95A75-seeklogo.com.png?v=638252741160000000" >
+                            <mat-card-title class="Title_Title__0JGzy">Gobierno Regional de Ayacucho</mat-card-title>
+                            <img class="img-thumbnail logo-tamano" alt="..." mat-card-sm-image src="https://seeklogo.com/images/G/gobierno-regional-ayacucho-logo-DD36F95A75-seeklogo.com.png?v=638252741160000000" >
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -396,8 +398,9 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title>Municiplaidad Distrital de Pichari</mat-card-title>
-                            <img mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzvJdC_XO0nGmMI5Jn47f4bx7Vas4TuivKmaD_i2OKaEo_kqomBEYkNTvTQvqbx5mdNKk&usqp=CAU" >
+                            <mat-card-title class="Title_Title__0JGzy">Municipalidad Distrital de Pichari</mat-card-title>
+                              <img class="img-thumbnail logo-tamano" alt="..." mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRzvJdC_XO0nGmMI5Jn47f4bx7Vas4TuivKmaD_i2OKaEo_kqomBEYkNTvTQvqbx5mdNKk&usqp=CAU">
+                             
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -408,8 +411,8 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title style="font-size: 11px;">Dirección Regional de Transportes y Comuniaciones de Huancavelica</mat-card-title>
-                            <img mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2PdVJLFjwaE3Mkh4hIOUkikGtjFEqH4voxw&s" >
+                            <mat-card-title class="Title_Title__0JGzy" style="font-size: 11px;">Dirección Regional de Transportes y Comuniaciones de Huancavelica</mat-card-title>
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcT2PdVJLFjwaE3Mkh4hIOUkikGtjFEqH4voxw&s" >
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -420,8 +423,8 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title style="font-size: 11px;">Dirección Regional de Transportes y Comunicaciones de Ayacucho</mat-card-title>
-                            <img mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjXy4reng2MmjUp9vJZD6hjpwEI-zYERnxKg&s" >
+                            <mat-card-title class="Title_Title__0JGzy" style="font-size: 11px;">Dirección Regional de Transportes y Comunicaciones de Ayacucho</mat-card-title>
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRjXy4reng2MmjUp9vJZD6hjpwEI-zYERnxKg&s" >
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -436,8 +439,8 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title>Municipalidad Dist. de Santillana</mat-card-title>
-                            <img mat-card-sm-image src="https://www.contrataciones.pe/organizaciones/licitaciones-municipalidad-santillana.png" >
+                            <mat-card-title class="Title_Title__0JGzy">Municipalidad Dist. de Santillana</mat-card-title>
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="https://www.contrataciones.pe/organizaciones/licitaciones-municipalidad-santillana.png" >
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -448,8 +451,8 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title>Municipalidad Dist. de Accomarca</mat-card-title>
-                            <img mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs3pMtEmhn3UpimvBqwkpQuJJOftrAutIZqg&s" >
+                            <mat-card-title class="Title_Title__0JGzy">Municipalidad Dist. de Accomarca</mat-card-title>
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs3pMtEmhn3UpimvBqwkpQuJJOftrAutIZqg&s" >
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -460,8 +463,8 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title>Colegio Logic School - Ayacucho</mat-card-title>
-                            <img mat-card-sm-image src="https://yt3.googleusercontent.com/ytc/AIdro_kiIOKH4z3ffMrAAKLcDoHs6AVZ46EFyroMLSRhZEfMFA=s900-c-k-c0x00ffffff-no-rj" >
+                            <mat-card-title class="Title_Title__0JGzy">Colegio Logic School - Ayacucho</mat-card-title>
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="https://yt3.googleusercontent.com/ytc/AIdro_kiIOKH4z3ffMrAAKLcDoHs6AVZ46EFyroMLSRhZEfMFA=s900-c-k-c0x00ffffff-no-rj" >
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -472,8 +475,8 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title>Colegio German Caro Rios - Ayacucho</mat-card-title>
-                            <img mat-card-sm-image src="../../../assets/principal/img/colegiogerman.png" >
+                            <mat-card-title class="Title_Title__0JGzy">Colegio German Caro Rios - Ayacucho</mat-card-title>
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="../../../assets/principal/img/colegiogerman.png" >
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -501,7 +504,7 @@
 
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
-                            <img mat-card-sm-image src="https://farmacia-linea.edsincloud.com/dashboardintra/fotos/WhatsApp%20Image%202020-08-19%20at%2010.55.50.jpeg" class="large-imagelogo">
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="https://farmacia-linea.edsincloud.com/dashboardintra/fotos/WhatsApp%20Image%202020-08-19%20at%2010.55.50.jpeg" class="large-imagelogo">
                         </mat-card-header>
                         <mat-card-content>
                         </mat-card-content>
@@ -511,7 +514,7 @@
                     <div class="col-md-3">
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
-                            <img mat-card-sm-image src="https://farmaciavo.edsincloud.com/dashboardintra/fotos/LOGO%20NEGRO_page-0001.jpg" class="large-imagelogo">
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="https://farmaciavo.edsincloud.com/dashboardintra/fotos/LOGO%20NEGRO_page-0001.jpg" class="large-imagelogo">
                         </mat-card-header>
                         <mat-card-content>
                         </mat-card-content>
@@ -520,7 +523,7 @@
                     <div class="col-md-3">
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
-                            <img mat-card-sm-image src="https://medicmas.edsincloud.com/dashboardintra/fotos/WhatsApp%20Image%202021-08-18%20at%2010.21.38%20AM.jpeg" class="large-imagelogo">
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="https://medicmas.edsincloud.com/dashboardintra/fotos/WhatsApp%20Image%202021-08-18%20at%2010.21.38%20AM.jpeg" class="large-imagelogo">
 
                         </mat-card-header>
                         <mat-card-content>
@@ -531,8 +534,8 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title>Chifa y Polleria Kay Ken</mat-card-title>
-                            <img mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkATt--yEyN2ACYSHKjjmDniSM2zfcE_GZQQ&s" >
+                            <mat-card-title class="Title_Title__0JGzy">Chifa y Polleria Kay Ken</mat-card-title>
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcTkATt--yEyN2ACYSHKjjmDniSM2zfcE_GZQQ&s" >
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -547,8 +550,8 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title>Chifa Polleria D'Kay Ken</mat-card-title>
-                            <img mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRySQlmb3f67UmK8jexFboM50TPg1PnI70NWw&s" >
+                            <mat-card-title class="Title_Title__0JGzy">Chifa Polleria D'Kay Ken</mat-card-title>
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcRySQlmb3f67UmK8jexFboM50TPg1PnI70NWw&s" >
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -559,8 +562,8 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title>Municipalidad Dist. de Accomarca</mat-card-title>
-                            <img mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs3pMtEmhn3UpimvBqwkpQuJJOftrAutIZqg&s" >
+                            <mat-card-title class="Title_Title__0JGzy">Municipalidad Dist. de Accomarca</mat-card-title>
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcQs3pMtEmhn3UpimvBqwkpQuJJOftrAutIZqg&s" >
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -571,8 +574,8 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title>Colegio Logic School - Ayacucho</mat-card-title>
-                            <img mat-card-sm-image src="https://yt3.googleusercontent.com/ytc/AIdro_kiIOKH4z3ffMrAAKLcDoHs6AVZ46EFyroMLSRhZEfMFA=s900-c-k-c0x00ffffff-no-rj" >
+                            <mat-card-title class="Title_Title__0JGzy">Colegio Logic School - Ayacucho</mat-card-title>
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="https://yt3.googleusercontent.com/ytc/AIdro_kiIOKH4z3ffMrAAKLcDoHs6AVZ46EFyroMLSRhZEfMFA=s900-c-k-c0x00ffffff-no-rj" >
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -583,8 +586,8 @@
                       <mat-card class="example-card" appearance="outlined">
                         <mat-card-header>
                           <mat-card-title-group>
-                            <mat-card-title>Colegio German Caro Rios - Ayacucho</mat-card-title>
-                            <img mat-card-sm-image src="../../../assets/principal/img/colegiogerman.png" >
+                            <mat-card-title class="Title_Title__0JGzy">Colegio German Caro Rios - Ayacucho</mat-card-title>
+                            <img class="img-thumbnail logo-tamano" mat-card-sm-image src="../../../assets/principal/img/colegiogerman.png" >
                           </mat-card-title-group>
                         </mat-card-header>
                         <mat-card-content>
@@ -609,6 +612,18 @@
       </div>
     </div>
   </section>
+
+  <!-- ========================= clients-logo start ========================= -->
+  <section class="clients-logo-section pt-200 pb-200">
+    <div class="container">
+      <div class="row">
+          <h1 class="titulo-portada"><a style="color: #0ae98a;">Expande</a> tu</h1>
+          <h1 class="titulo-portada">negocio</h1>
+          <p class="subtitulo-portada">Invierte en tecnología de calidad</p>
+      </div>
+    </div>
+  </section>
+  <!-- ========================= clients-logo end ========================= -->
 
   <!-- ========================= about style-4 end ========================= -->
   <section id="especialistas" class="feature-section feature-style-5 page_iadata4">
@@ -919,13 +934,6 @@
     </div>
   </section>
 
-  <!-- ========================= clients-logo start ========================= -->
-  <section class="clients-logo-section pt-200 pb-200">
-    <div class="container">
-      <div class="row">
-
-      </div>
-    </div>
-  </section>
-  <!-- ========================= clients-logo end ========================= -->
+  
+}
 

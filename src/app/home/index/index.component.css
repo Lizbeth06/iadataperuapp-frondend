@@ -125,10 +125,11 @@
   }
 
   .clients-logo-section {
-    background-image: url('../../../assets/principal/img/caja2.jpg');
+    background-image: url('../../../assets/img/fondocurso2.jpg');
     background-size: cover; /* Para cubrir toda la sección */
-    background-position: center; /* Alinea la imagen al centro */
-    /* Opcional: puedes ajustar otras propiedades como el tamaño y posición */
+    background-position:center center;
+    background-repeat: no-repeat;
+    overflow-x: hidden;
 }
 
 .card-grid {
@@ -153,21 +154,21 @@
   display: flex;
   justify-content: center; /* Centrar horizontalmente */
   align-items: center;
-  background-color: #66b167; /* Color de fondo para Tarjeta 1 */
+  background-color: #0c553e; /* Color de fondo para Tarjeta 1 */
 }
 
 .card2h {
   display: flex;
   justify-content: center; /* Centrar horizontalmente */
   align-items: center;
-  background-color: #ef802d; /* Color de fondo para Tarjeta 2 */
+  background-color: #083127; /* Color de fondo para Tarjeta 2 */
 }
 
 .card3h {
   display: flex;
   justify-content: center; /* Centrar horizontalmente */
   align-items: center;
-  background-color: #e52247; /* Color de fondo para Tarjeta 3 */
+  background-color: #0c553e; /* Color de fondo para Tarjeta 3 */
 }
 
 .price {
@@ -177,14 +178,14 @@
 
 .card1 {
   position: relative;
-  background: linear-gradient(rgba(7, 56, 3, 0.5), rgba(27, 167, 24, 0.5)), url('../../../assets/principal/img/plan1.jpg');
+  background: linear-gradient(rgba(30, 34, 41, 0.9), rgba(11, 34, 1, 0.9)), url('../../../assets/principal/img/plan1.jpg');
   background-size: cover;
   background-position: center;
 }
 
 .card1 p {
   /* Ajustes de estilo para el texto dentro de la tarjeta */
-  color: white; /* Color de texto blanco para contrastar con el fondo oscuro */
+   /* Color de texto blanco para contrastar con el fondo oscuro */
   padding: 10px; /* Espaciado interno para mejorar la legibilidad */
 }
 
@@ -230,11 +231,12 @@
   margin: 20px 0 25px;
   justify-content: center; /* Centrar horizontalmente */
   align-items: center;
+  color: #87909d;
 }
 
 .precio-promo {
   margin-top: 5px;
-
+  color: white;
 }
 
 .example-card {
@@ -246,5 +248,57 @@
   width: 100%;
   height: 80px;
 }
+
+.example-card {
+  background-color: #152024; /* Cambia el color de fondo de toda la tarjeta a gris claro */
+}
+
+.logo-tamano {
+  width: 80px;
+  height: 80px;
+}
+
+.p-plan {
+  align-items: center;
+  color: #ffffff;
+  display: flex;
+  font-size: .75rem;
+  font-weight: 400;
+  gap: .5rem;
+  letter-spacing: .019rem;
+  letter-spacing: .3px;
+  line-height: 1.125rem;
+  text-decoration: none;
+  text-transform: none;
+  margin: 0;
+}
+
+.p-noplan {
+  align-items: center;
+  color: #87909d;
+  display: flex;
+  font-size: .75rem;
+  font-weight: 400;
+  gap: .5rem;
+  letter-spacing: .019rem;
+  letter-spacing: .3px;
+  line-height: 1.125rem;
+  text-decoration: none;
+  text-transform: none;
+  margin: 0;
+}
+
+.titulo-portada {
+  color: white;
+  font-size: 80px;
+  line-height: 3rem;
+}
+
+.subtitulo-portada {
+  color: white;
+  font-size: 20px;
+  line-height: 3rem;
+}
+
 
 
