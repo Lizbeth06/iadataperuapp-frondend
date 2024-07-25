@@ -316,6 +316,18 @@ article {
     font-weight: bold;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
   }
+
+  .offer-badge2 {
+    position: absolute;
+    top: 50px;
+    left: 10px; /* Cambiado de 'right' a 'left' para colocarlo en la esquina superior izquierda */
+    background-color: rgba(222, 219, 12, 0.904); /* Fondo blanco */
+    color: rgb(245, 241, 241);
+    padding: 5px 10px;
+    border-radius: 5px;
+    font-weight: bold;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2); /* Sombra */
+  }
   
   .col-md-6.columna {
     position: relative;
@@ -330,6 +342,22 @@ article {
 .precioactual {
     font-weight: bold;
     color: rgb(8, 248, 224); /* Puedes ajustar el color según tus necesidades */
+}
+
+.titulo-portada {
+  color: rgb(0, 0, 0);
+  font-size: 80px;
+  line-height: 3rem;
+}
+
+.subtitulo-portada {
+  color: rgb(0, 0, 0);
+  font-size: 20px;
+  line-height: 3rem;
+}
+
+.feature-style-5A {
+  padding: 30px 0 5px;
 }
 
   
