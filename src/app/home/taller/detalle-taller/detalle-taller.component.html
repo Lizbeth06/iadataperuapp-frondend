@@ -1,3 +1,4 @@
+@defer (){
 <section id="nosotros" class="feature-section feature-style-5 page_iadata2">
     <div class="container">
         <div class="row">
@@ -49,7 +50,7 @@
             </div>
 
             <div class="col-xl-7 col-lg-6">
-                <img src="../../../assets/principal/img/curso/portada1.jfif" height="400px" class="card-img-top" alt="...">
+                <img src="assets/principal/img/curso/portada1.jfif" height="400px" class="card-img-top" alt="...">
                 <br><br>
                 <div class="d-flex justify-content-center align-items-center">
                   <mat-list-item (click)="redirigirAWhatsApp()">
@@ -57,6 +58,25 @@
                   </mat-list-item>
                  
                 </div>
+                
+                <ul style="color: white;">
+                  <li>
+                    <mat-icon style="color: white;">star</mat-icon>
+                    Asesoría personalizada.
+                  </li>
+                  <li>
+                    <mat-icon style="color: white;">star</mat-icon>
+                    Acceso al material por vida.
+                  </li>
+                  <li>
+                    <mat-icon style="color: white;">star</mat-icon>
+                    Acceso exclusivo a <strong>Discord</strong> (foro de Ingenieros de Latinoamérica).
+                  </li>
+                  <li>
+                    <mat-icon style="color: rgb(121, 117, 117);">star</mat-icon>
+                    <del style="color: rgb(121, 117, 117);">Certificado Digital de aprobación.</del>
+                  </li>
+                </ul>
             </div>         
         </div>
         <br><br>
@@ -74,7 +94,7 @@
                   <div class="col-md-6">
                     <mat-card-header>
                       <mat-card-title><mat-icon>settings_accessibility</mat-icon> ¿A quién va dirigido?</mat-card-title>
-                      <mat-card-subtitle>Herding group</mat-card-subtitle>
+                      <mat-card-subtitle>Público objetivo</mat-card-subtitle>
                     </mat-card-header>
                     <p style="text-align: justify;">Dirigido a profesionales de todas las áreas que busquen desarrollar su capacidad creativa y gestionar procesos de innovación. Destinado a empresarios, gerentes, emprendedores, startups y profesionales que trabajen en ingeniería, arquitectura, construcción y operaciones.</p>
                   
@@ -82,9 +102,22 @@
                   <div class="col-md-6">
                     <mat-card-header>
                       <mat-card-title><mat-icon>star_half</mat-icon> ¿Qué habilidades obtendré?</mat-card-title>
-                      <mat-card-subtitle>Herding group</mat-card-subtitle>
+                      <mat-card-subtitle>Desarrollo Profesional y Empresarial</mat-card-subtitle>
                     </mat-card-header>
-                    <p style="text-align: justify;">En esta ruta, aprenderás a aplicar la innovación y el pensamiento creativo profesionalmente, con metodologías, técnicas y herramientas para generar nuevas ideas y modelos de negocio innovadores de potencial éxito, y desarrollarás el pensamiento estratégico en tu trabajo, independientemente del rol que desempeñes en tu empresa o equipo.</p>
+                    <ul>
+                      <li>
+                        <mat-icon>check_circle</mat-icon>
+                        Aprenderás a aplicar la innovación y el pensamiento creativo de manera profesional.
+                      </li>
+                      <li>
+                        <mat-icon>check_circle</mat-icon>
+                        Adquirirás metodologías, técnicas y herramientas específicas para generar nuevas ideas y modelos de negocio innovadores.
+                      </li>
+                      <li>
+                        <mat-icon>check_circle</mat-icon>
+                        Desarrollarás el pensamiento estratégico en tu trabajo, independientemente del rol que desempeñes en tu empresa o equipo.
+                      </li>                      
+                    </ul>
                   </div>
                 </div>
                 
@@ -151,3 +184,4 @@
         </div>
     </div>
 </section>
+}
