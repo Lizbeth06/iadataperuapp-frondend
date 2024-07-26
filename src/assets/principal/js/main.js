@@ -4,14 +4,20 @@
     /* ====================
     Preloader
     ======================= */
-	window.onload = function () {
-		window.setTimeout(fadeout, 300);
-	}
+  window.onload = function () {
+    window.setTimeout(fadeout, 300);
+  }
 
-	function fadeout() {
-		document.querySelector('.preloader').style.opacity = '0';
-		document.querySelector('.preloader').style.display = 'none';
-	}
+  function fadeout() {
+    var preloader = document.querySelector('.preloader');
+    if (preloader) {
+      preloader.style.opacity = '0';
+      preloader.style.display = 'none';
+    } else {
+      console.error('No se encontró el elemento .preloader');
+      location.reload();
+    }
+  }
 
     // =========== sticky menu 
     window.onscroll = function () {
