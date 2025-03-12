@@ -1,1 +1,77 @@
-<p>micertificado works!</p>
+<section class="feature-section feature-style-5 page_iadata2">
+</section>
+
+<section class="feature-section feature-style-5A page_iadata9">
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="row">
+                <h1 class="titulo-portada"><a style="color: #0ae98a;">Hola,</a></h1>
+                <h2 class="titulo-portada">Aquí puede encontrar su Certificado</h2>
+            </div>
+        </div>
+    </div>
+</section>
+ 
+<section class="feature-section feature-style-5">
+    <div class="container">  
+
+            <div class="row">
+                <h2 class="txtcenter">Buscar por Numero de Documento</h2>
+                <div class="col-xl-12">
+                    <form [formGroup]="certificadoForm" (ngSubmit)="onSubmit()">
+                      <div class="row"> 
+                        <div class="col-md-3">
+
+                        </div>
+                        <div class="col-md-2">
+                          <mat-form-field class="example-full-width" style="width: 100%;"> 
+                            <mat-select>
+                              <mat-option [value]="1">DNI</mat-option>
+                              <mat-option [value]="2">PASAPORTE</mat-option>
+                            </mat-select>
+                            <mat-hint>Seleccionar Tipo Doc.</mat-hint>
+                          </mat-form-field>
+                        </div>
+                  
+                        <div class="col-md-2">
+                          <mat-form-field class="example-full-width" style="width: 100%;">
+                            <input matInput type="text">
+                            <mat-hint>N° de Documento</mat-hint>
+                          </mat-form-field>
+                        </div>
+                  
+                        <div class="col-md-2 d-flex align-items-center justify-content-center">
+                          <button mat-raised-button type="submit" class="color-button" [disabled]="certificadoForm.invalid">
+                            <mat-icon>search</mat-icon> Buscar
+                          </button>
+                        </div>
+                        <div class="col-md-3">
+
+                        </div>
+                      </div>
+                    </form>
+                  </div>
+                  
+            </div>
+            <br>
+            <div class="row">
+            
+                <div class="col-xl-12 col-lg-6">
+                  <mat-card appearance="outlined">
+                    <mat-card-content>
+                    
+                          <mat-card-header>
+                            <mat-card-title><mat-icon>star_half</mat-icon> Aqui se lista su certificado</mat-card-title>
+                            <mat-card-subtitle>Certificado por haber llevado con nosotros un practicas pre profesionales, curso o taller.</mat-card-subtitle>
+                          </mat-card-header>
+                  
+                      
+                    </mat-card-content>
+                    
+                    
+                  </mat-card>
+                </div>
+            </div>
+      
+    </div>
+</section>

@@ -10,3 +10,18 @@
   .color_textomenu {
     color:#000000; 
 }
+
+.nav-item.dropdown .dropdown-menu {
+  display: none;
+  position: absolute;
+  top: 100%; /* Asegura que el submenú aparezca justo debajo del menú */
+  left: 0;
+  background-color: #fff; /* Puedes cambiar el fondo según el diseño */
+  box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2); /* Sombras para darle profundidad */
+  min-width: 200px; /* Ancho mínimo para el submenú */
+}
+
+/* Mostrar el submenú cuando el mouse esté sobre el li (dropdown) */
+.nav-item.dropdown:hover .dropdown-menu {
+  display: block; /* Muestra el submenú al hacer hover */
+}

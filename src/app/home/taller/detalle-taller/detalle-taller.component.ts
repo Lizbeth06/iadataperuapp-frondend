@@ -2,11 +2,12 @@ import {ChangeDetectionStrategy, Component, signal} from '@angular/core';
 import {MatExpansionModule} from '@angular/material/expansion';
 import { MaterialModule } from '../../../material/material.module';
 import {MatChipsModule} from '@angular/material/chips';
+import { RouterLink } from '@angular/router';
 
 @Component({
   selector: 'app-detalle-taller',
   standalone: true,
-  imports: [MaterialModule,MatExpansionModule,MatChipsModule],
+  imports: [MaterialModule,MatExpansionModule,MatChipsModule,RouterLink],
   templateUrl: './detalle-taller.component.html',
   styleUrl: './detalle-taller.component.css'
 })

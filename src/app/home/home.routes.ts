@@ -12,7 +12,7 @@ export const HOME_ROUTES: Routes = [
         loadComponent: () => import('./nosotros/nosotros.component').then((m)=>m.NosotrosComponent),
     },
     {
-        path: 'catalogo',
+        path: 'catalogo', 
         pathMatch:'full',
         loadComponent: () => import('./catalogo/catalogo.component').then((m)=>m.CatalogoComponent),
     },

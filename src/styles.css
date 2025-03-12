@@ -64,6 +64,14 @@ body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
     overflow-x: hidden;
   }
 
+  .page_iadata9 {
+    background-image: linear-gradient(to left, rgba(255, 255, 255, 0.2), rgba(123, 187, 93, 0.1), rgba(16, 151, 161, 0.4)), url('assets/img/certificado-fondo.png');
+    background-size: cover; 
+    background-position: center; 
+    background-repeat: no-repeat;
+    overflow-x: hidden;
+  }
+
   .ctexto-blanco {
     color:#ffffff;
   }
