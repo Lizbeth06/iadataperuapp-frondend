@@ -76,4 +76,31 @@
 }
 
 
+.row-equal-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-equal-height > .col-lg-4 {
+  display: flex;
+}
+
+.row-equal-height > .col-lg-4 > .col {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.row-equal-height > .col-lg-4 > .col > mat-card {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* asegura que el mat-card tome toda la altura */
+}
+
+
+  
+
+
+
 

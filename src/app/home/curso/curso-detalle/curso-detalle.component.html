@@ -1,0 +1,211 @@
+@defer (){
+<section id="nosotros" class="feature-section feature-style-5 page_iadata2">
+    @for (sp of cursos; track $index) {
+    <div class="container">
+        <div class="row">
+            <nav aria-label="breadcrumb">
+                <ol class="breadcrumb">
+                <li class="breadcrumb-item"><a routerLink="/">Inicio</a></li>
+                <li class="breadcrumb-item"><a routerLink="/curso"> Cursos</a></li>
+                <li class="breadcrumb-item active" aria-current="page">  {{ sp.titulo }}</li>
+                </ol>
+            </nav>
+        </div>
+        <div class="row">
+            <div class="col-xl-5 col-lg-6">
+                <h1 class="Title_Title"> {{ sp.titulo }}</h1> 
+                <mat-card-content >
+                    <p class="mt-4" class="Title_subtitulo" [innerHTML]="sp.descripcion"></p>
+                    <hr>
+                    <div class="curso-details">
+                     <div class="left-details">
+                         <p class="p-noplan" [ngStyle]="{'color': getStatus(sp.fechaInicio, sp.fechaFinal).color}"><strong>Estado:</strong> {{ getStatus(sp.fechaInicio, sp.fechaFinal).status }}</p>
+                                            <p class="p-noplan" *ngIf="getStatus(sp.fechaInicio, sp.fechaFinal).formattedDate"><strong><i class="fas fa-calendar"></i></strong> {{ getStatus(sp.fechaInicio, sp.fechaFinal).formattedDate }}</p>
+                                            <p class="p-noplan"><strong><i class="fas fa-list-alt"></i></strong> {{ sp.duracionsemanas }} semanas</p>
+                     </div>
+                     <div class="right-details">
+                            <p class="p-noplan"><strong>Modalidad:</strong>
+                                <span *ngIf="sp.modalidad === 1">Presencial</span>
+                                <span *ngIf="sp.modalidad === 2">Virtual</span>
+                                <span *ngIf="sp.modalidad === 3">Semiprencial</span>
+                            </p>
+                            <p class="p-noplan"><strong><i class="fas fa-clock"></i></strong>Horarios:</p>
+                            <ul>
+                                <li *ngFor="let horario of horariosPorCurso[sp.idCurso]" style="color: #87909d;">
+                                    {{ horario.horarios.diassemana.descripcion }} {{ formatHora(horario.horarios.horaInicio) }} - {{ formatHora(horario.horarios.horaFinal) }}
+                                </li>
+                            </ul> 
+                     </div>
+                    </div>
+                     
+                    <hr>
+                    <p class="Title_subtitulo">Precio total:</p> 
+                    <p><del style="color: rgb(82, 64, 64);">PEN {{ sp.costoremate | currency: 'S/' : 'symbol' : '1.2-2' }}</del><span style="margin-right: 10px;"></span><strong style="color: red;">PEN {{ sp.costo | currency: 'S/' : 'symbol' : '1.2-2' }}</strong></p>
+                    <br>
+                    <p class="Title_subtitulo"><strong>Instructor:</strong></p>
+
+                    <div class="profile-container" *ngFor="let docente of docentePorCurso[sp.idCurso]">
+                      <div class="profile-picture">
+                        <img src="../../../../assets/principal/img/david.png" alt="Imagen de perfil">
+                      </div>
+                      <div>
+                        <small style="display: block; margin-bottom: 2px;">{{ docente.docente.especializacion }}</small>
+
+                        <h2 class="breadcrumb" style="margin: 0; font-size: 1.2em;">
+                          {{ docente.docente.trabajador?.persona?.nombres }} {{ docente.docente.trabajador?.persona?.apaterno }}
+                        </h2>
+
+                        @if(docente.docente.trabajador!.persona.urllinkeding){
+                          <p class="breadcrumb" style="margin: 0; padding: 0;">
+                            <a style="color: white; font-size: 12px;" href="{{docente.docente.trabajador?.persona?.urllinkeding}}" target="_blank">
+                              <i class="fab fa-linkedin"></i> LinkedIn
+                            </a>
+                          </p>
+                        }
+
+                      </div>
+
+                    </div>
+
+                    
+
+                    <hr>
+                    <div class="d-flex justify-content-center align-items-center">
+                        <mat-list-item (click)="redirigirAWhatsApp()">
+                            <button mat-raised-button class="mb-3"><span class="material-icons">hail</span> Solicitar mi Inscripción </button>
+                        </mat-list-item>
+                    </div>
+
+                    <ul style="color: white;">
+                        <li>
+                            <mat-icon style="color: white;">star</mat-icon>
+                            Aprendizaje basado en Proyectos reales (ABP)
+                        </li>
+                        <li>
+                            <mat-icon style="color: white;">star</mat-icon>
+                            Acceso al material por vida (CAMPUS)
+                        </li>
+                        <li>
+                            <mat-icon style="color: white;">star</mat-icon>
+                            Acceso exclusivo a <strong>Discord</strong> (foro de Ingenieros de Latinoamérica).
+                        </li>
+                        <li>
+                            <mat-icon style="color: rgb(121, 117, 117);">star</mat-icon>
+                            <del style="color: rgb(121, 117, 117);">Certificado Digital de aprobación.</del>
+                        </li>
+                    </ul>
+
+                  </mat-card-content>
+          
+                 
+                
+            </div>
+
+            
+            <div class="col-xl-7 col-lg-6" [innerHTML]="getIframeHtml(sp.urlprograma)"></div>
+                
+        </div>
+        <br><br>
+
+        <div class="row">
+          <div class="col-xl-3 col-lg-6">
+              <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Cutest dog breeds">
+                  <mat-chip-option selected color="primary">REQUISITOS :</mat-chip-option>
+                </mat-chip-listbox>
+          </div>
+          <div class="col-xl-9 col-lg-6">
+            <mat-card appearance="outlined">
+              <mat-card-content>
+                <div class="row">
+                  <div class="col-md-6">
+                    <mat-card-header>
+                      <mat-card-title><mat-icon>settings_accessibility</mat-icon> ¿A quién va dirigido?</mat-card-title>
+                      <mat-card-subtitle>Público objetivo</mat-card-subtitle>
+                    </mat-card-header>
+                    <p style="text-align: justify;">Dirigido a profesionales de todas las áreas que busquen desarrollar su capacidad creativa y gestionar procesos de innovación. Destinado a empresarios, gerentes, emprendedores, startups y profesionales que trabajen en ingeniería, arquitectura, construcción y operaciones.</p>
+                  
+                  </div>
+                  <div class="col-md-6">
+                    <mat-card-header>
+                      <mat-card-title><mat-icon>star_half</mat-icon> ¿Qué habilidades obtendré?</mat-card-title>
+                      <mat-card-subtitle>Desarrollo Profesional y Empresarial</mat-card-subtitle>
+                    </mat-card-header>
+                    <ul>
+                      <li>
+                        <mat-icon>check_circle</mat-icon>
+                        Aprenderás a aplicar la innovación y el pensamiento creativo de manera profesional.
+                      </li>
+                      <li>
+                        <mat-icon>check_circle</mat-icon>
+                        Adquirirás metodologías, técnicas y herramientas específicas para generar nuevas ideas y modelos de negocio innovadores.
+                      </li>
+                      <li>
+                        <mat-icon>check_circle</mat-icon>
+                        Desarrollarás el pensamiento estratégico en tu trabajo, independientemente del rol que desempeñes en tu empresa o equipo.
+                      </li>                      
+                    </ul>
+                  </div>
+                </div>
+                
+              </mat-card-content>
+              
+              
+            </mat-card>
+          </div>
+        </div>
+      <br>
+
+        <div class="row">
+            <div class="col-xl-3 col-lg-6">
+                <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Cutest dog breeds">
+                    <mat-chip-option selected color="primary">TEMARIO :</mat-chip-option>
+                  </mat-chip-listbox>
+            </div>
+            <div class="col-xl-9 col-lg-6">
+                <mat-accordion>
+                    <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
+                      <mat-expansion-panel-header>
+                        <mat-panel-title>1.- Emprendedores, Startup y Empresas </mat-panel-title>
+                        <mat-panel-description> Módulo 1</mat-panel-description>
+                      </mat-expansion-panel-header>
+                  
+                      <ul>
+                        <li>
+                          <mat-icon>check_circle</mat-icon>
+                          Introducción Generación de Ideas y Emprendimiento
+                        </li>
+                        <li>
+                          <mat-icon>check_circle</mat-icon>
+                          Conoce a tu Cliente
+                        </li>
+                        <li>
+                          <mat-icon>check_circle</mat-icon>
+                          Creación de Propuesta de Valor
+                        </li>
+                        <li>
+                          <mat-icon>check_circle</mat-icon>
+                          Modelo de Negocio
+                        </li>
+                        <li>
+                          <mat-icon>check_circle</mat-icon>
+                          Mínimo Producto Viable
+                        </li>
+                        <li>
+                          <mat-icon>check_circle</mat-icon>
+                          Elevator Pitch y Deck Emprendedor
+                        </li>
+                        <li>
+                          <mat-icon>check_circle</mat-icon>
+                          Final Pitch
+                        </li>
+                      </ul>
+                  
+                    </mat-expansion-panel>
+                  </mat-accordion>
+            </div>
+              
+        </div>
+    </div>
+    }
+</section>
+}

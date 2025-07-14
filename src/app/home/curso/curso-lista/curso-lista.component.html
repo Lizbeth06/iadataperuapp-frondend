@@ -1,0 +1,99 @@
+<section id="nosotros" class="feature-section feature-style-5 page_iadata2">
+</section>
+
+<section id="nosotros" class="feature-section feature-style-5 page_iadata6">
+    <div class="container">
+        <div class="content-wrapper">
+            <div>
+                <h1 class="Title_Title_principal"><strong>CURSOS</strong></h1>
+                <h2 class="Title_subtitulo">Para no postergar más tu futuro, aprende con nosotros las nuevas tendencias en TI, Gestión de Bases de Datos y IA</h2>
+            </div>
+        </div>
+    </div>
+</section>
+
+
+<section id="nosotros" class="feature-section feature-style-5 page_iadata2">
+    <div class="container">
+        <div class="d-flex align-items-start">
+                <div class="row row-equal-height">
+                <div class="col-lg-4" *ngFor="let sp of cursoPaginada">
+
+           
+                        <div class="col">
+                            <mat-card appearance="outlined" class="card feature-curso single-curso">
+                                <div style="position: relative;">
+                                    <img src="{{ sp.urlImagen }}" height="320px" class="card-img-top" alt="...">
+                                    @if(getStatus(sp.fechaInicio, sp.fechaFinal).status=='Próximamente'){
+                                    <div style="position: absolute; top: 10px; left: 10px; background-color: #f40a0a; color: white; padding: 5px;">
+                                        Nuevo
+                                    </div>
+                                    }
+
+                                </div>
+                                <mat-card-header>
+                                    <mat-card-title>{{ sp.titulo }}</mat-card-title> 
+                                </mat-card-header>
+                                <mat-card-content>
+                                    <p>{{ sp.subtitulo }}</p>
+                                    <hr>
+                                    <div class="curso-details">
+                                        <div class="left-details">
+                                            <p class="p-noplan" [ngStyle]="{'color': getStatus(sp.fechaInicio, sp.fechaFinal).color}"><strong>Estado:</strong> {{ getStatus(sp.fechaInicio, sp.fechaFinal).status }}</p>
+                                            <p class="p-noplan" *ngIf="getStatus(sp.fechaInicio, sp.fechaFinal).formattedDate"><strong><i class="fas fa-calendar"></i></strong> {{ getStatus(sp.fechaInicio, sp.fechaFinal).formattedDate }}</p>
+                                            <p class="p-noplan"><strong><i class="fas fa-list-alt"></i></strong> {{ sp.duracionsemanas }} semanas</p>
+                                        </div>
+                                        <div class="right-details">
+                                            <p class="p-noplan"><strong>Modalidad:</strong>
+                                                <span *ngIf="sp.modalidad === 1">Presencial</span>
+                                                <span *ngIf="sp.modalidad === 2">Virtual</span>
+                                                <span *ngIf="sp.modalidad === 3">Semiprencial</span>
+                                            </p>
+                                            <p class="p-noplan"><strong><i class="fas fa-clock"></i></strong>Horarios:</p>
+                                            <ul>
+                                                <li *ngFor="let horario of horariosPorCurso[sp.idCurso]">
+                                                    {{ horario.horarios.diassemana.descripcion }} {{ formatHora(horario.horarios.horaInicio) }} - {{ formatHora(horario.horarios.horaFinal) }}
+                                                </li>
+                                            </ul>                                            
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <p>
+                                        <del style="color: rgb(82, 64, 64); font-size: 12px;">
+                                            PEN {{ sp.costo | currency: 'S/' : 'symbol' : '1.2-2' }}
+                                        </del>
+                                        <strong style="color: red; font-size: 20px;">
+                                            {{ sp.costoremate | currency: 'S/' : 'symbol' : '1.2-2' }}
+                                        </strong>
+                                    </p>
+                                </mat-card-content>
+                                <mat-card-actions class="centered-actions">
+                                    <div class="centered-buttons">
+                                        <button mat-button class="mb-2" mat-raised-button><i class="fas fa-share"></i> Compartir</button>
+                                        <a mat-button class="mb-2" mat-raised-button [routerLink]="['/curso/detalle', sp.titulo]"><i class="fas fa-eye"></i> Ver detalle</a>
+                                    </div>
+                                </mat-card-actions>
+                            </mat-card>
+                        </div>
+             
+                </div>
+                </div>
+
+                
+
+
+          </div>
+
+            <!-- PAGINADOR -->
+            <div class="d-flex justify-content-center mt-4">
+            <mat-paginator
+                [length]="cursos.length"
+                [pageSize]="pageSize"
+                [pageSizeOptions]="[3,6,12]"
+                showFirstLastButtons
+                (page)="onPageChange($event)">
+            </mat-paginator>
+            </div>
+        
+    </div>
+</section>

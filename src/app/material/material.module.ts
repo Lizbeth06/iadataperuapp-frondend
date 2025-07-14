@@ -1,5 +1,5 @@
 import { NgModule } from '@angular/core';
-import { CommonModule } from '@angular/common';
+import { CommonModule, NgFor, NgIf } from '@angular/common';
 import { MatSidenavModule } from '@angular/material/sidenav';
 import { MatToolbarModule } from '@angular/material/toolbar';
 import { MatButtonModule } from '@angular/material/button';
@@ -17,9 +17,18 @@ import { MatProgressSpinnerModule } from '@angular/material/progress-spinner';
 import { MatSortModule} from '@angular/material/sort';
 import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { MatSelectModule } from '@angular/material/select';
+import {MatTabsModule} from '@angular/material/tabs';
+import {MatDatepickerModule} from '@angular/material/datepicker';
+import { MatDialogModule} from '@angular/material/dialog';
+import {MatProgressBarModule} from '@angular/material/progress-bar';
 import {MatListModule} from '@angular/material/list';
-import {MatButtonToggleModule} from '@angular/material/button-toggle';
+import { DateAdapter, MAT_DATE_LOCALE, MatNativeDateModule } from '@angular/material/core';
 
+import { MatAutocompleteModule } from '@angular/material/autocomplete';
+import {MatCheckboxModule} from '@angular/material/checkbox'
+import {MatChipsModule} from '@angular/material/chips';
+import { MatExpansionModule } from '@angular/material/expansion';
+import { CustomDateAdapter } from './custom-adapter';
 
 
 @NgModule({
@@ -37,17 +46,36 @@ import {MatButtonToggleModule} from '@angular/material/button-toggle';
     MatBadgeModule,
     MatSnackBarModule,
     MatMenuModule,
+    MatExpansionModule,
     MatProgressSpinnerModule,
     MatSortModule,
     FormsModule,
     ReactiveFormsModule,
     MatSelectModule,
+    MatTabsModule,
+    MatDatepickerModule,
+    MatDialogModule,
+    MatProgressBarModule,
     MatListModule,
-    MatButtonToggleModule
+    MatDatepickerModule,
+    MatNativeDateModule,
+    MatAutocompleteModule,
+    MatCheckboxModule,
+    MatChipsModule, NgFor,NgIf
+  ],
+  providers:[
+    {
+      provide: MAT_DATE_LOCALE,
+      useValue: 'es-ES'
+    },
+    {
+      provide:DateAdapter,
+      useClass:CustomDateAdapter
+    }
   ],
   declarations: [],
   imports: [
-    CommonModule
+    CommonModule,
   ]
 })
 export class MaterialModule { }
