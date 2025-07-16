@@ -1,6 +1,6 @@
 import { Injectable } from '@angular/core';
 import { HttpClient } from '@angular/common/http';
-import { Subject } from 'rxjs';
+import { Observable, Subject } from 'rxjs';
 import { GenericService } from './generic.service';
 import { Habilidades } from '../model/habilidades';
 import { environment } from '../../environments/environment.development';
@@ -31,4 +31,9 @@ export class HabilidadesService extends GenericService<Habilidades> {
   getMessageChange(){
     return this.messageChange.asObservable();
   }
+
+  findByHabilidadesCursoId(idCurso: number): Observable<Habilidades[]> {
+    return this.http.get<Habilidades[]>(`${environment.HOST}/api/habilidades/habilidadesidcurso/${idCurso}`);
+  }
+
 }

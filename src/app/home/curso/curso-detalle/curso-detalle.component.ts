@@ -1,4 +1,4 @@
-import { Component, inject, LOCALE_ID, OnInit, signal } from '@angular/core';
+import { Component, CUSTOM_ELEMENTS_SCHEMA, inject, LOCALE_ID, OnInit, signal } from '@angular/core';
 import { Curso } from '../../../model/curso';
 import { ActivatedRoute, RouterLink } from '@angular/router';
 import { CursoService } from '../../../services/curso.service';
@@ -9,6 +9,14 @@ import { ListahorariosService } from '../../../services/listahorarios.service';
 import { DomSanitizer, SafeHtml } from '@angular/platform-browser';
 import { Listadocente } from '../../../model/listadocente';
 import { ListadocenteService } from '../../../services/listadocente.service';
+import { HabilidadesService } from '../../../services/habilidades.service';
+import { Habilidades } from '../../../model/habilidades';
+import { TemarioService } from '../../../services/temario.service';
+import { Temario } from '../../../model/temario';
+import { register } from 'swiper/element/bundle';
+
+// Registrar los componentes web de Swiper (incluye Coverflow, Pagination, etc.)
+register();
 
 @Component({
   selector: 'app-curso-detalle',
@@ -16,12 +24,15 @@ import { ListadocenteService } from '../../../services/listadocente.service';
   imports: [MaterialModule,RouterLink,CommonModule],
   templateUrl: './curso-detalle.component.html',
   styleUrl: './curso-detalle.component.css',
-    providers: [
-      { provide: LOCALE_ID, useValue: 'es' },  // Establecer la configuración regional
-      DatePipe  
-    ]
+  providers: [
+    { provide: LOCALE_ID, useValue: 'es' },  // Establecer la configuración regional
+    DatePipe  
+  ],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class CursoDetalleComponent implements OnInit{
+
+  
 
   readonly panelOpenState = signal(false);
   
@@ -38,11 +49,14 @@ export class CursoDetalleComponent implements OnInit{
 
   titulo: string;
   cursos!:Curso[];
+  cursoslista!:Curso[];
   listacursovisitas!:Curso[];
   listahorarios: Listahorarios[] = [];
   listadocente: Listadocente[] = [];
   horariosPorCurso: { [idCurso: number]: Listahorarios[] } = {};
   docentePorCurso: { [idCurso: number]: Listadocente[] } = {};
+  habilidadesPorCurso: { [idCurso: number]: Habilidades[] } = {};
+  temarioPorCurso: { [idCurso: number]: Temario[] } = {};
   baseUrl: string = window.location.origin;
 
   constructor(
@@ -53,13 +67,18 @@ export class CursoDetalleComponent implements OnInit{
   private datePipe = inject(DatePipe);
   private listahorariosService = inject(ListahorariosService);
   private listadocenteService = inject(ListadocenteService);
-  
+  private habilidadesService = inject(HabilidadesService);
+  private temarioService = inject(TemarioService);
 
   ngOnInit(): void {
     this.route.paramMap.subscribe((params) => {
     this.titulo = this.route.snapshot.paramMap.get('titulo') || '';
 
     //console.log("titulo:", this.titulo);
+
+    this.cursoService.findAll().subscribe((datas)=>{
+      this.cursoslista=datas;
+    })
 
     this.cursoService.findAllTitulo(this.titulo).subscribe((data) => { 
       this.cursos = data;
@@ -79,6 +98,22 @@ export class CursoDetalleComponent implements OnInit{
           this.docentePorCurso[curso.idCurso] = docentes;
         });
       });
+
+      //lista de habilidades
+      this.cursos.forEach(curso =>{
+        this.habilidadesService.findByHabilidadesCursoId(curso.idCurso).subscribe(habilidades => {
+          const habilidadesActivas = habilidades.filter(h => h.estado === 1);
+          this.habilidadesPorCurso[curso.idCurso] = habilidadesActivas;
+        });
+      })
+
+      //lista de temarios
+      this.cursos.forEach(curso =>{
+        this.temarioService.findByTemarioCursoId(curso.idCurso).subscribe(temario => {
+          this.temarioPorCurso[curso.idCurso] = temario;
+        });
+      })
+
 
     });
     
@@ -179,6 +214,23 @@ export class CursoDetalleComponent implements OnInit{
   getIframeHtml(html: string): SafeHtml {
     return this.sanitizer.bypassSecurityTrustHtml(html);
   }
+
+
+  compartirWhatsApp() {
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://wa.me/?text=${url}`, '_blank');
+  }
+
+  compartirFacebook() {
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.facebook.com/sharer/sharer.php?u=${url}`, '_blank');
+  }
+
+  compartirLinkedIn() {
+    const url = encodeURIComponent(window.location.href);
+    window.open(`https://www.linkedin.com/sharing/share-offsite/?url=${url}`, '_blank');
+  }
+
 
 
 }

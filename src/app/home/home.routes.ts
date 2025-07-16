@@ -7,9 +7,10 @@ import { ConsultoriaComponent } from './consultoria/consultoria.component';
 import { ServicioTecnicoComponent } from './servicio-tecnico/servicio-tecnico.component';
 import { VentaAccesoriosComponent } from './venta-accesorios/venta-accesorios.component';
 import { VentaSistemasComponent } from './venta-sistemas/venta-sistemas.component';
-import { TallerComponent } from './taller/taller.component';
 import { MicertificadoComponent } from './micertificado/micertificado.component';
 import { CursoDetalleComponent } from './curso/curso-detalle/curso-detalle.component';
+import { CheckoutFormComponent } from './checkout/checkout-form/checkout-form.component';
+import { TallerListaComponent } from './curso/taller-lista/taller-lista.component';
 
 export const HOME_ROUTES: Routes = [
     {
@@ -52,8 +53,12 @@ export const HOME_ROUTES: Routes = [
             component: CursoDetalleComponent
         },
         {
+            path:'curso/detalle-pago/checkout',
+            component: CheckoutFormComponent
+        },
+        {
             path: 'taller',
-            component: TallerComponent
+            component: TallerListaComponent
         },
         {
             path: 'micertificado',

@@ -1,0 +1,30 @@
+.breadcrumb,
+  .breadcrumb-item,
+  .breadcrumb-item a,
+  .breadcrumb-item::before,
+  .breadcrumb-item::after {
+    color: #78b363;
+  }
+
+  .list-group-flush .list-group-item {
+    border: none !important; /* Quita las líneas/bordes */
+    padding-left: 0;
+    padding-right: 0;
+}
+
+
+.wallet-icon {
+  width: 40px;
+  height: 40px;
+  object-fit: contain;
+  margin-left: 8px;
+  vertical-align: middle;
+}
+
+
+.link-whatsapp {
+  text-decoration: none;
+  color: #25D366;
+  font-weight: bold;
+  cursor: pointer;
+}

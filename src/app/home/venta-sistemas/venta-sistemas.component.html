@@ -16,16 +16,16 @@
 <section id="catalogo" class="feature-section feature-style-5 page_iadata2">
     <div class="container">
       <div class="wrapper">
-        <div class="row">
-            <div class="col-md-6 columna">
-              <!-- Contenido de la primera columna -->
-              <h2 class="titulo-destacado">Catálogo de Sistemas en Venta</h2>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="wrapper">
+    
+
+        <div class="d-flex align-items-start">
+            <div class="row row-equal-height"> 
+                <h2 class="titulo-destacado">Catálogo de Sistemas en Venta</h2>
+                <div class="col-lg-6 mb-5">
+                  <div class="col">
+                    <div class="wrapper">
                     <article>
                       <div class="article-wrapper">
-                        
                         <!-- Carrusel de imágenes -->
                         <div id="carouselExample1" class="carousel slide" data-bs-ride="carousel">
                           <div class="carousel-inner">
@@ -59,148 +59,57 @@
                         
                         <div class="article-body">
                           <div class="offer-badge">Nuevo</div>
-                          <h2>Sistema de caja</h2>
-                          <div class="button-wrapper"> 
-                            <button class="btn outline">DETALLES</button>
-                            <button class="btn fill">COTIZAR</button>
-                          </div>
+                          <mat-card-header>
+                              <mat-card-title class="titulo-card">Sistema de Registro Civil para Municipalidades</mat-card-title> 
+                          </mat-card-header>
+                          <div style="padding: 16px; border-radius: 10px;">
+                                    <p style="text-align: justify;">
+                                      Ten una cuenta de ahorros en soles o en dólares con la Cuenta Simple de Interbank.
+                                      Sin monto mínimo de apertura ni cobro de mantenimiento. <strong>Conócela aquí.</strong>
+                                    </p>
+                                    <hr>
+                                    <div class="curso-details">
+                                        <div class="left-details">
+                                            <p class="p-noplan"><strong>Estado:</strong> dgdg</p>
+                                            <p class="p-noplan"><strong><i class="fas fa-calendar"></i></strong>fgfg</p>
+                                            <p class="p-noplan"><strong><i class="fas fa-list-alt"></i></strong> 47 semanas</p>
+                                        </div>
+                                        <div class="right-details">
+                                            <p class="p-noplan"><strong>Modalidad:</strong>
+                                                <span >Presencial</span>
+                                            <p class="p-noplan"><strong><i class="fas fa-clock"></i></strong>Horarios:</p>
+                                                                                     
+                                        </div>
+                                    </div>
+                                    <hr>
+                                    <p>
+                                        <del style="color: rgb(82, 64, 64); font-size: 12px;">
+                                            PEN {{ 60 | currency: 'S/' : 'symbol' : '1.2-2' }}
+                                        </del>
+                                        <strong style="color: red; font-size: 20px;">
+                                           PEN {{ 45 | currency: 'S/' : 'symbol' : '1.2-2' }}
+                                        </strong>
+                                    </p>
+                                  </div>
+
+                              <mat-card-actions class="centered-actions">
+                                  <div class="centered-buttons">
+                                    <button mat-button class="mb-2" mat-raised-button [routerLink]="['/curso/detalle-pago/checkout']" ><span class="material-icons">hail</span> Solicitar</button>
+                                    <button mat-button class="mb-2" mat-raised-button [routerLink]="['/curso/detalle']"><i class="fas fa-eye"></i> Ver detalle</button>
+                                    <button mat-button class="mb-2" mat-raised-button [routerLink]="['/curso/detalle-pago/checkout']" ><span class="material-icons">hail</span> Demostración</button>
+                                  </div>
+                              </mat-card-actions>
                         </div>
                       </div>
                     </article>
                   </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="wrapper">
-                    <article>
-                      <div class="article-wrapper">
-                        
-                        <!-- Carrusel de imágenes -->
-                        <div id="carouselExample2" class="carousel slide" data-bs-ride="carousel">
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <figure>
-                                <img src="assets/img/mesa.PNG" class="d-block w-100" alt="Sistema Mesa de Partes Virtual">
-                              </figure>
-                            </div>
-                            <div class="carousel-item">
-                              <figure>
-                                <img src="assets/img/mesa1.PNG" class="d-block w-100" alt="Sistema Mesa de Partes Virtual">
-                              </figure>
-                            </div>
-                            <div class="carousel-item">
-                              <figure>
-                                <img src="assets/img/mesa2.PNG" class="d-block w-100" alt="Sistema Mesa de Partes Virtual">
-                              </figure>
-                            </div>
-                          </div>
-                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample2" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                          </button>
-                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample2" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                          </button>
-                        </div>
-                        
-                        <div class="article-body">
-                          <div class="offer-badge">Oferta</div>
-                          <h2>Mesa de Partes Virtual</h2>    
-                          <div class="button-wrapper"> 
-                            <button class="btn outline">DETALLES</button>
-                            <button class="btn fill">COTIZAR</button>
-                          </div>  
-                        </div>
-                      </div>
-                    </article>
                   </div>
                 </div>
-              </div>
-            </div>
-  
-            <div class="col-md-6 columna">
-              <!-- Contenido de la primera columna -->
-              <h2 class="titulo-destacado">Nuestros Demos</h2>
-              <div class="row">
-                <div class="col-md-6">
-                  <div class="wrapper">
-                    <article>
-                      <div class="article-wrapper">
-                        
-                        <!-- Carrusel de imágenes -->
-                        <div id="carouselExample3" class="carousel slide" data-bs-ride="carousel">
-                          <div class="carousel-inner">
-                          
-                            <div class="carousel-item active">
-                              <figure>
-                                <img src="assets/img/soil.PNG" class="d-block w-100" alt="soiltestperú">
-                              </figure>
-                            </div>
-                            <div class="carousel-item">
-                              <figure>
-                                <img src="assets/img/soil2.PNG" class="d-block w-100" alt="soiltestperú">
-                              </figure>
-                            </div>
-                          </div>
-                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample3" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                          </button>
-                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample3" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                          </button>
-                        </div>
-                        
-                        <div class="article-body">
-                          <div class="offer-badge">Nuevo</div>
-                          <h2>SOILTESTPERÚ</h2>
-                          <div class="button-wrapper"> 
-                            <a href="https://soiltestperu.iadataperu.com/" class="btn fill" target="_blank">VER DEMO</a>
-                          
-                          </div>
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="wrapper">
-                    <article>
-                      <div class="article-wrapper">
-                        
-                        <!-- Carrusel de imágenes -->
-                        <div id="carouselExample4" class="carousel slide" data-bs-ride="carousel">
-                          <div class="carousel-inner">
-                            <div class="carousel-item active">
-                              <figure>
-                                <img src="assets/img/wasi.png" class="d-block w-100" alt="wasihub">
-                              </figure>
-                            </div>
-                          </div>
-                          <button class="carousel-control-prev" type="button" data-bs-target="#carouselExample4" data-bs-slide="prev">
-                            <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Previous</span>
-                          </button>
-                          <button class="carousel-control-next" type="button" data-bs-target="#carouselExample4" data-bs-slide="next">
-                            <span class="carousel-control-next-icon" aria-hidden="true"></span>
-                            <span class="visually-hidden">Next</span>
-                          </button>
-                        </div>
-                        
-                        <div class="article-body">
-                          <h2>WASIHUB</h2>
-                          <div class="button-wrapper"> 
-                            <a href="https://wasihub.pe/" class="btn fill" target="_blank">VER DEMO</a>
-                          </div>  
-                        </div>
-                      </div>
-                    </article>
-                  </div>
-                </div>
-              </div>
+                
+                
             </div>
         </div>
+
       </div>
     </div>
   </section>

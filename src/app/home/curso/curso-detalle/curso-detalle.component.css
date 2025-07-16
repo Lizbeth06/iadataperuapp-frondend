@@ -79,3 +79,196 @@
     margin: 0;
   }
   
+  ::ng-deep mat-panel-title {
+  white-space: normal;        /* Permite salto de línea */
+  line-height: 0.9;
+
+}
+
+.social-icons mat-icon {
+  color: white !important;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icon-circle:hover {
+  transform: scale(1.1);
+}
+
+/* Colores por red social */
+.icon-circle.whatsapp {
+  background-color: #25D366;
+}
+
+.icon-circle.facebook {
+  background-color: #1877F2;
+}
+
+.icon-circle.linkedin {
+  background-color: #0077B5;
+}
+
+
+/*card de curso*/
+.Title_Title_principal {
+    color: #ffffff;
+    font-size: 3.5rem;
+    line-height: 3rem;
+}
+
+.Title_subtitulo {
+    color: #ffffff;
+    font-size: 1.25rem;
+    line-height: 3rem;
+  }
+  
+
+.content-wrapper {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+.feature-curso {
+    background: #ffffff;
+    /* padding: 10px 62px; */
+    border-radius: 30px;
+    margin-bottom: 50px;
+    box-shadow: 0px 5px 25px rgba(255, 255, 255, 0.3);
+    text-align: center;
+    border-bottom: 5px solid #ffffff;
+    transition: all 0.3s ease-out 0s;
+}
+
+.single-curso {
+    border-color: #59a53d;
+    box-shadow: 0px 8px 25px rgba(47, 128, 237, 0.35);
+}
+
+.curso-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-details {
+    flex: 1;
+}
+
+.right-details {
+    flex: 1;
+    text-align: right;
+}
+
+.p-noplan {
+    align-items: center;
+    color: #87909d;
+    display: flex;
+    font-size: .75rem;
+    font-weight: 400;
+    gap: .5rem;
+    letter-spacing: .019rem;
+    letter-spacing: .3px;
+    line-height: 1.125rem;
+    text-decoration: none;
+    text-transform: none;
+    margin: 0;
+  }
+
+  .centered-actions {
+    display: flex;
+    justify-content: center;
+}
+
+.centered-buttons {
+    display: flex;
+    align-items: center; /* Centra los botones horizontalmente */
+}
+
+.centered-buttons button {
+    margin-right: 10px; /* Espacio entre los botones (opcional) */
+}
+
+
+.row-equal-height {
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.row-equal-height > .col-lg-4 {
+  display: flex;
+}
+
+.row-equal-height > .col-lg-4 > .col {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.row-equal-height > .col-lg-4 > .col > mat-card {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  height: 100%; /* asegura que el mat-card tome toda la altura */
+}
+
+.card-wrapper {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+
+
+
+.card {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+/* Para que la imagen no sobresalga y respete el borde superior redondeado */
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-top-left-radius: 30px;   /* Igual que mat-card */
+  border-top-right-radius: 30px;  /* Igual que mat-card */
+}
+
+/* Asegura que la imagen se ajuste al contenedor sin romper esquinas */
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+
+.nuevo-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #f40a0a;
+  color: white;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+.contenido-fijo {
+  flex-grow: 1;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}

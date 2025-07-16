@@ -1,7 +1,9 @@
 @defer (){
 <section id="nosotros" class="feature-section feature-style-5 page_iadata2">
-    @for (sp of cursos; track $index) {
+    
     <div class="container">
+      @for (sp of cursos; track $index) {
+
         <div class="row">
             <nav aria-label="breadcrumb">
                 <ol class="breadcrumb">
@@ -11,7 +13,7 @@
                 </ol>
             </nav>
         </div>
-        <div class="row">
+        <div class="row mb-5">
             <div class="col-xl-5 col-lg-6">
                 <h1 class="Title_Title"> {{ sp.titulo }}</h1> 
                 <mat-card-content >
@@ -19,9 +21,10 @@
                     <hr>
                     <div class="curso-details">
                      <div class="left-details">
-                         <p class="p-noplan" [ngStyle]="{'color': getStatus(sp.fechaInicio, sp.fechaFinal).color}"><strong>Estado:</strong> {{ getStatus(sp.fechaInicio, sp.fechaFinal).status }}</p>
-                                            <p class="p-noplan" *ngIf="getStatus(sp.fechaInicio, sp.fechaFinal).formattedDate"><strong><i class="fas fa-calendar"></i></strong> {{ getStatus(sp.fechaInicio, sp.fechaFinal).formattedDate }}</p>
-                                            <p class="p-noplan"><strong><i class="fas fa-list-alt"></i></strong> {{ sp.duracionsemanas }} semanas</p>
+                          <p class="p-noplan" [ngStyle]="{'color': getStatus(sp.fechaInicio, sp.fechaFinal).color}"><strong>Estado:</strong> {{ getStatus(sp.fechaInicio, sp.fechaFinal).status }}</p>
+                          <p class="p-noplan" *ngIf="getStatus(sp.fechaInicio, sp.fechaFinal).formattedDate"><strong><i class="fas fa-calendar"></i></strong> {{ getStatus(sp.fechaInicio, sp.fechaFinal).formattedDate }}</p>
+                          <p class="p-noplan"><strong><i class="fas fa-list-alt"></i></strong> {{ sp.duracionsemanas }} semanas</p>
+                          <p class="p-noplan"><strong><i class="fas fa-eye"></i></strong> {{ sp.totalvisitas }} Visitas</p>
                      </div>
                      <div class="right-details">
                             <p class="p-noplan"><strong>Modalidad:</strong>
@@ -40,20 +43,30 @@
                      
                     <hr>
                     <p class="Title_subtitulo">Precio total:</p> 
-                    <p><del style="color: rgb(82, 64, 64);">PEN {{ sp.costoremate | currency: 'S/' : 'symbol' : '1.2-2' }}</del><span style="margin-right: 10px;"></span><strong style="color: red;">PEN {{ sp.costo | currency: 'S/' : 'symbol' : '1.2-2' }}</strong></p>
+                    <p><del style="color: rgb(82, 64, 64);">PEN {{ sp.costo | currency: 'S/' : 'symbol' : '1.2-2' }}</del><span style="margin-right: 10px;"></span><strong style="color: red;">PEN {{ sp.costoremate | currency: 'S/' : 'symbol' : '1.2-2' }}</strong></p>
                     <br>
                     <p class="Title_subtitulo"><strong>Instructor:</strong></p>
 
                     <div class="profile-container" *ngFor="let docente of docentePorCurso[sp.idCurso]">
                       <div class="profile-picture">
-                        <img src="../../../../assets/principal/img/david.png" alt="Imagen de perfil">
+                        @if(docente.docente.trabajador?.urlFoto){
+                            <img src="{{ docente.docente.trabajador?.urlFoto }}" alt="Imagen de perfil">
+                        }@else{
+                          @if(docente.docente.trabajador?.persona?.genero==1){
+                              <img src="https://res.cloudinary.com/dwydc0kn6/image/upload/v1751407549/userhombre_zsvdv5.png" alt="Imagen de perfil">
+                          }@else {
+                              <img src="https://res.cloudinary.com/dwydc0kn6/image/upload/v1751407549/usermujer_plnmdu.png" alt="Imagen de perfil">
+                          }
+                        }
+                        
+
                       </div>
                       <div>
-                        <small style="display: block; margin-bottom: 2px;">{{ docente.docente.especializacion }}</small>
 
                         <h2 class="breadcrumb" style="margin: 0; font-size: 1.2em;">
                           {{ docente.docente.trabajador?.persona?.nombres }} {{ docente.docente.trabajador?.persona?.apaterno }}
                         </h2>
+                        <small style="display: block; margin-bottom: 2px;">{{ docente.docente.especializacion }}</small>
 
                         @if(docente.docente.trabajador!.persona.urllinkeding){
                           <p class="breadcrumb" style="margin: 0; padding: 0;">
@@ -70,13 +83,22 @@
                     
 
                     <hr>
-                    <div class="d-flex justify-content-center align-items-center">
-                        <mat-list-item (click)="redirigirAWhatsApp()">
-                            <button mat-raised-button class="mb-3"><span class="material-icons">hail</span> Solicitar mi Inscripción </button>
-                        </mat-list-item>
+                    <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
+                      <button mat-raised-button [routerLink]="['/curso/detalle-pago/checkout']" [state]="{ idCurso: sp.idCurso }">
+                        <span class="material-icons">hail</span>
+                        Solicitar mi Inscripción
+                      </button>
                     </div>
 
+
+
+
+
                     <ul style="color: white;">
+                        <li>
+                            <mat-icon style="color: white;">star</mat-icon>
+                            Certificado a nombre de IADATA PERÚ
+                        </li>
                         <li>
                             <mat-icon style="color: white;">star</mat-icon>
                             Aprendizaje basado en Proyectos reales (ABP)
@@ -86,14 +108,38 @@
                             Acceso al material por vida (CAMPUS)
                         </li>
                         <li>
-                            <mat-icon style="color: white;">star</mat-icon>
-                            Acceso exclusivo a <strong>Discord</strong> (foro de Ingenieros de Latinoamérica).
-                        </li>
-                        <li>
                             <mat-icon style="color: rgb(121, 117, 117);">star</mat-icon>
-                            <del style="color: rgb(121, 117, 117);">Certificado Digital de aprobación.</del>
+                            <del style="color: rgb(121, 117, 117);">Acceso exclusivo a <strong>Discord</strong> (foro de Ingenieros de Latinoamérica).</del>
                         </li>
                     </ul>
+                    <br>
+
+                     
+
+                      <div class="social-icons d-flex gap-3 align-items-center">
+                        <p style="color: white; margin: 0; font-weight: bold;">Compartir en</p>
+
+                        <!-- WhatsApp -->
+                        <a (click)="compartirWhatsApp()" title="Compartir en WhatsApp"
+                          class="icon-circle whatsapp d-flex justify-content-center align-items-center">
+                          <i class="fab fa-whatsapp"></i>
+                        </a>
+
+                        <!-- Facebook -->
+                        <a (click)="compartirFacebook()" title="Compartir en Facebook"
+                          class="icon-circle facebook d-flex justify-content-center align-items-center">
+                          <i class="fab fa-facebook-f"></i>
+                        </a>
+
+                        <!-- LinkedIn -->
+                        <a (click)="compartirLinkedIn()" title="Compartir en LinkedIn"
+                          class="icon-circle linkedin d-flex justify-content-center align-items-center">
+                          <i class="fab fa-linkedin-in"></i>
+                        </a>
+                      </div>
+
+
+
 
                   </mat-card-content>
           
@@ -105,9 +151,9 @@
             <div class="col-xl-7 col-lg-6" [innerHTML]="getIframeHtml(sp.urlprograma)"></div>
                 
         </div>
-        <br><br>
+       
 
-        <div class="row">
+        <div class="row mb-3">
           <div class="col-xl-3 col-lg-6">
               <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Cutest dog breeds">
                   <mat-chip-option selected color="primary">REQUISITOS :</mat-chip-option>
@@ -122,7 +168,7 @@
                       <mat-card-title><mat-icon>settings_accessibility</mat-icon> ¿A quién va dirigido?</mat-card-title>
                       <mat-card-subtitle>Público objetivo</mat-card-subtitle>
                     </mat-card-header>
-                    <p style="text-align: justify;">Dirigido a profesionales de todas las áreas que busquen desarrollar su capacidad creativa y gestionar procesos de innovación. Destinado a empresarios, gerentes, emprendedores, startups y profesionales que trabajen en ingeniería, arquitectura, construcción y operaciones.</p>
+                    <p style="text-align: justify;">{{ sp.objetivo }}</p>
                   
                   </div>
                   <div class="col-md-6">
@@ -131,18 +177,13 @@
                       <mat-card-subtitle>Desarrollo Profesional y Empresarial</mat-card-subtitle>
                     </mat-card-header>
                     <ul>
+                      @for(sp1 of habilidadesPorCurso[sp.idCurso]; track $index){
                       <li>
                         <mat-icon>check_circle</mat-icon>
-                        Aprenderás a aplicar la innovación y el pensamiento creativo de manera profesional.
+                        {{sp1.descripcion}}
                       </li>
-                      <li>
-                        <mat-icon>check_circle</mat-icon>
-                        Adquirirás metodologías, técnicas y herramientas específicas para generar nuevas ideas y modelos de negocio innovadores.
-                      </li>
-                      <li>
-                        <mat-icon>check_circle</mat-icon>
-                        Desarrollarás el pensamiento estratégico en tu trabajo, independientemente del rol que desempeñes en tu empresa o equipo.
-                      </li>                      
+                      }
+
                     </ul>
                   </div>
                 </div>
@@ -153,9 +194,8 @@
             </mat-card>
           </div>
         </div>
-      <br>
 
-        <div class="row">
+        <div class="row mb-3">
             <div class="col-xl-3 col-lg-6">
                 <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Cutest dog breeds">
                     <mat-chip-option selected color="primary">TEMARIO :</mat-chip-option>
@@ -163,49 +203,125 @@
             </div>
             <div class="col-xl-9 col-lg-6">
                 <mat-accordion>
+                    @for(sp2 of temarioPorCurso[sp.idCurso]; track $index){
                     <mat-expansion-panel (opened)="panelOpenState.set(true)" (closed)="panelOpenState.set(false)">
                       <mat-expansion-panel-header>
-                        <mat-panel-title>1.- Emprendedores, Startup y Empresas </mat-panel-title>
-                        <mat-panel-description> Módulo 1</mat-panel-description>
+                        <mat-panel-title>{{$index+1}}.- {{ sp2.titulo }} </mat-panel-title>
+                        <mat-panel-description> Sesión {{$index+1}}</mat-panel-description>
                       </mat-expansion-panel-header>
                   
                       <ul>
                         <li>
                           <mat-icon>check_circle</mat-icon>
-                          Introducción Generación de Ideas y Emprendimiento
-                        </li>
-                        <li>
-                          <mat-icon>check_circle</mat-icon>
-                          Conoce a tu Cliente
-                        </li>
-                        <li>
-                          <mat-icon>check_circle</mat-icon>
-                          Creación de Propuesta de Valor
-                        </li>
-                        <li>
-                          <mat-icon>check_circle</mat-icon>
-                          Modelo de Negocio
-                        </li>
-                        <li>
-                          <mat-icon>check_circle</mat-icon>
-                          Mínimo Producto Viable
-                        </li>
-                        <li>
-                          <mat-icon>check_circle</mat-icon>
-                          Elevator Pitch y Deck Emprendedor
-                        </li>
-                        <li>
-                          <mat-icon>check_circle</mat-icon>
-                          Final Pitch
+                          {{sp2.resumen}}
                         </li>
                       </ul>
                   
                     </mat-expansion-panel>
-                  </mat-accordion>
+                    }
+
+                </mat-accordion>
             </div>
               
         </div>
+      }
+
+      <!--OTROS CURSOS -->
+      <div class="row">
+        <div class="col-xl-3 col-lg-6">
+            <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Cutest dog breeds">
+                <mat-chip-option selected color="primary">CURSOS DE INTERÉS :</mat-chip-option>
+              </mat-chip-listbox>
+        </div>
+
+        <swiper-container
+          slides-per-view="3"
+          space-between="30"
+          loop="true"
+          autoplay-delay="2500"
+          autoplay-disable-on-interaction="false"
+          speed="800"
+          parallax="true"
+          grab-cursor="true"
+          style="width: 100%;"
+        >
+          <!-- Parallax background -->
+        
+
+          <swiper-slide *ngFor="let sp of cursoslista">
+            <div class="card-wrapper">
+              <mat-card appearance="outlined" class="card feature-curso single-curso">
+                <div class="img-container">
+                  <img [src]="sp.urlImagen" class="card-img-top" alt="...">
+                  @if(getStatus(sp.fechaInicio, sp.fechaFinal).status=='Próximamente'){
+                    <div class="nuevo-badge">Nuevo</div>
+                  }
+                </div>
+
+                <mat-card-header>
+                  <mat-card-title>{{ sp.titulo }}</mat-card-title> 
+                </mat-card-header>
+
+                <mat-card-content>
+                  <p>{{ sp.subtitulo }}</p>
+                  <hr>
+                  <div class="curso-details">
+                    <div class="left-details">
+                      <p class="p-noplan" [ngStyle]="{'color': getStatus(sp.fechaInicio, sp.fechaFinal).color}">
+                        <strong>Estado:</strong> {{ getStatus(sp.fechaInicio, sp.fechaFinal).status }}
+                      </p>
+                      <p class="p-noplan" *ngIf="getStatus(sp.fechaInicio, sp.fechaFinal).formattedDate">
+                        <strong><i class="fas fa-calendar"></i></strong> {{ getStatus(sp.fechaInicio, sp.fechaFinal).formattedDate }}
+                      </p>
+                      <p class="p-noplan">
+                        <strong><i class="fas fa-list-alt"></i></strong> {{ sp.duracionsemanas }} semanas
+                      </p>
+                    </div>
+
+                    <div class="right-details">
+                      <p class="p-noplan">
+                        <strong>Modalidad:</strong>
+                        <span *ngIf="sp.modalidad === 1">Presencial</span>
+                        <span *ngIf="sp.modalidad === 2">Virtual</span>
+                        <span *ngIf="sp.modalidad === 3">Semipresencial</span>
+                      </p>
+                      <p class="p-noplan">
+                        <strong><i class="fas fa-clock"></i></strong>Horarios:
+                      </p>
+                      <ul>
+                        <li *ngFor="let horario of horariosPorCurso[sp.idCurso]">
+                          {{ horario.horarios.diassemana.descripcion }} {{ formatHora(horario.horarios.horaInicio) }} - {{ formatHora(horario.horarios.horaFinal) }}
+                        </li>
+                      </ul>                                            
+                    </div>
+                  </div>
+
+                  <hr>
+                  <p>
+                    <del style="color: rgb(82, 64, 64); font-size: 12px;">
+                      PEN {{ sp.costo | currency: 'S/' : 'symbol' : '1.2-2' }}
+                    </del>
+                    <strong style="color: red; font-size: 20px;">
+                      {{ sp.costoremate | currency: 'S/' : 'symbol' : '1.2-2' }}
+                    </strong>
+                  </p>
+                </mat-card-content>
+
+                <mat-card-actions class="centered-actions">
+                  <div class="centered-buttons">
+                    <button mat-button class="mb-2" mat-raised-button [routerLink]="['/curso/detalle-pago/checkout']" [state]="{ idCurso: sp.idCurso }"><span class="material-icons">hail</span> Solicitar</button>
+                    <a mat-button class="mb-2" mat-raised-button [routerLink]="['/curso/detalle', sp.titulo]"><i class="fas fa-eye"></i> Ver detalle</a>
+                  </div>
+                </mat-card-actions>
+              </mat-card>
+            </div>
+          </swiper-slide>
+        </swiper-container>
+      </div>
+
     </div>
-    }
+    
+   
 </section>
 }
+

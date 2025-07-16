@@ -1,25 +1,25 @@
 import { Component, inject, LOCALE_ID, OnInit } from '@angular/core';
-import { MaterialModule } from '../../../material/material.module';
-import { Curso } from '../../../model/curso';
-import { CursoService } from '../../../services/curso.service';
 import { PageEvent } from '@angular/material/paginator';
-import { CommonModule, DatePipe } from '@angular/common';
 import { ListahorariosService } from '../../../services/listahorarios.service';
+import { CursoService } from '../../../services/curso.service';
+import { CommonModule, DatePipe } from '@angular/common';
 import { Listahorarios } from '../../../model/listahorarios';
+import { Curso } from '../../../model/curso';
 import { RouterLink } from '@angular/router';
+import { MaterialModule } from '../../../material/material.module';
 
 @Component({
-  selector: 'app-curso-lista',
+  selector: 'app-taller-lista',
   standalone: true,
   imports: [MaterialModule,CommonModule,RouterLink],
-  templateUrl: './curso-lista.component.html',
-  styleUrl: './curso-lista.component.css',
+  templateUrl: './taller-lista.component.html',
+  styleUrl: './taller-lista.component.css',
   providers: [
     { provide: LOCALE_ID, useValue: 'es' },  // Establecer la configuración regional
     DatePipe  
   ]
 })
-export class CursoListaComponent implements OnInit{
+export class TallerListaComponent implements OnInit{
   cursos: Curso[] = [];
   listahorarios: Listahorarios[] = [];
   cursoPaginada: Curso[] = [];
@@ -37,7 +37,7 @@ export class CursoListaComponent implements OnInit{
   ngOnInit(): void {
     this.cursoService.findAll().subscribe(data => {
       this.cursos = data
-      .filter(curso => curso.categoria.idCategoria === 1)
+      .filter(curso => curso.categoria.idCategoria === 2)
       .sort((a, b) => b.idCurso - a.idCurso); 
     
       this.setPaginado();
@@ -131,3 +131,4 @@ getStatus(fechaInicio: Date, fechaFinal: Date) {
   
    
 }
+

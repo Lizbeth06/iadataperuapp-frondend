@@ -20,10 +20,11 @@ export class Curso {
   costoremate:     number;
   estado:          number;
   descripcion:     string;
+  objetivo:     string;
   urlImagen:       string;
   urlprograma:       string;
   totalvisitas:       number;
-  categoria:       Categoria | null;
+  categoria:       Categoria;
   listadocente:    Listadocente[];
   listahorarios:   Listahorarios[];
   habilidades:     Habilidades[];

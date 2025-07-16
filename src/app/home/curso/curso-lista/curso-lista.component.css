@@ -98,6 +98,41 @@
   height: 100%; /* asegura que el mat-card tome toda la altura */
 }
 
+/* Para que la imagen no sobresalga y respete el borde superior redondeado */
+.img-container {
+  position: relative;
+  width: 100%;
+  height: 300px;
+  overflow: hidden;
+  border-top-left-radius: 30px;   /* Igual que mat-card */
+  border-top-right-radius: 30px;  /* Igual que mat-card */
+}
+
+/* Asegura que la imagen se ajuste al contenedor sin romper esquinas */
+.img-container img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+  border-top-left-radius: 30px;
+  border-top-right-radius: 30px;
+}
+
+
+.nuevo-badge {
+  position: absolute;
+  top: 10px;
+  left: 10px;
+  background-color: #f40a0a;
+  color: white;
+  padding: 5px;
+  font-size: 12px;
+  border-radius: 5px;
+}
+
+
+
+
 
   
 
