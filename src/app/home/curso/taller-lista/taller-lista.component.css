@@ -130,7 +130,19 @@
   border-radius: 5px;
 }
 
+.custom-btn {
+  background-color: #ffffff !important;
+  color: #0e5b3c !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra ligera */
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
 
+.custom-btn:hover {
+  border-color: #0e5b3c;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* sombra más fuerte al pasar */
+  transform: translateY(-1px); /* pequeño levantamiento */
+}
   
 
 

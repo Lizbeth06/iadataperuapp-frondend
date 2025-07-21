@@ -6,11 +6,12 @@ import { CatalogoComponent } from './catalogo/catalogo.component';
 import { ConsultoriaComponent } from './consultoria/consultoria.component';
 import { ServicioTecnicoComponent } from './servicio-tecnico/servicio-tecnico.component';
 import { VentaAccesoriosComponent } from './venta-accesorios/venta-accesorios.component';
-import { VentaSistemasComponent } from './venta-sistemas/venta-sistemas.component';
 import { MicertificadoComponent } from './micertificado/micertificado.component';
 import { CursoDetalleComponent } from './curso/curso-detalle/curso-detalle.component';
 import { CheckoutFormComponent } from './checkout/checkout-form/checkout-form.component';
 import { TallerListaComponent } from './curso/taller-lista/taller-lista.component';
+import { VentasistemasListaComponent } from './venta-sistemas/ventasistemas-lista/ventasistemas-lista.component';
+import { VentasistemasDetalleComponent } from './venta-sistemas/ventasistemas-detalle/ventasistemas-detalle.component';
 
 export const HOME_ROUTES: Routes = [
     {
@@ -42,7 +43,11 @@ export const HOME_ROUTES: Routes = [
         },
         {
             path: 'venta-sistemas',
-            component: VentaSistemasComponent
+            component: VentasistemasListaComponent
+        },
+        {
+            path:'venta-sistemas/detalle/:titulo',
+            component: VentasistemasDetalleComponent
         },
         {
             path: 'curso',

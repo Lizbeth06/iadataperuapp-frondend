@@ -1,18 +1,18 @@
 import { ComponentFixture, TestBed } from '@angular/core/testing';
 
-import { VentaSistemasComponent } from './venta-sistemas.component';
+import { AgendarFormComponent } from './agendar-form.component';
 
-describe('VentaSistemasComponent', () => {
-  let component: VentaSistemasComponent;
-  let fixture: ComponentFixture<VentaSistemasComponent>;
+describe('AgendarFormComponent', () => {
+  let component: AgendarFormComponent;
+  let fixture: ComponentFixture<AgendarFormComponent>;
 
   beforeEach(async () => {
     await TestBed.configureTestingModule({
-      imports: [VentaSistemasComponent]
+      imports: [AgendarFormComponent]
     })
     .compileComponents();
     
-    fixture = TestBed.createComponent(VentaSistemasComponent);
+    fixture = TestBed.createComponent(AgendarFormComponent);
     component = fixture.componentInstance;
     fixture.detectChanges();
   });

@@ -84,11 +84,12 @@
 
                     <hr>
                     <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
-                      <button mat-raised-button [routerLink]="['/curso/detalle-pago/checkout']" [state]="{ idCurso: sp.idCurso }">
+                      <button mat-raised-button class="custom-btn" [routerLink]="['/curso/detalle-pago/checkout']" [state]="{ idCurso: sp.idCurso }">
                         <span class="material-icons">hail</span>
                         Solicitar mi Inscripción
                       </button>
                     </div>
+
 
 
 
@@ -308,11 +309,16 @@
                 </mat-card-content>
 
                 <mat-card-actions class="centered-actions">
-                  <div class="centered-buttons">
-                    <button mat-button class="mb-2" mat-raised-button [routerLink]="['/curso/detalle-pago/checkout']" [state]="{ idCurso: sp.idCurso }"><span class="material-icons">hail</span> Solicitar</button>
-                    <a mat-button class="mb-2" mat-raised-button [routerLink]="['/curso/detalle', sp.titulo]"><i class="fas fa-eye"></i> Ver detalle</a>
-                  </div>
-                </mat-card-actions>
+                    <div class="centered-buttons">
+                      <button mat-button class="mb-2 custom-btn" mat-raised-button [routerLink]="['/curso/detalle-pago/checkout']" [state]="{ idCurso: sp.idCurso }">
+                        <span class="material-icons">hail</span> Solicitar
+                      </button>
+                      <a mat-button class="mb-2 custom-btn" mat-raised-button [routerLink]="['/curso/detalle', sp.titulo]">
+                        <i class="fas fa-eye"></i> Ver detalle
+                      </a>
+                    </div>
+                  </mat-card-actions>
+
               </mat-card>
             </div>
           </swiper-slide>

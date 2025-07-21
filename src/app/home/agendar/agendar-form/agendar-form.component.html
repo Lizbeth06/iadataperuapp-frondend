@@ -1,0 +1,94 @@
+<mat-dialog-content class="mat-typography">
+    <div class="section-title-with-lines">
+  <h3 style="color: #0e5b3c;">Agenda tu reunión aquí</h3>
+</div>
+
+    <form class="example-form" [formGroup]="form" (ngSubmit)="operate()">
+
+        <div class="row">
+            <mat-form-field class="col-md-2">
+                <mat-label>Seleccionar</mat-label>
+            <mat-select formControlName="tipodocumento" >
+                    <mat-option [value]="1">DNI</mat-option>
+            </mat-select>
+            <mat-hint>Tipo de Doc.</mat-hint>
+            </mat-form-field> 
+
+            <mat-form-field class="col-md-2" appearance="fill">
+            <mat-label>N° Documento</mat-label>
+            <input matInput type="text" formControlName="numDocumento">
+            
+            <!-- Botón de búsqueda con ícono de lupa al lado del input -->
+            <button mat-icon-button matSuffix (click)="buscarxDoc()">
+                <mat-icon>search</mat-icon>
+            </button>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-4">
+            <mat-label>Razón Social o Nombres</mat-label>
+            <input matInput formControlName="razonSocial">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2">
+                <mat-label>Teléfono</mat-label>
+                <input matInput formControlName="telefono">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2">
+                <mat-label>Correo Electrónico</mat-label>
+                <input matInput formControlName="correo" type="email">
+                <mat-error *ngIf="form?.get('correo')?.invalid && form?.get('correo')?.touched">
+                Ingresa un correo válido.
+                </mat-error>
+            </mat-form-field>
+        </div>
+        <div class="row">
+
+            <mat-form-field class="col-md-4">
+                <mat-label>Categoria</mat-label>
+                <mat-select formControlName="idepartamento">
+                    
+                    <mat-option [value]="">fgfg</mat-option>
+                    
+                </mat-select>
+                <mat-hint>Departamento</mat-hint>
+            </mat-form-field> 
+
+            <mat-form-field class="col-md-2">
+                <mat-label>fecha</mat-label>
+                <input matInput [matDatepicker]="picker">
+                <mat-hint>MM/DD/YYYY</mat-hint>
+                <mat-datepicker-toggle matIconSuffix [for]="picker"></mat-datepicker-toggle>
+                <mat-datepicker #picker></mat-datepicker>
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2">
+                <mat-label>Hora de Inicio</mat-label>
+                <input matInput type="time" formControlName="horaInicio">
+            </mat-form-field>
+
+            <mat-form-field class="col-md-2">
+                <mat-label>Hora de Final</mat-label>
+                <input matInput type="time" formControlName="horaFinal">
+            </mat-form-field>
+         
+
+            <div class="col-md-2 d-flex justify-content-center align-items-center gap-3 mb-3">
+                <button mat-raised-button class="custom-btn w-100" [mat-dialog-close]="true" cdkFocusInitial>
+                    <mat-icon>send</mat-icon> Enviar
+                </button>
+            </div>
+
+        </div>
+    
+    </form>
+
+ 
+
+  <br>
+  <small><strong><em>*Tras la reunión, la propuesta detallada será enviada a su correo electrónico o vía WhatsApp.</em></strong></small>
+
+</mat-dialog-content>
+<mat-dialog-actions align="end">
+  <button mat-raised-button class="custom-btn" mat-dialog-close>Cerrar</button>
+</mat-dialog-actions>

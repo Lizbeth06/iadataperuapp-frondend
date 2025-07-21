@@ -1,0 +1,134 @@
+<section class="feature-section feature-style-5 page_iadata2">
+</section>
+
+<section class="feature-section feature-style-5A page_iadata7">
+    <div class="container">
+        <div class="content-wrapper">
+            <div class="row">
+                <h1 class="titulo-portada"><a style="color: #0ae98a;">Alcanza </a> nuevos</h1>
+                <h1 class="titulo-portada">horizontes</h1>
+                <p class="subtitulo-portada">Con nuestro software diseñado exclusivamente para ti</p>
+            </div>
+        </div>
+    </div>
+</section>
+
+<section id="catalogo" class="feature-section feature-style-5 page_iadata2 bg-dark py-5">
+  <div class="container">
+    <h2 class="titulo-destacado text-white mb-4">Catálogo de Sistemas en Venta</h2>
+    <div class="row g-5">
+      <div class="col-md-2 mb-4">
+        <h5 class="text-white fw-bold mb-0 pb-2">Categorías</h5>  
+        <mat-chip-listbox
+            class="mat-mdc-chip-set-stacked position-relative"
+            aria-label="Opciones del sistema"
+            (selectionChange)="onChipSelected()">
+            
+            <mat-chip-option *ngFor="let item of chips; let i = index"
+                            [value]="item"
+                            (click)="onChipClick(item, i)"
+                            [selected]="item.selected">
+              {{ item.label }}
+              
+              <!-- Badge contador (opcional o dinámico) -->
+              <span *ngIf="item.count > 0"
+                    class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger">
+                {{ item.count }}
+                <span class="visually-hidden">contador</span>
+              </span>
+            </mat-chip-option>
+
+        </mat-chip-listbox>
+      </div>
+      <div class="col-md-10 mb-4">
+        <mat-card class="example-card p-0 bg-dark text-white mb-4" appearance="outlined">
+          <div class="row">
+
+            <!-- Carrusel con badges en esquina superior izquierda -->
+            <div class="col-md-6 p-0 d-flex position-relative">
+
+              <!-- 🔰 Badges flotantes -->
+              <div class="position-absolute top-0 start-0 z-3 m-2 d-flex flex-column gap-1">
+                <div class="badge bg-danger text-white px-2 py-1 rounded fs-6">Nuevo</div>
+                <div class="badge bg-warning text-dark px-2 py-1 rounded">Garantía 1 año</div>
+              </div>
+
+              <!-- 🎞 Carrusel -->
+              <div id="carouselFotos" class="carousel slide w-100 h-100" data-bs-ride="carousel">
+                <div class="carousel-inner w-100 h-100">
+                  <div class="carousel-item active w-100 h-100">
+                    <img src="assets/img/caja.PNG" class="d-block w-100 h-100 m-0" alt="Imagen 1" style="object-fit: cover;">
+                  </div>
+                  <div class="carousel-item w-100 h-100">
+                    <img src="assets/img/caja2.PNG" class="d-block w-100 h-100 m-0" alt="Imagen 2" style="object-fit: cover;">
+                  </div>
+                  <div class="carousel-item w-100 h-100">
+                    <img src="assets/img/caja3.PNG" class="d-block w-100 h-100 m-0" alt="Imagen 3" style="object-fit: cover;">
+                  </div>
+                </div>
+                <button class="carousel-control-prev" type="button" data-bs-target="#carouselFotos" data-bs-slide="prev">
+                  <span class="carousel-control-prev-icon"></span>
+                  <span class="visually-hidden">Anterior</span>
+                </button>
+                <button class="carousel-control-next" type="button" data-bs-target="#carouselFotos" data-bs-slide="next">
+                  <span class="carousel-control-next-icon"></span>
+                  <span class="visually-hidden">Siguiente</span>
+                </button>
+              </div>
+            </div>
+
+            <!-- Lado derecho: información -->
+            <div class="col-md-6">
+              <mat-card-header>
+                <mat-card-title>
+                  <strong>Sistema de Recursos Humanos (RRHH), Sistema Planilla o Gestión de Planilla</strong>
+                </mat-card-title>
+              </mat-card-header>
+              <mat-card-content>
+
+                <!-- Características -->
+                <div class="d-flex flex-wrap gap-2 text-secondary mb-2 small">
+                  <div class="d-flex align-items-center">
+                    <span class="material-icons me-1 fs-6">pets</span> Cariñoso
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <span class="material-icons me-1 fs-6">terrain</span> Aventurero
+                  </div>
+                  <div class="d-flex align-items-center">
+                    <span class="material-icons me-1 fs-6">star</span> Popularidad
+                  </div>
+                </div>
+
+                <!-- Descripción -->
+                <p class="text-justify-custom">Tus colaboradores pueden acceder a su información en tiempo real: consultar recibos de sueldo, solicitar vacaciones y mucho más. Desde cualquier dispositivo con una interfaz intuitiva y segura.</p>
+
+                <hr>
+
+                <div class="d-flex flex-wrap gap-2 small justify-content-center">
+                  <button mat-raised-button class="custom-btn" (click)="openDialogCotizar()">
+                    <span class="material-icons me-1">hail</span> Cotizar
+                  </button>
+                  <button mat-raised-button class="custom-btn" [routerLink]="['/venta-sistemas/detalle', 'holajdj']">
+                    <i class="fas fa-eye me-1"></i> Ver detalle
+                  </button>
+                  <button mat-raised-button class="custom-btn" (click)="openDialogDemo()">
+                    <span class="material-icons me-1">play_circle</span> Demo
+                  </button>
+                </div>
+
+
+              </mat-card-content>
+            </div>
+          </div>
+        </mat-card>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+
+
+
+  
+

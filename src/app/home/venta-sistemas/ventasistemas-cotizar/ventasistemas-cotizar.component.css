@@ -1,0 +1,89 @@
+.custom-btn {
+  background-color: #ffffff !important;
+  color: #0e5b3c !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra ligera */
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  border-color: #0e5b3c;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* sombra más fuerte al pasar */
+  transform: translateY(-1px); /* pequeño levantamiento */
+}
+
+.section-title-with-lines {
+  display: flex;
+  align-items: center;
+  text-align: center;
+  color: #0e5b3c;
+  margin: 2rem 0;
+  flex-wrap: nowrap; /* que no se rompa por defecto */
+}
+
+.section-title-with-lines h3 {
+  margin: 0 1rem;
+  font-weight: 600;
+  font-size: 1.3rem;
+  white-space: nowrap;
+  flex-shrink: 0; /* evita que el texto se reduzca demasiado */
+}
+
+/* Líneas laterales */
+.section-title-with-lines::before,
+.section-title-with-lines::after {
+  content: "";
+  flex: 1;
+  border-top: 2px solid #0e5b3c;
+  height: 0;
+  min-width: 20px;
+}
+
+/* Responsividad para pantallas pequeñas */
+@media (max-width: 576px) {
+  .section-title-with-lines {
+    flex-wrap: wrap; /* permite que el texto pase a la siguiente línea */
+  }
+
+  .section-title-with-lines h3 {
+    font-size: 1.1rem;
+    white-space: normal; /* permite que el texto se ajuste y no desborde */
+    margin: 0.5rem 0; /* separa el texto de las líneas */
+    flex-basis: 100%; /* ocupa toda la línea */
+  }
+
+  .section-title-with-lines::before,
+  .section-title-with-lines::after {
+    flex-basis: 40%;
+    min-width: 0;
+  }
+}
+
+
+
+  .example-button-row .mat-mdc-button-base {
+    margin: 8px 8px 8px 0;
+  }
+  
+  .example-flex-container {
+    display: flex;
+    justify-content: space-between;
+    flex-wrap: wrap;
+  }
+  
+  .example-button-container {
+    display: flex;
+    justify-content: center;
+    width: 140px;
+  }
+
+  .example-button-row {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 10px;
+}
+
+.custom-backdrop-class .cdk-overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}

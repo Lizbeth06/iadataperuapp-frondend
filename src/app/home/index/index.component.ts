@@ -1,5 +1,5 @@
 import { Component,OnInit } from '@angular/core';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 import { CommonModule } from '@angular/common';
 import { MaterialModule } from '../../material/material.module';
 import { MatDialog } from '@angular/material/dialog';
@@ -7,15 +7,38 @@ import { ModalunoComponent } from './modaluno/modaluno.component';
 import { ModalconsultoriaComponent } from './modalconsultoria/modalconsultoria.component';
 import { ModalsoportetecnicoComponent } from './modalsoportetecnico/modalsoportetecnico.component';
 import { ModalaccesoriosComponent } from './modalaccesorios/modalaccesorios.component';
+import { AfterViewInit } from '@angular/core';
+import { tns } from 'tiny-slider/src/tiny-slider'; 
 
 @Component({
   selector: 'app-index',
   standalone: true,
-  imports: [CommonModule,MaterialModule,RouterLink],
+  imports: [CommonModule,MaterialModule,RouterModule],
   templateUrl: './index.component.html',
   styleUrl: './index.component.css'
 })
-export class IndexComponent {
+export class IndexComponent implements AfterViewInit {
+
+  ngAfterViewInit() {
+    const sliderContainer = document.querySelector('.my-slider');
+    if (!sliderContainer) {
+      console.warn("Can't find .my-slider");
+      return;
+    }
+
+    const slider = tns({
+      container: '.my-slider',
+      items: 1,
+      slideBy: 'page',
+      autoplay: true,
+      controls: true,
+      nav: true,
+      autoplayButtonOutput: false
+    });
+  
+
+  }
+  
   redirigirAWhatsApp(): void {
     // Definir el número de teléfono o enlace de WhatsApp
     let telefono = '51930794100';

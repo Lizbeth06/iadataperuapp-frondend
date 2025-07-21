@@ -1,0 +1,92 @@
+
+.social-icons mat-icon {
+  color: white !important;
+}
+
+.icon-circle {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  font-size: 20px;
+  color: white;
+  text-align: center;
+  cursor: pointer;
+  transition: transform 0.2s;
+}
+
+.icon-circle:hover {
+  transform: scale(1.1);
+}
+
+/* Colores por red social */
+.icon-circle.whatsapp {
+  background-color: #25D366;
+}
+
+.icon-circle.facebook {
+  background-color: #1877F2;
+}
+
+.icon-circle.linkedin {
+  background-color: #0077B5;
+}
+
+
+  .breadcrumb,
+  .breadcrumb-item,
+  .breadcrumb-item a,
+  .breadcrumb-item::before,
+  .breadcrumb-item::after {
+    color: #78b363;
+  }
+
+  .curso-details {
+    display: flex;
+    justify-content: space-between;
+}
+
+.left-details {
+    flex: 1;
+}
+
+.right-details {
+    flex: 1;
+    text-align: right;
+}
+
+.p-noplan {
+    align-items: center;
+    color: #87909d;
+    display: flex;
+    font-size: .75rem;
+    font-weight: 400;
+    gap: .5rem;
+    letter-spacing: .019rem;
+    letter-spacing: .3px;
+    line-height: 1.125rem;
+    text-decoration: none;
+    text-transform: none;
+    margin: 0;
+  }
+
+.custom-btn {
+  background-color: #ffffff !important;
+  color: #0e5b3c !important;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2); /* sombra ligera */
+  border: 2px solid transparent;
+  transition: all 0.3s ease;
+}
+
+.custom-btn:hover {
+  border-color: #0e5b3c;
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.3); /* sombra más fuerte al pasar */
+  transform: translateY(-1px); /* pequeño levantamiento */
+}
+
+
+
+.custom-backdrop-class .cdk-overlay-backdrop {
+  background-color: rgba(0, 0, 0, 0.7) !important;
+}
+
+

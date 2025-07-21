@@ -17,12 +17,9 @@
 
 <section id="nosotros" class="feature-section feature-style-5 page_iadata2">
     <div class="container">
-        <div class="d-flex align-items-start">
-                <div class="row row-equal-height">
-                <div class="col-lg-4" *ngFor="let sp of cursoPaginada">
-
-           
-                        <div class="col">
+        <div class="row">
+                @for(sp of cursoPaginada; track $index){
+                    <div class="col-12 col-md-8 col-lg-4 mb-1 d-flex justify-content-center">
                             <mat-card appearance="outlined" class="card feature-curso single-curso">
                                 <div class="img-container">
                                     <img [src]="sp.urlImagen" class="card-img-top" alt="...">
@@ -67,16 +64,22 @@
                                     </p>
                                 </mat-card-content>
                                 <mat-card-actions class="centered-actions">
-                                    <div class="centered-buttons">
-                                        <button mat-button class="mb-2" mat-raised-button [routerLink]="['/curso/detalle-pago/checkout']" [state]="{ idCurso: sp.idCurso }"><span class="material-icons">hail</span> Solicitar</button>
-                                        <a mat-button class="mb-2" mat-raised-button [routerLink]="['/curso/detalle', sp.titulo]"><i class="fas fa-eye"></i> Ver detalle</a>
+                                    <div class="centered-buttons d-flex flex-wrap gap-2 justify-content-center">
+                                        <button mat-button mat-raised-button class="custom-btn mb-2" [routerLink]="['/curso/detalle-pago/checkout']" [state]="{ idCurso: sp.idCurso }">
+                                        <span class="material-icons">hail</span> Solicitar
+                                        </button>
+                                        <a mat-button mat-raised-button class="custom-btn mb-2" [routerLink]="['/curso/detalle', sp.titulo]">
+                                        <i class="fas fa-eye"></i> Ver detalle
+                                        </a>
                                     </div>
-                                </mat-card-actions>
-                            </mat-card>
-                        </div>
+                                    </mat-card-actions>
+
+                                </mat-card>
+                        
              
-                </div>
-                </div>
+                
+                    </div>
+                }
 
                 
 
