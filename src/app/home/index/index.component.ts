@@ -9,7 +9,7 @@ import { ModalsoportetecnicoComponent } from './modalsoportetecnico/modalsoporte
 import { ModalaccesoriosComponent } from './modalaccesorios/modalaccesorios.component';
 import { AfterViewInit } from '@angular/core';
 import { tns } from 'tiny-slider/src/tiny-slider'; 
-
+declare var bootstrap: any;
 @Component({
   selector: 'app-index',
   standalone: true,
@@ -20,22 +20,14 @@ import { tns } from 'tiny-slider/src/tiny-slider';
 export class IndexComponent implements AfterViewInit {
 
   ngAfterViewInit() {
-    const sliderContainer = document.querySelector('.my-slider');
-    if (!sliderContainer) {
-      console.warn("Can't find .my-slider");
-      return;
-    }
-
-    const slider = tns({
-      container: '.my-slider',
-      items: 1,
-      slideBy: 'page',
-      autoplay: true,
-      controls: true,
-      nav: true,
-      autoplayButtonOutput: false
-    });
-  
+    
+  const carouselElement = document.querySelector('#carouselFotos');
+      if (carouselElement) {
+        new bootstrap.Carousel(carouselElement, {
+          interval: 3000,
+          ride: 'carousel'
+        });
+      }
 
   }
   
