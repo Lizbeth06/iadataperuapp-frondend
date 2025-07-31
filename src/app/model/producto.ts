@@ -1,3 +1,6 @@
+import { Categoria } from "./categoria";
+import { Listabeneficiosproducto } from "./listabeneficiosproducto";
+import { Listadetalleproducto } from "./listadetalleproducto";
 import { Tipoproducto } from "./tipoproducto";
 
 export class Producto {
@@ -11,8 +14,15 @@ export class Producto {
   cantidad: number;
   codigo: string;
   tipoproducto: Tipoproducto | null; 
+  categoria: Categoria;
   urlImagen: string;
+  urlImagen2: string;
+  urlImagen3: string;
+  urlyoutuve: string;
   garantia: number;
   estadoProducto: number;
+  fechacreacion: Date;
   urlDireccionWeb: string; 
+  listabeneficiosproducto:    Listabeneficiosproducto[];
+  listadetalleproducto:    Listadetalleproducto[];
 }

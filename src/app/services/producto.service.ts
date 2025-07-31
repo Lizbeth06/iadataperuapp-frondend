@@ -4,6 +4,7 @@ import { Observable, Subject } from 'rxjs';
 import { Producto } from '../model/producto';
 import { environment } from '../../environments/environment.development';
 import { GenericService } from '../services/generic.service';
+import { ProductoCategoriaResumen } from '../model/productocategoriaresumen';
 
 
 @Injectable({
@@ -44,6 +45,10 @@ export class ProductoService extends GenericService<Producto> {
   //para el layout contador
   getTotalProductos():Observable<number>{
     return this.http.get<number>(`${this.url}/conteo/total`);
+  }
+
+  obtenerResumenProductoPorCategoria(): Observable<ProductoCategoriaResumen[]> {
+    return this.http.get<ProductoCategoriaResumen[]>(`${this.url}/resumen-por-categoria`);
   }
 
 }
