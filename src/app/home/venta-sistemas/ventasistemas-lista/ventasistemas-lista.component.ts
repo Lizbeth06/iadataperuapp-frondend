@@ -123,15 +123,15 @@ export class VentasistemasListaComponent implements OnInit, AfterViewInit{
 
 
   //carusel
-    ngAfterViewInit() {
-      const carouselElement = document.querySelector('#carouselFotos');
-      if (carouselElement) {
-        new bootstrap.Carousel(carouselElement, {
-          interval: 3000,
-          ride: 'carousel'
-        });
-      }
+  ngAfterViewInit() {
+    const carouselElement = document.querySelector('#carouselFotos');
+    if (carouselElement) {
+      new bootstrap.Carousel(carouselElement, {
+        interval: 3000,
+        ride: 'carousel'
+      });
     }
+  }
 
   setPaginado(): void {
     const start = this.pageIndex * this.pageSize;

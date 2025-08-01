@@ -51,4 +51,8 @@ export class ProductoService extends GenericService<Producto> {
     return this.http.get<ProductoCategoriaResumen[]>(`${this.url}/resumen-por-categoria`);
   }
 
+  findAllTitulo(titulo:string){
+      return this.http.get<Producto[]>(`${environment.HOST}/api/producto/detalletitulo/${titulo}`)
+    } 
+
 }

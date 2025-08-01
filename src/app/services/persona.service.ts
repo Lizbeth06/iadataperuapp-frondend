@@ -29,7 +29,7 @@ export class PersonaService extends GenericService<Persona>{
   return this.http.get<Persona[]>(`${environment.HOST}/api/persona/searchxnumdoc`, { params });
   }
 
-  setPersonaChange(data:Persona[]){
+  setPersonaChange(data:Persona[]){ 
     this.personaChange.next(data);
   }
 

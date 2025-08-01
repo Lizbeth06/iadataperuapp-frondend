@@ -9,22 +9,20 @@
         <div class="row">
             <mat-form-field class="col-md-2">
                 <mat-label>Seleccionar</mat-label>
-            <mat-select formControlName="tipodocumento" >
-                @for (item of tipodocumento; track $index) {
-                    <mat-option [value]="item.idTipoDocumento">{{item.descripcion}}</mat-option>
-                }
-            </mat-select>
-            <mat-hint>Tipo de Doc.</mat-hint>
+                <mat-select formControlName="tipodocumento" >
+                    @for (item of tipodocumento; track $index) {
+                        <mat-option [value]="item.idTipoDocumento">{{item.descripcion}}</mat-option>
+                    }
+                </mat-select>
+                <mat-hint>Tipo de Doc.</mat-hint>
             </mat-form-field> 
 
             <mat-form-field class="col-md-2" appearance="fill">
-            <mat-label>N° Documento</mat-label>
-            <input matInput type="text" formControlName="numDocumento">
-            
-            <!-- Botón de búsqueda con ícono de lupa al lado del input -->
-            <button mat-icon-button matSuffix (click)="buscarxDoc()">
-                <mat-icon>search</mat-icon>
-            </button>
+                    <mat-label>N° de documento</mat-label>
+                    <input formControlName="numDocumento" type="text" matInput />
+                    <button (click)="existePersonaPorDocumento()" type="button" mat-icon-button matSuffix>
+                      <mat-icon>search</mat-icon>
+                    </button>
             </mat-form-field>
 
             <mat-form-field class="col-md-2">
@@ -63,36 +61,36 @@
 
             <mat-form-field class="col-md-2">
                 <mat-label>Seleccionar</mat-label>
-                <mat-select formControlName="idepartamento" (selectionChange)="obtenerProvinciasDir()">
-                    
-                    <mat-option [value]="">fgfg</mat-option>
-                    
+                <mat-select formControlName="ubiDpto" (selectionChange)="obtenerProvinciaDir()">
+                    @for (sp of departamentosDir; track sp.idUbigeo) {
+                    <mat-option [value]="sp.ubiDpto">{{sp.ubiNombre}}</mat-option>
+                    }
                 </mat-select>
                 <mat-hint>Departamento</mat-hint>
             </mat-form-field> 
 
             <mat-form-field class="col-md-2">
                 <mat-label>Seleccionar</mat-label> 
-                <mat-select formControlName="idprovincia" (selectionChange)="obtenerDistritosDir()">
-                    
-                    <mat-option [value]="">fg</mat-option>
-                    
+                <mat-select formControlName="ubiProvincia" (selectionChange)="obtenerDistritoDir()">
+                    @for (sp of provinciaDir; track sp.idUbigeo){
+                    <mat-option [value]="sp.ubiProvincia">{{ sp.ubiNombre }}</mat-option>
+                    }
                 </mat-select>
                 <mat-hint>Provincia</mat-hint>
             </mat-form-field>
 
             <mat-form-field class="col-md-2">
                 <mat-label>Seleccionar</mat-label>
-                <mat-select formControlName="iddistrito">
-                
-                    <mat-option [value]="">fgfg</mat-option>
-                    
+                <mat-select formControlName="ubiDistrito">
+                    @for (sp of distritoDir; track sp.idUbigeo){
+                    <mat-option [value]="sp.idUbigeo">{{ sp.ubiNombre }}</mat-option>
+                    }
                 </mat-select>
                 <mat-hint>Distrito</mat-hint>
             </mat-form-field>
 
             <div class="col-md-2 d-flex justify-content-center align-items-center gap-3 mb-3">
-                <button mat-raised-button class="custom-btn w-100" [mat-dialog-close]="true" cdkFocusInitial>
+                <button type="submit" mat-raised-button class="custom-btn w-100" cdkFocusInitial [disabled]="form.invalid">
                     <mat-icon>send</mat-icon> Enviar
                 </button>
             </div>
