@@ -21,8 +21,9 @@ export class Producto {
   urlyoutuve: string;
   garantia: number;
   estadoProducto: number;
-  fechacreacion: Date;
+  fechacreacion: Date; 
   urlDireccionWeb: string; 
+ totalvisitas:number;
   listabeneficiosproducto:    Listabeneficiosproducto[];
   listadetalleproducto:    Listadetalleproducto[];
 }

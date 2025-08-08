@@ -165,7 +165,7 @@ export class VentasistemasListaComponent implements OnInit, AfterViewInit{
       return cumpleBusqueda && cumpleCategoria;
     });
 
-    this.pageIndex = 0;
+    this.pageIndex = 0; 
     this.setPaginado();
   }
 

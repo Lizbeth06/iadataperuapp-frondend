@@ -6,4 +6,4 @@ export class Listadetalleproducto {
   descripcion: string;
   producto: Producto;
   modulosproducto: Modulosproducto;
-}
+} 

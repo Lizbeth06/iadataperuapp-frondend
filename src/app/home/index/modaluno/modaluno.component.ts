@@ -11,6 +11,7 @@ import {
 import { MaterialModule } from '../../../material/material.module';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { AgendarFormComponent } from '../../agendar/agendar-form/agendar-form.component';
 
 @Component({
   selector: 'app-modaluno',
@@ -32,5 +33,19 @@ export class ModalunoComponent {
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, me gustaría *agendar una reunión* para hablar sobre los *servicios o la venta de software personalizado* que ofrecen para mi negocio o empresa.`;
     window.open(enlaceWhatsApp, '_blank');
   }
+
+   readonly dialog = inject(MatDialog);
+
+  openDialogAgendar(idProducto: number, tipomensaje: number): void {
+        this.dialog.open(AgendarFormComponent, {
+          width: '1500px',
+          backdropClass: '',
+          disableClose: false,
+          data: {
+            idProducto: idProducto,
+            tipomensaje: tipomensaje
+          }
+        });
+      }
 
 }

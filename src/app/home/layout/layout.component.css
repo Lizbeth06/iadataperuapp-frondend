@@ -25,3 +25,34 @@
 .nav-item.dropdown:hover .dropdown-menu {
   display: block; /* Muestra el submenú al hacer hover */
 }
+
+
+  .toggler-close {
+    font-size: 32px;
+    color: white;
+    background: none;
+    border: none;
+    display: inline-block;
+    line-height: 1;
+  }
+  .navbar-toggler {
+    position: relative;
+    z-index: 1050;
+  }
+  .toggler-open {
+    display: inline-block;
+  }
+  .d-none {
+    display: none !important;
+  }
+
+  .top-bar a {
+  transition: all 0.3s ease;
+}
+
+.top-bar a:hover {
+  text-decoration: underline;
+  color: #f0f0f0;
+}
+
+

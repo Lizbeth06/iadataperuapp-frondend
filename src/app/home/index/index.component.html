@@ -15,10 +15,10 @@
                   <button mat-raised-button class="mb-2"><span class="material-icons">spatial_audio</span> Consultar</button>
                 </span>
               </mat-list-item>
-              <mat-list-item (click)="redirigirAWhatsAppAR()">
+              <mat-list-item (click)="openDialogAgendar(0,1)">
                 <button mat-raised-button class="mb-2"><span class="material-icons">calendar_month</span> Agendar Reunión</button>
               </mat-list-item>
-              <mat-list-item (click)="redirigirAWhatsAppST()">
+              <mat-list-item  routerLink="/servicio-tecnico">
                 <button mat-raised-button class="mb-2"><span class="material-icons">hail</span> Solicitar Soporte Técnico de Computadora a Domicilio</button>
               </mat-list-item>
             </mat-list>

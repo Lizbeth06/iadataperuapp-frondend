@@ -12,6 +12,8 @@ import { SafeUrlPipe } from '../../../services/safeUrlPipe';
 import { Listabeneficiosproducto } from '../../../model/listabeneficiosproducto';
 import { ListabeneficiosproductoService } from '../../../services/listabeneficiosproducto.service';
 import { ListadetalleproductoService } from '../../../services/listadetalleproducto.service';
+import { Listadetalleproducto } from '../../../model/listadetalleproducto';
+import { Modulosproducto } from '../../../model/modulosproducto';
 
 @Component({
   selector: 'app-ventasistemas-detalle',
@@ -23,8 +25,18 @@ import { ListadetalleproductoService } from '../../../services/listadetalleprodu
 export class VentasistemasDetalleComponent implements OnInit{
   titulo: string;
   producto!:Producto[];
+  listaproductovisitas!:Producto[];
+  listadetalleproducto!:Listadetalleproducto[];
   listabeneficiosPorProducto: { [idCurso: number]: Listabeneficiosproducto[] } = {};
   listabeneficiosPorProducto2: { [idCurso: number]: Listabeneficiosproducto[] } = {};
+  listadetallePorModuloPorProducto: {
+    [idProducto: number]: {
+      [idModulo: number]: {
+        modulo: Modulosproducto;
+        detalles: Listadetalleproducto[];
+      };
+    };
+  } = {};
   
   
   private productoService = inject(ProductoService);
@@ -43,6 +55,10 @@ export class VentasistemasDetalleComponent implements OnInit{
 
     this.productoService.findAllTitulo(this.titulo).subscribe((data) => { 
       this.producto = data;
+      if (this.producto.length > 0) {
+        this.registrarVisita(this.producto[0]); // Solo a la primera actividad con ese título
+      }
+
       const productosFiltradosTipo = data
 
       productosFiltradosTipo.forEach(producto => {
@@ -61,9 +77,61 @@ export class VentasistemasDetalleComponent implements OnInit{
           });
       });
 
+      productosFiltradosTipo.forEach(producto => {
+        this.listadetalleproductoService.findByProductoDetalleId(producto.idProducto)
+          .subscribe(listadetalle => {
+            const agrupadoPorModulo: {
+              [idModulo: number]: { modulo: Modulosproducto, detalles: Listadetalleproducto[] }
+            } = {};
+
+            listadetalle.forEach(detalle => {
+              const idModulo = detalle.modulosproducto.idModulosproducto;
+
+              if (!agrupadoPorModulo[idModulo]) {
+                agrupadoPorModulo[idModulo] = {
+                  modulo: detalle.modulosproducto,
+                  detalles: []
+                };
+              }
+
+              agrupadoPorModulo[idModulo].detalles.push(detalle);
+            });
+
+            this.listadetallePorModuloPorProducto[producto.idProducto] = agrupadoPorModulo;
+          });
+      });
+
+
+
+    });
+
+    this.productoService.findAll().subscribe((data) => {
+      this.listaproductovisitas = data
+        .sort((a, b) => b.totalvisitas - a.totalvisitas) // orden descendente
+        .slice(0, 3); // tomar solo las 3 primeras
     });
 
     });
+  }
+
+  registrarVisita(producto: Producto) {
+      const key = `visita_producto_${producto.idProducto}`;
+      const stored = localStorage.getItem(key);
+      const today = this.getTodayDate();
+  
+    
+        producto.totalvisitas++;
+        localStorage.setItem(key, today);
+  
+        // Llamar backend para actualizar totalvisitas
+        this.productoService.update(producto.idProducto, producto).subscribe(() => {
+          console.log('Visita registrada');
+        });
+     
+  }
+  getTodayDate(): string {
+    const today = new Date();
+    return today.toISOString().slice(0, 10);
   }
 
 
@@ -94,13 +162,18 @@ export class VentasistemasDetalleComponent implements OnInit{
   });
 }
 
-openDialogAgendar(idProducto: number): void {
-  this.dialog.open(AgendarFormComponent, {
-    width: '1500px',
-    backdropClass: '',
-    disableClose: false,
-    data: { idProducto }
-  });
-}
+  openDialogAgendar(idProducto: number, tipomensaje: number): void {
+    this.dialog.open(AgendarFormComponent, {
+      width: '1500px',
+      backdropClass: '',
+      disableClose: false,
+      data: {
+        idProducto: idProducto,
+        tipomensaje: tipomensaje
+      }
+    });
+  }
+
+
 
 }

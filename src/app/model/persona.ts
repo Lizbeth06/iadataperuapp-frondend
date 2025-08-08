@@ -15,5 +15,5 @@ export class Persona {
   urllinkeding: string;
   fnacimiento: Date | string;
   tipodocumento: Tipodocumento; 
-  ubigeo: Ubigeo;
+  ubigeo: Ubigeo|null;
 }

@@ -12,6 +12,9 @@ import { CheckoutFormComponent } from './checkout/checkout-form/checkout-form.co
 import { TallerListaComponent } from './curso/taller-lista/taller-lista.component';
 import { VentasistemasListaComponent } from './venta-sistemas/ventasistemas-lista/ventasistemas-lista.component';
 import { VentasistemasDetalleComponent } from './venta-sistemas/ventasistemas-detalle/ventasistemas-detalle.component';
+import { CheckoutProductoComponent } from './servicio-tecnico/checkout-producto/checkout-producto.component';
+import { FacturacionComponent } from './facturacion/facturacion.component';
+import { ProfesionalListaComponent } from './profesionales/profesional-lista/profesional-lista.component';
 
 export const HOME_ROUTES: Routes = [
     {
@@ -62,12 +65,24 @@ export const HOME_ROUTES: Routes = [
             component: CheckoutFormComponent
         },
         {
+            path:'producto/detalle-pago/checkout-producto',
+            component: CheckoutProductoComponent
+        },
+        {
             path: 'taller',
             component: TallerListaComponent
         },
         {
             path: 'micertificado',
             component: MicertificadoComponent
+        },
+        {
+            path: 'facturacion-electronica',
+            component: FacturacionComponent
+        },
+        {
+            path: 'profesionales',
+            component: ProfesionalListaComponent
         }
     ]
   }

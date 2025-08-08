@@ -27,18 +27,18 @@
                     <div class="curso-details">
                         <div class="left-details">
                             <p class="p-noplan" ><strong>Estado:</strong> {{sp.cantidad}} en Stock</p>
-                            <p class="p-noplan"><strong><i class="fas fa-list-alt"></i></strong> {{sp.categoria.descripcion}}</p>
-                            <p class="p-noplan"><strong><i class="fas fa-eye"></i></strong> 45 Visitas</p>
+                            <p class="p-noplan"><strong><i class="fas fa-list-alt"></i></strong> Sector {{sp.categoria.nombre}}</p>
+                            <p class="p-noplan"><strong><i class="fas fa-eye"></i></strong> {{sp.totalvisitas}} Visitas</p>
                         </div>
                      </div> 
                     <hr>
                     <div class="d-flex justify-content-center align-items-center gap-3 mb-3">
                         <button mat-raised-button class="custom-btn" (click)="openDialogCotizar(sp.idProducto)">
                             <span class="material-icons">hail</span>
-                            Solicitar mi Cotización
+                            Solicitar mi Cotización 
                         </button>
-                        <button mat-raised-button class="custom-btn" (click)="openDialogAgendar(sp.idProducto)">
-                            <span class="material-icons">calendar_month</span>
+                        <button mat-raised-button class="custom-btn" (click)="openDialogAgendar(sp.idProducto,2)">
+                            <span class="material-icons">calendar_month</span> 
                             Agendar Reunión
                         </button>
                     </div>
@@ -93,31 +93,37 @@
         }
        
 
-        <div class="row mb-3">
-          <div class="col-xl-3 col-lg-6">
-            <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Cutest dog breeds">
-                <mat-chip-option selected color="primary">Modulos :</mat-chip-option>
-            </mat-chip-listbox>
-          </div>
-          <div class="col-xl-9 col-lg-6">
-            <mat-accordion>
-                <mat-expansion-panel >
-                <mat-expansion-panel-header>
-                    <mat-panel-title>fhfhfh</mat-panel-title>
-                    <mat-panel-description> Sesión fhfhfh</mat-panel-description>
-                </mat-expansion-panel-header>
-            
-                <ul>
-                    <li>
-                    <mat-icon>check_circle</mat-icon>
-                    dgdgdg
-                    </li>
-                </ul>
-            
-                </mat-expansion-panel>
-            </mat-accordion>
-          </div>
+        <div *ngFor="let p of producto">
+            <div class="row mb-3">
+                <div class="col-xl-3 col-lg-6">
+                <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Modulos">
+                    <mat-chip-option selected color="primary">Módulos :</mat-chip-option>
+                </mat-chip-listbox>
+                </div>
+
+                <div class="col-xl-9 col-lg-6">
+                <mat-accordion *ngIf="listadetallePorModuloPorProducto[p.idProducto]">
+                 
+                    <ng-container *ngFor="let mod of listadetallePorModuloPorProducto[p.idProducto] | keyvalue;let i = index">
+                    <mat-expansion-panel>
+                        <mat-expansion-panel-header>
+                        <mat-panel-title>M-{{i+1}} {{ mod.value.modulo.titulo }}</mat-panel-title>
+                        <mat-panel-description>{{ mod.value.modulo.descripcion }}</mat-panel-description>
+                        </mat-expansion-panel-header>
+
+                        <ul>
+                        <li *ngFor="let detalle of mod.value.detalles">
+                            <mat-icon>check_circle</mat-icon>
+                            {{ detalle.descripcion }}
+                        </li>
+                        </ul>
+                    </mat-expansion-panel>
+                    </ng-container>
+                </mat-accordion>
+                </div>
+            </div>
         </div>
+
     </div>
     
    

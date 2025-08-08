@@ -1,182 +1,184 @@
-    <!-- ========================= preloader start ========================= -->
-    <div class="preloader">
-        <div class="loader">
-        <div class="spinner">
-            <div class="spinner-container">
-            <div class="spinner-rotator">
-                <div class="spinner-left">
-                <div class="spinner-circle"></div>
-                </div>
-                <div class="spinner-right">
-                <div class="spinner-circle"></div>
-                </div>
-            </div>
-            </div>
+<!-- ========================= preloader start ========================= -->
+<div class="preloader">
+  <div class="loader">
+    <div class="spinner">
+      <div class="spinner-container">
+        <div class="spinner-rotator">
+          <div class="spinner-left">
+            <div class="spinner-circle"></div>
+          </div>
+          <div class="spinner-right">
+            <div class="spinner-circle"></div>
+          </div>
         </div>
-        </div>
+      </div>
     </div>
-    <!-- ========================= preloader end ========================= -->
+  </div>
+</div>
+<!-- ========================= preloader end ========================= -->
 
-    <!-- ========================= hero-section-wrapper-5 start ========================= -->
-    <section id="home" class="hero-section-wrapper-5">
+<!-- ========================= top-bar start ========================= -->
+<div class="top-bar text-white py-1" style="background-color: #14563a;">
+  <div class="container">
+    <div class="d-flex justify-content-end align-items-center">
+      <a routerLink="/" class="text-white me-3 text-decoration-none">
+        <i class="fas fa-user"></i> Campus
+      </a>
+      <a href="#contacto" class="text-white text-decoration-none">
+        <i class="fas fa-envelope"></i> Contacto
+      </a>
+    </div>
+  </div>
+</div>
 
-        <!-- ========================= header-6 start ========================= -->
-        <header class="header header-6">
-            <div class="navbar-area"> 
-                <div class="container">
-                <div class="row align-items-center">
-                    <div class="col-lg-12">
-                    <nav class="navbar navbar-expand-lg">
-                        <a class="navbar-brand d-flex align-items-center" href="">
-                            <img src="assets/img/logo2.png" alt="Logo" height="40px"/>
-                            <h2 class="mb-0 ms-3 mat-display-3 ctexto-blanco">IADATA PERÚ</h2>
-                        </a>
-                        <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent6" aria-controls="navbarSupportedContent6" aria-expanded="false" aria-label="Toggle navigation">
-                        <span class="toggler-icon"></span>
-                        <span class="toggler-icon"></span>
-                        <span class="toggler-icon"></span>
-                        </button>
+<!-- ========================= top-bar end ========================= -->
 
-                        <div class="collapse navbar-collapse sub-menu-bar" id="navbarSupportedContent6">
-                        <ul id="nav6" class="navbar-nav ms-auto">
-                            <li class="nav-item">
-                            <a class="page-scroll" routerLink="/" class="no-underline">Inicio</a>
-                            </li>
-                            <li class="nav-item"> 
-                                <a class="page-scroll" routerLink="/nosotros">Nosotros</a>
-                            </li>
-                            <li class="nav-item">
-                                <a class="page-scroll" href="#servicios">Servicios</a>
-                            </li>
-                            <li class="nav-item">
-                            <a class="page-scroll" href="#planes">Planes</a>
-                            </li>
-                            <li class="nav-item dropdown">
-                                <a class="page-scroll dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Catálogo
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" routerLink="/venta-sistemas" style="color:#000000;">Sistemas en Venta</a></li>
-                                    <li><a class="dropdown-item" routerLink="/venta-accesorios" style="color:#000000;">Accesorios</a></li>
-                                    <li><a class="dropdown-item" routerLink="/servicio-tecnico" style="color:#000000;">Soporte Técnico</a></li>
-                                </ul>
-                            </li>
+<!-- ========================= hero-section-wrapper-5 start ========================= -->
+<section id="home" class="hero-section-wrapper-5">
 
-                            <li class="nav-item dropdown">
-                                <a class="page-scroll dropdown-toggle" href="#" role="button" data-bs-toggle="dropdown" aria-expanded="false">
-                                    Formación
-                                </a>
-                                <ul class="dropdown-menu" aria-labelledby="navbarDropdown">
-                                    <li><a class="dropdown-item" routerLink="/curso" style="color:#000000;">Cursos</a></li>
-                                    <li><a class="dropdown-item" routerLink="/taller" style="color:#000000;">Taller</a></li>
-                                </ul>
-                            </li>
-                          
-                            <li class="nav-item">
-                               <a class="page-scroll" routerLink="/micertificado" style="background-color: rgb(255, 0, 0);">Mi Certificado</a>
-                            </li>
+  <!-- ========================= header-6 start ========================= -->
+  <header class="header header-6">
+    <div class="navbar-area">
+      <div class="container">
+        <div class="row align-items-center">
+          <div class="col-lg-12">
+            <nav class="navbar navbar-expand-lg">
+              <a class="navbar-brand d-flex align-items-center" href="">
+                <img src="assets/img/logo2.png" alt="Logo" height="40px" />
+                <h2 class="mb-0 ms-3 mat-display-3 ctexto-blanco">IADATA PERÚ</h2>
+              </a>
+              <button class="navbar-toggler" type="button" (click)="toggleNavbar()" aria-label="Toggle navigation">
+                <ng-container *ngIf="!navbarOpen">
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                  <span class="toggler-icon"></span>
+                </ng-container>
+                <ng-container *ngIf="navbarOpen">
+                  <span class="toggler-close">&times;</span>
+                </ng-container>
+              </button>
 
-                            <li class="nav-item">
-                                <a class="page-scroll" routerLink="/" style="background-color: rgb(159, 214, 30);"><i class="fas fa-user"></i> Campus</a>
-                             </li>
-
-                            <li class="nav-item">
-                                <a class="page-scroll" href="#contacto">Contacto</a>
-                             </li>
-                        </ul>
-                        </div>
-
-                        <div class="header-action d-flex">
-                           <a href="#0"> <i class="lni lni-cart"></i> </a>
-                        </div>
-                        <!-- navbar collapse -->
-                    </nav>
-                    <!-- navbar -->
-                    </div>
-                </div>
-                <!-- row -->
-                </div>
-                <!-- container -->
-            </div>
-            <!-- navbar area -->
-        </header>
-        <!-- ========================= header-6 end ========================= -->
-
-        <router-outlet></router-outlet>
-
-    </section>
-    <!-- ========================= hero-section-wrapper-6 end ========================= -->
-    <!-- ========================= footer style-4 start ========================= -->
-    <footer class="footer footer-style-4 page_iadata4">
-        <div class="container">
-            <div class="widget-wrapper">
-                <div class="row">
-                    <div class="col-xl-3 col-lg-4 col-md-6">
-                        <div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
-                            <div class="logo logo_header"> 
-                                <a href="#"> <img src="assets/img/logo2.png" alt="" height="80px"> </a>
-                            </div>
-                            <p class="desc ctexto-blanco" style="text-align:justify">Avanzando juntos hacia un futuro digital más brillante. En IADATA PERÚ nos especializamos en construir y proporcionar soluciones de software innovadoras y de alta calidad, diseñadas para empoderar tanto a empresas privadas como a entidades públicas.</p>
-                            <ul class="socials">
-                                <li> <a href="https://www.facebook.com/profile.php?id=61555022295719" target="_blank"> <i class="lni lni-facebook-filled"></i> </a> </li>
-                                <li> <a href="#0"> <i class="lni lni-twitter-filled"></i> </a> </li>
-                                <li> <a href="#0"> <i class="lni lni-instagram-filled"></i> </a> </li>
-                                <li> <a href="#0"> <i class="lni lni-linkedin-original"></i> </a> </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6 col-sm-6">
-                        <div class="footer-widget wow fadeInUp" data-wow-delay=".3s">
-                            <h6>Enlaces Rápidos</h6>
-                            <ul class="links">
-                                <li> <a href="#" >Inicio</a> </li>
-                                <li> <a href="/nosotros">Acerca de Nostros</a> </li>
-                                <li> <a href="#servicios">Servicios</a> </li>
-                                <li> <a href="/catalogo">Catálogo</a> </li>
-                                <li> <a href="#contacto">Contacto</a> </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
-                        <div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
-                            <h6>Servicios</h6>
-                            <ul class="links">
-                                <li> <a href="#servicios">Venta de Sistemas</a> </li>
-                                <li> <a href="#servicios">Consultoria y Desarrollo de Sistemas</a> </li>
-                                <li> <a href="#servicios">Soporte Técnico de computadoras a Domicilio</a> </li>
-                                <li> <a href="#servicios">Venta de Ticket y Rollos</a> </li>
-                            </ul>
-                        </div>
-                    </div>
-                    <div class="col-xl-3 col-lg-3 col-md-6">
-                        <div class="footer-widget wow fadeInUp" data-wow-delay=".5s">
-                            <h6>Descargar Aplicación</h6>
-                            <ul class="download-app">
-                                <li>
-                                    <a href="#0">
-                                        <span class="icon"><i class="lni lni-apple"></i></span>
-                                        <span class="text">Descargar en <b>App Store</b> </span>
-                                    </a>
-                                </li>
-                                <li>
-                                    <a href="#0">
-                                        <span class="icon"><i class="lni lni-play-store"></i></span>
-                                        <span class="text">OBTÉNLO EN <b>Play Store</b> </span>
-                                    </a>
-                                </li>
-                            </ul>
-                        </div>
-                    </div>
-                </div>
-            </div>
-            <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
-                <p>Derechos Reservados© 2025 <strong>IADATA PERÚ</strong> | Gracias por tu visita.</p>
-            </div>
+              <div class="collapse navbar-collapse sub-menu-bar" [ngClass]="{'show': navbarOpen}" id="navbarSupportedContent6">
+                <ul id="nav6" class="navbar-nav ms-auto" (click)="closeNavbar()">
+                  <li class="nav-item">
+                    <a class="page-scroll" routerLink="/">Inicio</a>
+                  </li>
+                  <li class="nav-item dropdown" [class.show]="isNosotrosOpen" (click)="toggleDropdown('nosotros', $event)">
+                    <a class="page-scroll dropdown-toggle" href="#">Nosotros</a>
+                    <ul class="dropdown-menu" [class.show]="isNosotrosOpen">
+                      <li><a class="dropdown-item" routerLink="/nosotros" style="color:#000000;">¿IADATA PERÚ?</a></li>
+                      <li><a class="dropdown-item" routerLink="/profesionales" style="color:#000000;">Profesionales</a></li>
+                    </ul>
+                  </li>
+              
+                  <!--<li class="nav-item">
+                    <a class="page-scroll" href="#servicios">Servicios</a>
+                  </li>-->
+                  <li class="nav-item dropdown" [class.show]="isCatalogoOpen" (click)="toggleDropdown('catalogo', $event)">
+                    <a class="page-scroll dropdown-toggle" href="#">Servicios</a>
+                    <ul class="dropdown-menu" [class.show]="isCatalogoOpen">
+                      <li><a class="dropdown-item" routerLink="/venta-sistemas" style="color:#000000;">Sistemas en Venta</a></li>
+                      <li><a class="dropdown-item" routerLink="/facturacion-electronica" style="color:#000000;">Plan de Facturación</a></li>
+                      <li><a class="dropdown-item" routerLink="/venta-accesorios" style="color:#000000;">Accesorios</a></li>
+                      <li><a class="dropdown-item" routerLink="/servicio-tecnico" style="color:#000000;">Soporte Técnico</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item dropdown" [class.show]="isFormacionOpen" (click)="toggleDropdown('formacion', $event)">
+                    <a class="page-scroll dropdown-toggle" href="#">Formación</a>
+                    <ul class="dropdown-menu" [class.show]="isFormacionOpen">
+                      <li><a class="dropdown-item" routerLink="/curso" style="color:#000000;">Cursos</a></li>
+                      <li><a class="dropdown-item" routerLink="/taller" style="color:#000000;">Taller</a></li>
+                    </ul>
+                  </li>
+                  <li class="nav-item">
+                    <a class="page-scroll" routerLink="/micertificado" style="background-color: rgb(255, 0, 0);">Mi Certificado</a>
+                  </li>
+                </ul>
+              </div>
+            </nav>
+          </div>
         </div>
-    </footer>
+      </div>
+    </div>
+  </header>
+  <!-- ========================= header-6 end ========================= -->
 
-    <!-- ========================= footer style-4 end ========================= -->
+  <router-outlet></router-outlet>
+</section>
+<!-- ========================= hero-section-wrapper-6 end ========================= -->
 
-  <!-- ========================= scroll-top start ========================= -->
-  <a href="#" class="scroll-top"> <i class="lni lni-chevron-up"></i> </a>
-  <!-- ========================= scroll-top end ========================= -->
+<!-- ========================= footer start ========================= -->
+<footer class="footer footer-style-4 page_iadata4">
+  <div class="container">
+    <div class="widget-wrapper">
+      <div class="row">
+        <div class="col-xl-3 col-lg-4 col-md-6">
+          <div class="footer-widget wow fadeInUp" data-wow-delay=".2s">
+            <div class="logo logo_header">
+              <a href="#"> <img src="assets/img/logo2.png" alt="" height="80px"> </a>
+            </div>
+            <p class="desc ctexto-blanco" style="text-align:justify">
+              Avanzando juntos hacia un futuro digital más brillante. En IADATA PERÚ nos especializamos en construir y proporcionar soluciones de software innovadoras y de alta calidad, diseñadas para empoderar tanto a empresas privadas como a entidades públicas.
+            </p>
+            <ul class="socials">
+              <li><a href="https://www.facebook.com/profile.php?id=61555022295719" target="_blank"><i class="lni lni-facebook-filled"></i></a></li>
+              <li><a href="#0"><i class="lni lni-twitter-filled"></i></a></li>
+              <li><a href="#0"><i class="lni lni-instagram-filled"></i></a></li>
+              <li><a href="#0"><i class="lni lni-linkedin-original"></i></a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-2 offset-xl-1 col-lg-2 col-md-6 col-sm-6">
+          <div class="footer-widget wow fadeInUp" data-wow-delay=".3s">
+            <h6>Enlaces Rápidos</h6>
+            <ul class="links">
+              <li><a href="#">Inicio</a></li>
+              <li><a href="/nosotros">Acerca de Nosotros</a></li>
+              <li><a href="#servicios">Servicios</a></li>
+              <li><a href="/catalogo">Catálogo</a></li>
+              <li><a href="#contacto">Contacto</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6 col-sm-6">
+          <div class="footer-widget wow fadeInUp" data-wow-delay=".4s">
+            <h6>Servicios</h6>
+            <ul class="links">
+              <li><a href="#servicios">Venta de Sistemas</a></li>
+              <li><a href="#servicios">Consultoría y Desarrollo de Sistemas</a></li>
+              <li><a href="#servicios">Soporte Técnico a Domicilio</a></li>
+              <li><a href="#servicios">Venta de Tickets y Rollos</a></li>
+            </ul>
+          </div>
+        </div>
+        <div class="col-xl-3 col-lg-3 col-md-6">
+          <div class="footer-widget wow fadeInUp" data-wow-delay=".5s">
+            <h6>Descargar Aplicación</h6>
+            <ul class="download-app">
+              <li>
+                <a href="#0">
+                  <span class="icon"><i class="lni lni-apple"></i></span>
+                  <span class="text">Descargar en <b>App Store</b></span>
+                </a>
+              </li>
+              <li>
+                <a href="#0">
+                  <span class="icon"><i class="lni lni-play-store"></i></span>
+                  <span class="text">OBTÉNLO EN <b>Play Store</b></span>
+                </a>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="copyright-wrapper wow fadeInUp" data-wow-delay=".2s">
+      <p>Derechos Reservados© 2025 <strong>IADATA PERÚ</strong> | Gracias por tu visita.</p>
+    </div>
+  </div>
+</footer>
+<!-- ========================= footer end ========================= -->
+
+<!-- ========================= scroll-top start ========================= -->
+<a href="#" class="scroll-top"><i class="lni lni-chevron-up"></i></a>
+<!-- ========================= scroll-top end ========================= -->

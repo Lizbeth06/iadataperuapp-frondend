@@ -12,5 +12,5 @@ export class Mensaje {
   fregistro:       Date;
   tipomensaje:     number;
   persona:         Persona;
-  producto:        Producto;
+  producto:        Producto | null;
 }

@@ -15,7 +15,7 @@ import { RucService } from '../../../services/ruc.service';
 import Swal from 'sweetalert2';
 import { MensajeService } from '../../../services/mensaje.service';
 import { Mensaje } from '../../../model/mensaje';
-
+ 
 @Component({
   selector: 'app-ventasistemas-cotizar',
   standalone: true,
@@ -42,12 +42,13 @@ export class VentasistemasCotizarComponent implements OnInit{
   private mensajeService = inject(MensajeService);
 
   constructor(
-      @Inject(MAT_DIALOG_DATA) private data: Producto,
-      private dialogRef: MatDialogRef<VentasistemasCotizarComponent>,
-      private fb:FormBuilder,
-    ){
+    @Inject(MAT_DIALOG_DATA) private data: Producto,
+    private dialogRef: MatDialogRef<VentasistemasCotizarComponent>,
+    private fb:FormBuilder,
+  ){
   
-    }
+  }
+
   ngOnInit(): void {
     this.producto={ ...this.data};
 
@@ -212,91 +213,91 @@ export class VentasistemasCotizarComponent implements OnInit{
   }
 
   operate() {
-  const tipodocumento = this.form.get('tipodocumento')?.value;
-  const numDocumento = this.form.get('numDocumento')?.value;
+    const tipodocumento = this.form.get('tipodocumento')?.value;
+    const numDocumento = this.form.get('numDocumento')?.value;
 
-  this.personaService.findTipodocByNumdoc(tipodocumento, numDocumento).pipe(
-    switchMap(personasEncontradas => {
-      if (personasEncontradas && personasEncontradas.length > 0) {
-        return of(personasEncontradas[0]); // ya existe
-      } else {
-        // guardar nueva persona sin esperar respuesta con id
-        const personaNueva: Persona = {
-          numDocumento: numDocumento,
-          nombres: this.form.get('nombres')?.value,
-          apaterno: this.form.get('apaterno')?.value,
-          amaterno: this.form.get('amaterno')?.value,
-          genero: this.form.get('genero')?.value ?? 1,
-          correo: this.form.get('correo')?.value,
-          telefono: this.form.get('telefono')?.value,
-          direccion: this.form.get('direccion')?.value,
-          urllinkeding: '',
-          fnacimiento: '',
-          tipodocumento: { idTipoDocumento: tipodocumento } as Tipodocumento,
-          ubigeo: { idUbigeo: this.form.get('ubiDistrito')?.value } as Ubigeo,
-        } as Persona;
+    this.personaService.findTipodocByNumdoc(tipodocumento, numDocumento).pipe(
+      switchMap(personasEncontradas => {
+        if (personasEncontradas && personasEncontradas.length > 0) {
+          return of(personasEncontradas[0]); // ya existe
+        } else {
+          // guardar nueva persona sin esperar respuesta con id
+          const personaNueva: Persona = {
+            numDocumento: numDocumento,
+            nombres: this.form.get('nombres')?.value,
+            apaterno: this.form.get('apaterno')?.value,
+            amaterno: this.form.get('amaterno')?.value,
+            genero: this.form.get('genero')?.value ?? 1,
+            correo: this.form.get('correo')?.value,
+            telefono: this.form.get('telefono')?.value,
+            direccion: this.form.get('direccion')?.value,
+            urllinkeding: '',
+            fnacimiento: '',
+            tipodocumento: { idTipoDocumento: tipodocumento } as Tipodocumento,
+            ubigeo: { idUbigeo: this.form.get('ubiDistrito')?.value } as Ubigeo,
+          } as Persona;
 
-        return this.personaService.save(personaNueva).pipe(
-          // 🔁 luego del POST, consultar por documento para obtener el idPersona
-          switchMap(() =>
-            this.personaService.findTipodocByNumdoc(tipodocumento, numDocumento).pipe(
-              switchMap(result => {
-                if (result && result.length > 0) {
-                  return of(result[0]); // <- devuelve directamente el Observable<Persona>
-                } else {
-                  throw new Error('No se pudo obtener persona recién creada.');
-                }
-              })
+          return this.personaService.save(personaNueva).pipe(
+            // 🔁 luego del POST, consultar por documento para obtener el idPersona
+            switchMap(() =>
+              this.personaService.findTipodocByNumdoc(tipodocumento, numDocumento).pipe(
+                switchMap(result => {
+                  if (result && result.length > 0) {
+                    return of(result[0]); // <- devuelve directamente el Observable<Persona>
+                  } else {
+                    throw new Error('No se pudo obtener persona recién creada.');
+                  }
+                })
+              )
             )
-          )
 
 
 
-        );
+          );
+        }
+      }),
+      switchMap((personaGuardada: Persona) => {
+        this.mensaje = {
+          asunto: `Cotización de ${this.producto.titulo}`,
+          descripcion: '',
+          tiporeunion: 1,
+          fechaprogramado: new Date(),
+          horainicio: '00:00',
+          horafin: '00:00',
+          fregistro: new Date(),
+          tipomensaje: 2,
+          persona: personaGuardada,
+          producto: { idProducto: this.producto.idProducto } as Producto,
+        } as Mensaje;
+
+        return this.mensajeService.save(this.mensaje);
+      })
+    ).subscribe({
+      next: () => {
+        this.mensajeService.findAll().subscribe(data => {
+          this.mensajeService.setMensajeChange(data);
+          this.mensajeService.setMessageChange('SE REGISTRÓ');
+        });
+
+        Swal.fire({
+          icon: 'success',
+          title: 'Cotización enviada',
+          text: 'Tu mensaje fue registrado correctamente.',
+          confirmButtonText: 'Aceptar'
+        });
+
+        this.close();
+      },
+      error: err => {
+        console.error('Error al registrar mensaje:', err);
+        Swal.fire({
+          icon: 'error',
+          title: 'Error',
+          text: 'Ocurrió un problema al guardar el mensaje.',
+        });
       }
-    }),
-    switchMap((personaGuardada: Persona) => {
-      this.mensaje = {
-        asunto: `Cotización de ${this.producto.titulo}`,
-        descripcion: '',
-        tiporeunion: 1,
-        fechaprogramado: new Date(),
-        horainicio: '00:00',
-        horafin: '00:00',
-        fregistro: new Date(),
-        tipomensaje: 2,
-        persona: personaGuardada,
-        producto: { idProducto: this.producto.idProducto } as Producto,
-      } as Mensaje;
-
-      return this.mensajeService.save(this.mensaje);
-    })
-  ).subscribe({
-    next: () => {
-      this.mensajeService.findAll().subscribe(data => {
-        this.mensajeService.setMensajeChange(data);
-        this.mensajeService.setMessageChange('SE REGISTRÓ');
-      });
-
-      Swal.fire({
-        icon: 'success',
-        title: 'Cotización enviada',
-        text: 'Tu mensaje fue registrado correctamente.',
-        confirmButtonText: 'Aceptar'
-      });
-
-      this.close();
-    },
-    error: err => {
-      console.error('Error al registrar mensaje:', err);
-      Swal.fire({
-        icon: 'error',
-        title: 'Error',
-        text: 'Ocurrió un problema al guardar el mensaje.',
-      });
-    }
-  });
-}
+    });
+  }
 
 
 

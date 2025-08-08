@@ -9,6 +9,7 @@ import { ModalsoportetecnicoComponent } from './modalsoportetecnico/modalsoporte
 import { ModalaccesoriosComponent } from './modalaccesorios/modalaccesorios.component';
 import { AfterViewInit } from '@angular/core';
 import { tns } from 'tiny-slider/src/tiny-slider'; 
+import { AgendarFormComponent } from '../agendar/agendar-form/agendar-form.component';
 declare var bootstrap: any;
 @Component({
   selector: 'app-index',
@@ -141,5 +142,18 @@ export class IndexComponent implements AfterViewInit {
       console.log('El modal se cerró');
     });
   }
+
+  openDialogAgendar(idProducto: number, tipomensaje: number): void {
+    this.dialog.open(AgendarFormComponent, {
+      width: '1500px',
+      backdropClass: '',
+      disableClose: false,
+      data: {
+        idProducto: idProducto,
+        tipomensaje: tipomensaje
+      }
+    });
+  }
+
 
 }

@@ -1,4 +1,4 @@
-import { Component } from '@angular/core';
+import { Component, inject } from '@angular/core';
 import {
   MatDialog,
   MatDialogActions,
@@ -9,11 +9,12 @@ import {
 import { MaterialModule } from '../../../material/material.module';
 import { CommonModule } from '@angular/common';
 import { RouterLink } from '@angular/router';
+import { AgendarFormComponent } from '../../agendar/agendar-form/agendar-form.component';
 
 @Component({
   selector: 'app-modalconsultoria',
   standalone: true,
-  imports: [CommonModule,MaterialModule, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose,RouterLink],
+  imports: [CommonModule,MaterialModule, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose],
   templateUrl: './modalconsultoria.component.html',
   styleUrl: './modalconsultoria.component.css'
 })
@@ -29,5 +30,19 @@ export class ModalconsultoriaComponent {
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, me gustaría *agendar una reunión* para hablar sobre la *consultoría en soluciones empresariales con documentos digitales* que necesito para mi negocio o empresa`;
     window.open(enlaceWhatsApp, '_blank');
   }
+
+  readonly dialog = inject(MatDialog);
+
+  openDialogAgendar(idProducto: number, tipomensaje: number): void {
+      this.dialog.open(AgendarFormComponent, {
+        width: '1500px',
+        backdropClass: '',
+        disableClose: false,
+        data: {
+          idProducto: idProducto,
+          tipomensaje: tipomensaje
+        }
+      });
+    }
 
 }
