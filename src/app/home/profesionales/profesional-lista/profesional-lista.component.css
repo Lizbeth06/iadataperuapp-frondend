@@ -151,129 +151,83 @@
   background-color: #0c553e; /* Color de fondo para Tarjeta 3 */
 }
 
-.price {
-  font-weight: bold;
-  margin-top: 10px;
-}
-
-
-
-.card1 p {
-  /* Ajustes de estilo para el texto dentro de la tarjeta */
-   /* Color de texto blanco para contrastar con el fondo oscuro */
-  padding: 10px; /* Espaciado interno para mejorar la legibilidad */
-}
-
-
-.plan-titulo {
-  color: white;
-  font-size: 33px;
-  line-height: 40px;
-  text-shadow: 3px 3px 5px #707070;
-  font-weight: 900;
+.card__name {
+  margin: 0;
   padding: 0;
 }
 
-.precio-regular {
-  color: white;
-  font-size: 18px;
-  font-weight: 600;
-}
-
-.precio-precio {
-  font-size: 64px;
-  font-weight: 900;
-  display: flex;
-  margin-top: 15px;
-  align-items: center;
-  justify-content: center;
-}
-
-.moneda {
-  font-size: 37px;
-  font-weight: 700;
-}
-
-.datos-precio {
-  font-size: 18px;
-  padding: 20px 20px 0;
-}
-
-.ideal {
-  font-size: 16px;
-  line-height: 20px;
-  font-weight: 600;
-  margin: 20px 0 25px;
-  justify-content: center; /* Centrar horizontalmente */
-  align-items: center;
-  color: #87909d;
-}
-
-.precio-promo {
-  margin-top: 5px;
-  color: white;
-}
-
-.example-card {
-  max-width: 400px;
-  margin-bottom: 8px;
-}
-
-.large-imagelogo{
-  width: 100%;
-  height: 80px;
-}
-
-.example-card {
-  background-color: #152024; /* Cambia el color de fondo de toda la tarjeta a gris claro */
-}
-
-.logo-tamano {
-  width: 80px;
-  height: 80px;
-}
-
-.p-plan {
-  align-items: center;
-  color: #ffffff;
-  display: flex;
-  font-size: .75rem;
-  font-weight: 400;
-  gap: .5rem;
-  letter-spacing: .019rem;
-  letter-spacing: .3px;
-  line-height: 1.125rem;
-  text-decoration: none;
-  text-transform: none;
+.card__name p {
   margin: 0;
+  padding: 0;
+  line-height: 1;
 }
 
-.p-noplan {
-  align-items: center;
-  color: #87909d;
+.card__profession {
+  font-size: 0.75em;     /* Tamaño pequeño */
+  color: #cccccc;         /* Gris claro para diferencia visual */
+  display: block;
+  margin-top: 2px;        /* Apenas un pequeño espacio */
+  line-height: 1;
+}
+
+
+mat-form-field.mat-mdc-form-field {
+  --mdc-outlined-text-field-outline-color: #00ff00; /* Verde */
+  --mdc-outlined-text-field-focus-outline-color: #00ff00;
+  --mdc-theme-primary: #00ff00;
+}
+
+.mat-mdc-form-field .mat-mdc-floating-label {
+  color: #ccc;
+}
+
+.mat-mdc-form-field.mat-focused .mat-mdc-floating-label {
+  color: #00ff00;
+}
+
+/* ✅ Cambiar color del texto del input */
+.mat-mdc-form-field input.mat-mdc-input-element {
+  color: #ffffff; /* blanco, puedes usar #00ff00 si lo quieres verde */
+}
+
+/* ✅ Cambiar color del placeholder */
+.mat-mdc-form-field input::placeholder {
+  color: #aaaaaa; /* gris claro */
+  opacity: 1; /* fuerza visibilidad en todos los navegadores */
+}
+
+
+
+.card__article {
   display: flex;
-  font-size: .75rem;
-  font-weight: 400;
-  gap: .5rem;
-  letter-spacing: .019rem;
-  letter-spacing: .3px;
-  line-height: 1.125rem;
-  text-decoration: none;
-  text-transform: none;
+  flex-direction: column;
+  height: 100%;
+}
+
+.card__data {
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.card__description-wrapper {
+  min-height: 80px;
+  max-height: 80px;
+  overflow: hidden;
+  display: -webkit-box; /* máximo 4 líneas */
+  -webkit-box-orient: vertical;
+}
+
+.card__description {
   margin: 0;
+  color: white;
+  font-size: 0.9rem;
+  line-height: 1.2;
 }
 
-.titulo-portada {
-  color: white;
-  font-size: 80px;
-  line-height: 3rem;
-}
 
-.subtitulo-portada {
-  color: white;
-  font-size: 20px;
-  line-height: 3rem;
-}
+
+
 
 
 

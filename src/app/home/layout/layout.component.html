@@ -18,13 +18,19 @@
 <!-- ========================= preloader end ========================= -->
 
 <!-- ========================= top-bar start ========================= -->
-<div class="top-bar text-white py-1" style="background-color: #14563a;">
+<div class="top-bar text-white py-2" style="background-color: #14563a;">
   <div class="container">
     <div class="d-flex justify-content-end align-items-center">
-      <a routerLink="/" class="text-white me-3 text-decoration-none">
-        <i class="fas fa-user"></i> Campus
+      <a routerLink="/iantropia" class="text-white me-3 text-decoration-none">
+        <i class="fas fa-hands-helping"></i> IAntropia
       </a>
-      <a href="#contacto" class="text-white text-decoration-none">
+      <a routerLink="/convocatoria" class="text-white me-3 text-decoration-none">
+        <i class="fas fa-bullhorn"></i> Comvocatoria
+      </a>
+      <a routerLink="/" class="text-white me-3 text-decoration-none">
+        <i class="fas fa-graduation-cap"></i> Campus
+      </a>
+      <a routerLink="/contacto" class="text-white text-decoration-none">
         <i class="fas fa-envelope"></i> Contacto
       </a>
     </div>
@@ -78,7 +84,7 @@
                     <a class="page-scroll dropdown-toggle" href="#">Servicios</a>
                     <ul class="dropdown-menu" [class.show]="isCatalogoOpen">
                       <li><a class="dropdown-item" routerLink="/venta-sistemas" style="color:#000000;">Sistemas en Venta</a></li>
-                      <li><a class="dropdown-item" routerLink="/facturacion-electronica" style="color:#000000;">Plan de Facturación</a></li>
+                      <li><a class="dropdown-item" routerLink="/facturacion-electronica" style="color:#000000;">Facturación Electrónica</a></li>
                       <li><a class="dropdown-item" routerLink="/venta-accesorios" style="color:#000000;">Accesorios</a></li>
                       <li><a class="dropdown-item" routerLink="/servicio-tecnico" style="color:#000000;">Soporte Técnico</a></li>
                     </ul>

@@ -144,7 +144,9 @@
   transform: translateY(-1px); /* pequeño levantamiento */
 }
   
-
+.resaltado {
+      background-color: yellow; /* Cambia el color a amarillo */
+    }
 
 
 

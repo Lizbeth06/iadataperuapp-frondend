@@ -1,6 +1,6 @@
-import { Component,OnInit } from '@angular/core';
+import { Component,CUSTOM_ELEMENTS_SCHEMA,inject,LOCALE_ID,OnInit } from '@angular/core';
 import { RouterLink, RouterModule } from '@angular/router';
-import { CommonModule } from '@angular/common';
+import { CommonModule, DatePipe } from '@angular/common';
 import { MaterialModule } from '../../material/material.module';
 import { MatDialog } from '@angular/material/dialog';
 import { ModalunoComponent } from './modaluno/modaluno.component';
@@ -10,15 +10,35 @@ import { ModalaccesoriosComponent } from './modalaccesorios/modalaccesorios.comp
 import { AfterViewInit } from '@angular/core';
 import { tns } from 'tiny-slider/src/tiny-slider'; 
 import { AgendarFormComponent } from '../agendar/agendar-form/agendar-form.component';
+import { CursoService } from '../../services/curso.service';
+import { Curso } from '../../model/curso';
+import { Listahorarios } from '../../model/listahorarios';
+import { SafeHtml } from '@angular/platform-browser';
+import { register } from 'swiper/element/bundle';
+
+// Registrar los componentes web de Swiper (incluye Coverflow, Pagination, etc.)
+register();
+
 declare var bootstrap: any;
 @Component({
-  selector: 'app-index',
+  selector: 'app-index', 
   standalone: true,
   imports: [CommonModule,MaterialModule,RouterModule],
   templateUrl: './index.component.html',
-  styleUrl: './index.component.css'
+  styleUrl: './index.component.css',
+  providers: [
+      { provide: LOCALE_ID, useValue: 'es' },  // Establecer la configuración regional
+      DatePipe 
+    ],
+    schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class IndexComponent implements AfterViewInit {
+
+  cursoslista!:Curso[];
+  horariosPorCurso: { [idCurso: number]: Listahorarios[] } = {};
+
+  private datePipe = inject(DatePipe);
+  private cursoService= inject(CursoService);
 
   ngAfterViewInit() {
     
@@ -90,6 +110,10 @@ export class IndexComponent implements AfterViewInit {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
       this.currentImage = this.images[this.currentIndex];
     }, 5000); // Cambia la imagen cada 5 segundos (5000 milisegundos)
+
+    this.cursoService.findAll().subscribe((datas)=>{
+      this.cursoslista=datas;
+    })
   }
 
 
@@ -154,6 +178,67 @@ export class IndexComponent implements AfterViewInit {
       }
     });
   }
+
+  getStatus(fechaInicio: Date, fechaFinal: Date) {
+    const currentDate = new Date();
+
+    // Convertir las fechas de string a objetos Date si es necesario
+    const startDate = new Date(fechaInicio);
+    const endDate = new Date(fechaFinal);
+
+    // Si la fecha de inicio aún no ha llegado
+    if (currentDate < startDate) {
+      return {
+        status: 'Próximamente',
+        color: 'green',
+        formattedDate: this.datePipe.transform(startDate, 'd MMMM yyyy')!
+      };
+    }
+    // Si la fecha de inicio ha pasado pero la fecha final aún no ha llegado
+    else if (currentDate >= startDate && currentDate <= endDate) {
+      return {
+        status: 'Ya inicializado',
+        color: 'blue',
+        formattedDate: ''
+      };
+    }
+    // Si la fecha final ya pasó
+    else if (currentDate > endDate) {
+      return {
+        status: 'Finalizado',
+        color: 'gray',
+        formattedDate: ''
+      };
+    }
+
+    // Si no se cumple ninguna condición, se devuelve un estado indeterminado
+    return {
+      status: 'Indeterminado',
+      color: 'gray',
+      formattedDate: ''
+    };
+  }
+
+  formatHora(hora: Date | string): string {
+        if (!hora) return '';
+  
+        if (hora instanceof Date) {
+          if (isNaN(hora.getTime())) return ''; // fecha inválida
+          return hora.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit', hour12: false });
+        }
+  
+        // Si es string y tiene formato "HH:mm:ss" sin fecha, solo corta el string
+        if (typeof hora === 'string') {
+          if (hora.length >= 5) {
+            return hora.slice(0, 5); // "16:00" de "16:00:00"
+          }
+          return hora; // o cadena vacía si quieres
+        }
+  
+        return '';
+    }
+  
+   
 
 
 }

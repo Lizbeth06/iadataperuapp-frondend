@@ -15,6 +15,9 @@ import { VentasistemasDetalleComponent } from './venta-sistemas/ventasistemas-de
 import { CheckoutProductoComponent } from './servicio-tecnico/checkout-producto/checkout-producto.component';
 import { FacturacionComponent } from './facturacion/facturacion.component';
 import { ProfesionalListaComponent } from './profesionales/profesional-lista/profesional-lista.component';
+import { ContactoComponent } from './contacto/contacto.component';
+import { IantropiaComponent } from './iantropia/iantropia.component';
+import { ConvocatoriaListaComponent } from './convocatoria/convocatoria-lista/convocatoria-lista.component';
 
 export const HOME_ROUTES: Routes = [
     {
@@ -83,6 +86,18 @@ export const HOME_ROUTES: Routes = [
         {
             path: 'profesionales',
             component: ProfesionalListaComponent
+        },
+        {
+            path: 'contacto',
+            component: ContactoComponent
+        },
+        {
+            path: 'iantropia',
+            component: IantropiaComponent
+        },
+        {
+            path: 'convocatoria',
+            component: ConvocatoriaListaComponent
         }
     ]
   }
