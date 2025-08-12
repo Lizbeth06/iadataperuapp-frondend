@@ -199,6 +199,30 @@
   padding: 0;
 }
 
+.plan-titulo1 {
+  color: #33bbff;
+  font-size: 33px;
+  line-height: 40px;
+  font-weight: 900;
+  padding: 0;
+}
+
+.plan-titulo2 {
+  color: #00cc66;
+  font-size: 33px;
+  line-height: 40px;
+  font-weight: 900;
+  padding: 0;
+}
+
+.plan-titulo3 {
+  color: #cdc4fb;
+  font-size: 33px;
+  line-height: 40px;
+  font-weight: 900;
+  padding: 0;
+}
+
 .precio-regular {
   color: white;
   font-size: 18px;
@@ -291,7 +315,7 @@
 .titulo-portada {
   color: white;
   font-size: 80px;
-  line-height: 3rem;
+  line-height: 5rem;
 }
 
 .subtitulo-portada {
@@ -299,6 +323,78 @@
   font-size: 20px;
   line-height: 3rem;
 }
+
+
+.image-overlay-container {
+  position: relative;
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  border-radius: 8px;
+  overflow: hidden;
+}
+
+.background-image {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: brightness(0.6);
+}
+
+.overlay-text {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%; /* Ocupa toda el área de la imagen */
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  padding: 10%;
+  box-sizing: border-box;
+  text-align: center;
+  color: white;
+}
+
+
+
+.overlay-text h1 {
+  font-size: 2rem;
+}
+
+.overlay-text p {
+  font-size: 1.2rem;
+}
+
+/* Responsive ajustes */
+@media (max-width: 768px) {
+  .overlay-text h1 {
+    font-size: 1.6rem;
+  }
+
+  .overlay-text p {
+    font-size: 1rem;
+    padding: 8px 12px;
+  }
+}
+
+@media (max-width: 480px) {
+  .overlay-text {
+    padding: 5%;
+  }
+
+  .overlay-text h1 {
+    font-size: 1.3rem;
+  }
+
+  .overlay-text p {
+    font-size: 0.95rem;
+  }
+}
+
+
+
 
 
 

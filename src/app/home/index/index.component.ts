@@ -13,7 +13,7 @@ import { AgendarFormComponent } from '../agendar/agendar-form/agendar-form.compo
 import { CursoService } from '../../services/curso.service';
 import { Curso } from '../../model/curso';
 import { Listahorarios } from '../../model/listahorarios';
-import { SafeHtml } from '@angular/platform-browser';
+import { SafeHtml } from '@angular/platform-browser'; 
 import { register } from 'swiper/element/bundle';
 
 // Registrar los componentes web de Swiper (incluye Coverflow, Pagination, etc.)
@@ -30,7 +30,7 @@ declare var bootstrap: any;
       { provide: LOCALE_ID, useValue: 'es' },  // Establecer la configuración regional
       DatePipe 
     ],
-    schemas: [CUSTOM_ELEMENTS_SCHEMA],
+  schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class IndexComponent implements AfterViewInit {
 

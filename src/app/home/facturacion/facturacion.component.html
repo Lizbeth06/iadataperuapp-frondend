@@ -206,3 +206,85 @@
       </div>
     </div><br><br>
   </section>
+
+  <section id="especialistas" class="feature-section feature-style-5 page_iadata4">
+    <div class="container">
+      <div class="row justify-content-center">
+        <div class="section-title text-center mb-1">
+          <h1 class="Title_Title"><strong>Nuestros Sistemas en Venta</strong></h1>
+          <p class="wow fadeInUp Title_Title__0JGzy" data-wow-delay=".4s" style="text-align: justify;">Soluciones prácticas que impulsan la <span class="custom-mark-container"><mark class="custom-mark"><strong>Transformación Digital</strong></mark></span> de tu negocio o institución, optimizando procesos y mejorando la gestión con tecnología moderna y adaptable.</p>
+        </div>
+      </div>
+      <!--OTROS CURSOS -->
+      <div class="row">
+        <div class="col-xl-3 col-lg-6">
+            <mat-chip-listbox class="mat-mdc-chip-set-stacked" aria-label="Cutest dog breeds">
+                <mat-chip-option selected color="primary">SISTEMAS DE INTERÉS :</mat-chip-option>
+              </mat-chip-listbox>
+        </div>
+
+        <swiper-container
+          slides-per-view="3"
+          space-between="30"
+          loop="true"
+          autoplay-delay="2500"
+          autoplay-disable-on-interaction="false"
+          speed="800"
+          parallax="true"
+          grab-cursor="true"
+          style="width: 100%;"
+        >
+          <!-- Parallax background -->
+        
+
+          <swiper-slide *ngFor="let sp of productoFiltrado">
+            <div class="card-wrapper">
+              <mat-card appearance="outlined" class="card feature-curso single-curso">
+                <div class="img-container">
+                  <img [src]="sp.urlImagen" class="card-img-top" alt="...">
+                  @if(esProductoNuevo(sp.fechacreacion)){
+                    <div class="nuevo-badge">Nuevo</div>
+                  }
+                </div>
+
+                <mat-card-header>
+                  <mat-card-title>{{ sp.titulo }}</mat-card-title> 
+                </mat-card-header>
+
+                <mat-card-content>
+                  <p class="text-justify-custom">{{ getPlainText(sp.descripcion, 280) }}</p>
+                  <hr>
+                  <div class="curso-details">
+                   <!-- Características -->
+                  <div class="d-flex flex-wrap gap-2 text-secondary mb-2 small">
+                      <div class="d-flex align-items-center" *ngFor="let beneficio of listabeneficiosPorProducto[sp.idProducto]">
+                        <span class="material-icons me-1 fs-6">{{beneficio.icono}}</span> {{beneficio.descripcion}}
+                      </div>
+                  </div>
+               
+                  </div>
+                </mat-card-content>
+
+                <mat-card-actions class="centered-actions">
+                    <div class="d-flex flex-wrap gap-2 small justify-content-center">
+                  <button mat-raised-button class="custom-btn" (click)="openDialogCotizar(sp.idProducto)">
+                    <span class="material-icons me-1">hail</span> Cotizar
+                  </button>
+                  <button mat-raised-button class="custom-btn" [routerLink]="['/venta-sistemas/detalle', sp.titulo]">
+                    <i class="fas fa-eye me-1"></i> Ver detalle
+                  </button>
+                  @if(sp.urlyoutuve){
+                  <button mat-raised-button class="custom-btn" (click)="openDialogDemo(sp.idProducto)">
+                    <span class="material-icons me-1">play_circle</span> Demo
+                  </button>
+                  }
+                </div>
+                  </mat-card-actions>
+
+              </mat-card>
+            </div>
+          </swiper-slide>
+        </swiper-container>
+      </div>
+    </div>
+  </section>

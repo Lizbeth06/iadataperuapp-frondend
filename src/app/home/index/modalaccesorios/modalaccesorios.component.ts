@@ -13,7 +13,7 @@ import { RouterLink } from '@angular/router';
 @Component({
   selector: 'app-modalaccesorios',
   standalone: true,
-  imports: [CommonModule,MaterialModule, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose,RouterLink],
+  imports: [CommonModule,MaterialModule, MatDialogTitle, MatDialogContent, MatDialogActions, MatDialogClose],
   templateUrl: './modalaccesorios.component.html',
   styleUrl: './modalaccesorios.component.css'
 })
