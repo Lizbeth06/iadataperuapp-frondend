@@ -1,52 +1,75 @@
 <!-- ========================= Seccionde contacto ========================= -->
   <section id="contacto" class="contact-section contact-style-3 page_iadata5">
-    <div class="container">
+    <div class="container mt-85">
+      <iframe src="https://www.google.com/maps/embed?pb=!1m14!1m12!1m3!1d243.8557118894986!2d-77.0337914143269!3d-12.064741962470663!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!5e0!3m2!1ses!2spe!4v1755113070640!5m2!1ses!2spe" width="100%" height="450" style="border:0;" allowfullscreen="" loading="lazy" referrerpolicy="no-referrer-when-downgrade"></iframe>
       <div class="row justify-content-center">
         <div class="col-xxl-5 col-xl-5 col-lg-7 col-md-10">
-          <div class="section-title text-center mb-50">
+          <div class="section-title text-center mb-50"><br>
             <h1 class="Title_Title"><strong>Ponerse en contacto</strong></h1>
             <p class="ctexto-blanco">No pierdas Tiempo y contacte con nosotros!</p>
           </div>
         </div>
-      </div>
+      </div> 
       <div class="row">
         <div class="col-lg-8">
           <div class="contact-form-wrapper">
-            <form action="assets/php/contact.php" method="POST">
-              <div class="row">
-                <div class="col-md-6">
+            <form class="example-form" [formGroup]="form" (ngSubmit)="operate(1)">
+                <div class="row">
+                  <mat-form-field class="col-md-3">
+                  <mat-label>Seleccionar</mat-label>
+                  <mat-select formControlName="tipodocumento" >
+                      @for (item of tipodocumento; track $index) {
+                          <mat-option [value]="item.idTipoDocumento">{{item.descripcion}}</mat-option>
+                      }
+                  </mat-select>
+                  <mat-hint>Tipo de Doc.</mat-hint>
+                </mat-form-field> 
+                <mat-form-field class="col-md-3" appearance="fill">
+                    <mat-label>N° de documento</mat-label>
+                    <input formControlName="numDocumento" type="text" matInput />
+                    <button (click)="existePersonaPorDocumento()" type="button" mat-icon-button matSuffix>
+                      <mat-icon>search</mat-icon>
+                    </button>
+                </mat-form-field>
+                    <mat-form-field class="col-md-3">
+                    <mat-label>Razón Social o Nombres</mat-label>
+                    <input matInput formControlName="nombres">
+                </mat-form-field>
+                <mat-form-field class="col-md-3">
+                    <mat-label>Ap. Paterno</mat-label>
+                    <input matInput formControlName="apaterno">
+                </mat-form-field>
+
+                <mat-form-field class="col-md-3">
+                    <mat-label>Ap. Materno</mat-label>
+                    <input matInput formControlName="amaterno">
+                </mat-form-field>
+                <mat-form-field class="col-md-6">
+                    <mat-label><i class="lni lni-envelope"></i> Correo Electrónico</mat-label>
+                    <input matInput formControlName="correo" type="email">
+                    <mat-error *ngIf="form?.get('correo')?.invalid && form?.get('correo')?.touched">
+                    Ingresa un correo válido.
+                    </mat-error>
+                </mat-form-field>
+                <mat-form-field class="col-md-3">
+                    <mat-label><i class="lni lni-phone"></i> Teléfono</mat-label>
+                    <input matInput formControlName="telefono">
+                </mat-form-field>
+                <div class="col-md-12">
                   <div class="single-input">
-                    <input type="text" id="name" name="name" class="form-input" placeholder="Name">
-                    <i class="lni lni-user"></i>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single-input">
-                    <input type="email" id="email" name="email" class="form-input" placeholder="Email">
-                    <i class="lni lni-envelope"></i>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single-input">
-                    <input type="text" id="number" name="number" class="form-input" placeholder="Number">
-                    <i class="lni lni-phone"></i>
-                  </div>
-                </div>
-                <div class="col-md-6">
-                  <div class="single-input">
-                    <input type="text" id="subject" name="subject" class="form-input" placeholder="Subject">
+                    <input type="text" formControlName="asunto" class="form-input" placeholder="Subject" >
                     <i class="lni lni-text-format"></i>
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="single-input">
-                    <textarea name="message" id="message" class="form-input" placeholder="Message" rows="6"></textarea>
+                    <textarea formControlName="descripcion" class="form-input" placeholder="Message" rows="6"></textarea>
                     <i class="lni lni-comments-alt"></i>
                   </div>
                 </div>
                 <div class="col-md-12">
                   <div class="form-button">
-                    <button type="submit" class="button"> <i class="lni lni-telegram-original"></i> Enviar</button>
+                    <button type="submit" mat-raised-button class="custom-btn w-100" cdkFocusInitial [disabled]="form.invalid"> <i class="lni lni-telegram-original"></i> Enviar</button>
                   </div>
                 </div>
               </div>
