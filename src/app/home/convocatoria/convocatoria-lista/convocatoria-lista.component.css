@@ -1,0 +1,32 @@
+table {
+  width: 100%;
+}
+
+.mat-mdc-form-field {
+  font-size: 14px;
+  width: 100%;
+}
+
+td, th {
+  width: 25%;
+}
+
+
+.Title_Title {
+    color: #fff;
+    font-size: 3rem;
+    line-height: 3rem;
+  }
+
+.Title_Title__0JGzy {
+    color: #0ae98a;
+  }
+
+  .pdf-icon {
+  color: red;
+  font-size: 32px;
+}
+.center-button {
+  display: flex;
+  justify-content: center;
+}
