@@ -5,13 +5,13 @@ import { MatPaginator } from '@angular/material/paginator';
 import { MatTableDataSource } from '@angular/material/table';
 import { Convocatoria } from '../../../model/convocatoria';
 import { ConvocatoriaService } from '../../../services/convocatoria.service';
-import { RouterLink } from '@angular/router';
+import { RouterLink, RouterModule } from '@angular/router';
 
 
 @Component({
   selector: 'app-convocatoria-lista',
   standalone: true,
-  imports: [MaterialModule,RouterLink],
+  imports: [MaterialModule],
   templateUrl: './convocatoria-lista.component.html',
   styleUrl: './convocatoria-lista.component.css'
 })
@@ -33,9 +33,14 @@ export class ConvocatoriaListaComponent implements OnInit {
 
   ngOnInit(): void {
     this.convocatoriaService.findAll().subscribe(data => {
-      this.cargarTabla(data);
-    })
+      // Filtrar solo los que tienen estado = 1
+      const filtrados = data.filter(conv => conv.estado === 1);
+      // Ordenar de mayor a menor por idConvocatoria
+      const ordenado = filtrados.sort((a, b) => b.idConvocatoria - a.idConvocatoria);
+      this.cargarTabla(ordenado);
+    });
   }
+
 
   cargarTabla(data: Convocatoria[]) {
     this.dataSource = new MatTableDataSource<Convocatoria>(data);

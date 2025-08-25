@@ -30,3 +30,7 @@ td, th {
   display: flex;
   justify-content: center;
 }
+.table-responsive {
+  overflow-x: auto;
+  width: 100%;
+}

@@ -5,6 +5,7 @@ export class Convocatoria {
     numconvocatoria: string;
     objetivo: string;
     fregistro: Date;
+    fregistrofinal: Date;
     urlbase: string; 
     urlresultadoinscripcion: string;
     urlresultadoconocimiento: string;

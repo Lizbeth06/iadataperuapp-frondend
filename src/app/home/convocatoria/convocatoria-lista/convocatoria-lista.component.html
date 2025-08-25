@@ -15,13 +15,14 @@
 
         
       <div class="demo-button-container mt-3 mb-3 center-button">
-        <a href="https://convocatorias.iadataperu.com/" target="_blank" rel="noopener">
+        <a href="https://convocatorias.iadataperu.com" target="_blank" rel="noopener noreferrer">
           <button mat-raised-button class="mb-2">
             <mat-icon>touch_app</mat-icon>
             Inscripción
           </button>
-        </a>   
+        </a>
       </div>
+
 
 
          
@@ -31,13 +32,13 @@
             <input matInput (keyup)="applyFilter($event)" placeholder="Buscar Resultado de Convocatoria" #input>
         </mat-form-field>
 
-        <div class="mat-elevation-z8 mb-3">
+        <div class="mat-elevation-z8 mb-3 table-responsive">
         <table mat-table [dataSource]="dataSource" matSort>
 
             <!-- ID Column -->
             <ng-container matColumnDef="idConvocatoria">
-            <th mat-header-cell *matHeaderCellDef mat-sort-header> ID </th>
-            <td mat-cell *matCellDef="let row"> {{row.idConvocatoria}} </td>
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> N° </th>
+              <td mat-cell *matCellDef="let row; let i=index"> {{i + 1}} </td>
             </ng-container>
 
             <!-- Progress Column -->
@@ -55,7 +56,7 @@
             <!-- Fruit Column -->
             <ng-container matColumnDef="fregistro">
             <th mat-header-cell *matHeaderCellDef mat-sort-header> Fecha de Registro </th>
-            <td mat-cell *matCellDef="let row"> {{row.fregistro}} </td>
+            <td mat-cell *matCellDef="let row"> Del {{row.fregistro}} al {{row.fregistrofinal}}</td>
             </ng-container>
 
             <!-- Fruit Column -->
@@ -161,6 +162,8 @@
                 Prácticas Preprofesionales
               } @else if(row.tipo==4){
                 Prácticas Profesionales
+              } @else if(row.tipo==5){
+                Prácticas Preprofesionales y Profesionales
               } @else {
                 Otro
               }
