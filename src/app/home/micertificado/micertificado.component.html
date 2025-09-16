@@ -16,7 +16,18 @@
     <div class="container">  
       <h2 class="txtcenter">Buscar por Numero de Documento</h2>
       <div class="col-xl-12">
-        <form [formGroup]="formCertificado" >
+        <form [formGroup]="formDocumento" >
+          <div class="row dense-3 justify-content-center">
+            <div class="col-12 col-md-3">
+              <mat-form-field style="width: 100%;" class="full-width mat-body"> 
+                <mat-select id="dowload" class="mat-body" placeholder="Selec. documento a imprimir" formControlName="imprimirdoc" (ngModelChange)="changeImprimir()">
+                  <mat-option [value]="1">CONSTANCIA</mat-option>
+                  <mat-option [value]="2">CERTIFICADO</mat-option>
+                </mat-select>
+                <mat-hint>Seleccione a imprimir</mat-hint>
+              </mat-form-field>
+            </div>
+          </div>
           <div class="row dense-3 justify-content-center"> 
             <div class="col-12 col-md-3">
               <mat-form-field style="width: 100%;" class="full-width mat-body"> 
@@ -47,7 +58,7 @@
               </mat-form-field>
             </div>
             <div class="col-12 col-md-3">
-              <button mat-raised-button class="color-button" [disabled]="!this.formCertificado.valid" (click)="getCertificado()">
+              <button mat-raised-button class="color-button" [disabled]="!this.formDocumento.valid" (click)="getDocImprimir()">
                 <mat-icon>search</mat-icon> Buscar
               </button>
             </div>
@@ -55,18 +66,17 @@
         </form>
       </div>
 
-      
-      <div class="mat-elevation-z8 mt-4" *ngIf="mostrarTabla()">
+      <div class="mat-elevation-z8 mt-4" *ngIf="mostrarTabla() && this.docImprimir=='2'">
         <div class="table-respons">
-          <table mat-table [dataSource]="dataSource" matSort>
+          <table mat-table [dataSource]="dataCertificado" matSort>
             
             <!-- ID Column -->
             <ng-container matColumnDef="id">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> N° </th>
               <td mat-cell *matCellDef="let row; let idx=index"> {{idx+1}} </td>
             </ng-container>
-            
-            <!-- Curso Column -->
+
+            <!-- Codigo certificado Column -->
             <ng-container matColumnDef="curso">
               <th mat-header-cell *matHeaderCellDef mat-sort-header> Curso </th>
               <td mat-cell *matCellDef="let row"> {{row.titulo}} </td>
@@ -83,7 +93,7 @@
               <th mat-header-cell *matHeaderCellDef>Descargar</th>
               <td mat-cell *matCellDef="let row">
                 <button type="button" mat-icon-button 
-                matTooltip="descargar certificado" (click)="viewCertificadoPdf(row.id_certificado)">
+                matTooltip="Descargar constancia" (click)="viewCertificadoPdf(row.id_certificado)">
                 <mat-icon>picture_as_pdf</mat-icon>
               </button>
             </td>
@@ -96,8 +106,50 @@
             <td class="mat-cell" colspan="4" style="text-align: center;">No hay ningún certificado que mostrar</td>
           </tr>
         </table>
+        </div>
       </div>
-    </div>
+      <div class="mat-elevation-z8 mt-4" *ngIf="mostrarTabla()  && this.docImprimir=='1'">
+        <div class="table-respons">
+          <table mat-table [dataSource]="dataConstancia" matSort>
+            
+            <!-- ID Column -->
+            <ng-container matColumnDef="id">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> N° </th>
+              <td mat-cell *matCellDef="let row; let idx=index"> {{idx+1}} </td>
+            </ng-container>
+
+            <!-- Nombres de la Column -->
+            <ng-container matColumnDef="nombre">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Apellidos y N.</th>
+              <td mat-cell *matCellDef="let row">{{row.apaterno+' '+row.amaterno+' '+row.nombres}}</td>
+            </ng-container>
+
+            <!-- Codigo certificado Column -->
+            <ng-container matColumnDef="codigo">
+              <th mat-header-cell *matHeaderCellDef mat-sort-header> Código de constancia </th>
+              <td mat-cell *matCellDef="let row">{{row.codigo_validacion}}</td>
+            </ng-container>
+
+            <!-- Action Column-->
+            <ng-container matColumnDef="accion">
+              <th mat-header-cell *matHeaderCellDef>Descargar</th>
+              <td mat-cell *matCellDef="let row">
+                <button type="button" mat-icon-button 
+                matTooltip="descargar constancia" (click)="viewConstanciaPdf(row.id_constancia)">
+                <mat-icon>picture_as_pdf</mat-icon>
+              </button>
+            </td>
+          </ng-container>
+          
+          <tr mat-header-row *matHeaderRowDef="constanciaColumns"></tr>
+          <tr mat-row *matRowDef="let row; columns: constanciaColumns;"></tr>
+          
+          <tr class="mat-row" *matNoDataRow>
+            <td class="mat-cell" colspan="4" style="text-align: center;">No hay ninguna constancia que mostrar</td>
+          </tr>
+        </table>
+        </div>
+      </div>
     <br>
     <div class="row">
       <div class="col-xl-12 col-lg-6">

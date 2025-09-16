@@ -12,6 +12,8 @@ import { validarInput, ValidationType } from '../../util/validaciones.util';
 import { CertificadoService } from '../../services/certificado.service';
 import { MatTableDataSource } from '@angular/material/table';
 import { ListaCertificado } from '../../model/certificado';
+import { ListaConstancia } from '../../model/constancia';
+import { ConstanciaService } from '../../services/constancia.service';
 
 @Component({
   selector: 'app-micertificado',
@@ -28,15 +30,20 @@ export class MicertificadoComponent {
     this.buildForm();
   }
   private certificadoService=inject(CertificadoService);
+  private constanciaService=inject(ConstanciaService);
   
-  formCertificado: FormGroup;
+  formDocumento: FormGroup;
   tipodocumento: string="";
+  docImprimir: string="";
   docSeleccionado: number = 0;
   displayedColumns: string[] = ['id', 'curso','codigo','accion'];
-  dataSource!: MatTableDataSource<ListaCertificado>;
+  constanciaColumns: string[] = ['id','nombre','codigo','accion'];
+  dataCertificado!: MatTableDataSource<ListaCertificado>;
+  dataConstancia!: MatTableDataSource<ListaConstancia>;
   
   private buildForm() {
-    this.formCertificado = this.formBuilder.group({
+    this.formDocumento = this.formBuilder.group({
+      imprimirdoc: ['', [Validators.required]],
       tipodocumento: ['', [Validators.required]],
       dni: ['', [ Validators.pattern(/^[0-9]{8}$/)]],
       carnet: ['', [Validators.pattern(/^[0-9]{12}$/)]],
@@ -44,23 +51,46 @@ export class MicertificadoComponent {
     })
   }
   changeTipoDoc() {
-    this.tipodocumento = this.formCertificado?.get('tipodocumento')!.value ?? '';
+    this.tipodocumento = this.formDocumento?.get('tipodocumento')!.value ?? '';
   }
-  getCertificado() {
-    const numeroDoc=this.formCertificado.get('tipodocumento')!.value===1?this.formCertificado.get('dni')?.value:this.formCertificado.get('tipodocumento')!.value===2?this.formCertificado.get('carnet')!.value:
-        this.formCertificado.get('pass')!.value;
+  changeImprimir() {
+    this.docImprimir = this.formDocumento?.get('imprimirdoc')!.value ?? '';
+  }
+  getDocImprimir() {
+    const numeroDoc=this.formDocumento.get('tipodocumento')!.value===1?this.formDocumento.get('dni')?.value:this.formDocumento.get('tipodocumento')!.value===2?this.formDocumento.get('carnet')!.value:
+        this.formDocumento.get('pass')!.value;
+    if(this.docImprimir=='2'){
+      this.certificadoService.getCertificadoxdoc(numeroDoc).subscribe(data=>{
+        this.crearTabla(data.body as ListaCertificado[])
+      })
 
-    this.certificadoService.getCertificadoxdoc(numeroDoc).subscribe(data=>{
-      this.crearTabla(data.body as ListaCertificado[])
-    })
+    }else{
+      this.constanciaService.getConstanciaxdoc(numeroDoc).subscribe(data=>{
+        this.crearTabla(data.body as ListaConstancia[])
+      })
+    }
+
   
   }
-  crearTabla(data: ListaCertificado[]){
-    this.dataSource = new MatTableDataSource(data);
+  crearTabla(data: any[]){
+     if(this.docImprimir=='1'){
+      console.log(data);
+      this.dataConstancia = new MatTableDataSource(data);
+     }
+     else{
+      this.dataCertificado = new MatTableDataSource(data);
+    }
   }
   //mostrando pdf
   viewCertificadoPdf(id:number){
     this.certificadoService.generarPdfCertificado(id).subscribe(data=>{
+      const blob = new Blob([data], { type: 'application/pdf' });
+      const url = window.URL.createObjectURL(blob);
+      window.open(url, '_blank');
+    });
+  }
+  viewConstanciaPdf(id:number){
+    this.constanciaService.generarPdfConstancia(id).subscribe(data=>{
       const blob = new Blob([data], { type: 'application/pdf' });
       const url = window.URL.createObjectURL(blob);
       window.open(url, '_blank');
@@ -71,7 +101,7 @@ export class MicertificadoComponent {
     validarInput(event,type);
   }
   mostrarTabla():boolean{
-    if(this.formCertificado.get('dni')?.value.length>=8 || this.formCertificado.get('carnet')!.value.length>=12||this.formCertificado.get('pass')!.value.length>=8){
+    if(this.formDocumento.get('dni')?.value.length>=8 || this.formDocumento.get('carnet')!.value.length>=12||this.formDocumento.get('pass')!.value.length>=8){
       return true
     }
     return false;
