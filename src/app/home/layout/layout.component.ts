@@ -16,6 +16,7 @@ export class LayoutComponent implements AfterViewInit {
   isCatalogoOpen = false;
   isFormacionOpen = false;
   isNosotrosOpen = false;
+  currentYear = new Date().getFullYear();
 
   constructor(private el: ElementRef, private renderer: Renderer2) {}
 
