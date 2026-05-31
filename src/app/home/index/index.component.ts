@@ -54,7 +54,7 @@ export class IndexComponent implements AfterViewInit {
   
   redirigirAWhatsApp(): void {
     // Definir el número de teléfono o enlace de WhatsApp
-    let telefono = '51930794100';
+    let telefono = '51900696971';
 
     // Construir el enlace de WhatsApp
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, me gustaría recibir más detalles sobre los servicios que ofrecen.`;
@@ -65,7 +65,7 @@ export class IndexComponent implements AfterViewInit {
 
   redirigirAWhatsAppAR(): void {
     // Definir el número de teléfono o enlace de WhatsApp
-    let telefono = '51930794100';
+    let telefono = '51900696971';
 
     // Construir el enlace de WhatsApp
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, estoy interesado en *programar una reunión*.`;
@@ -75,25 +75,25 @@ export class IndexComponent implements AfterViewInit {
   }
 
   redirigirAWhatsAppST(): void {
-    let telefono = '51930794100';
+    let telefono = '51900696971';
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, estoy interesado en recibir información sobre el servicio de *Soporte Técnico a domicilio* que ofrecen`;
     window.open(enlaceWhatsApp, '_blank');
   }
 
   redirigirAWhatsAppPlan1(): void {
-    let telefono = '51930794100';
+    let telefono = '51900696971';
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, ¿podrían proporcionarme información sobre el *Plan Básico* de Facturación Electrónica?`;
     window.open(enlaceWhatsApp, '_blank');
   }
 
   redirigirAWhatsAppPlan2(): void {
-    let telefono = '51930794100';
+    let telefono = '51900696971';
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, ¿podrían proporcionarme información sobre el *Plan Emprendedor* de Facturación Electrónica?`;
     window.open(enlaceWhatsApp, '_blank');
   }
 
   redirigirAWhatsAppPlan3(): void {
-    let telefono = '51930794100';
+    let telefono = '51900696971';
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, ¿podrían proporcionarme información sobre el *Plan Empresial* de Facturación Electrónica?`;
     window.open(enlaceWhatsApp, '_blank');
   }
@@ -101,7 +101,12 @@ export class IndexComponent implements AfterViewInit {
 
 
 
-  images: string[] = ['assets/principal/img/presentacion8.png', 'assets/principal/img/presentacion9.png', 'assets/principal/img/presentacion1.png'];
+  images: string[] = [
+    'https://res.cloudinary.com/devdt1imc/image/upload/v1780189931/presentacion1_vnom9k.png', 
+    
+    'https://res.cloudinary.com/devdt1imc/image/upload/v1780190775/presentacion2_iiprdg.png',
+    'assets/principal/img/presentacion9.png'
+  ];
   currentImage: string = this.images[0]; // Inicialmente muestra la primera imagen
   currentIndex: number = 0;
 
@@ -109,7 +114,7 @@ export class IndexComponent implements AfterViewInit {
     setInterval(() => {
       this.currentIndex = (this.currentIndex + 1) % this.images.length;
       this.currentImage = this.images[this.currentIndex];
-    }, 5000); // Cambia la imagen cada 5 segundos (5000 milisegundos)
+    }, 6000); // Cambia la imagen cada 6 segundos (6000 milisegundos)
 
     this.cursoService.findAll().subscribe((datas)=>{
       this.cursoslista=datas;

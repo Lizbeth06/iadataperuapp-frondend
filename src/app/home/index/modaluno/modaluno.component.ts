@@ -23,13 +23,13 @@ import { AgendarFormComponent } from '../../agendar/agendar-form/agendar-form.co
 export class ModalunoComponent {
   
   redirigirAWhatsAppConsultarVS(): void {
-    let telefono = '51930794100'; // Aquí pon el número de teléfono o enlace de WhatsApp
+    let telefono = '51900696971'; // Aquí pon el número de teléfono o enlace de WhatsApp
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, quisiera saber más sobre el *servicios o venta de software personalizado* que ofrecen para mi negocio o empresa`;
     window.open(enlaceWhatsApp, '_blank');
   }
 
   redirigirAWhatsAppARVS(): void {
-    let telefono = '51930794100'; // Aquí pon el número de teléfono o enlace de WhatsApp
+    let telefono = '51900696971'; // Aquí pon el número de teléfono o enlace de WhatsApp
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, me gustaría *agendar una reunión* para hablar sobre los *servicios o la venta de software personalizado* que ofrecen para mi negocio o empresa.`;
     window.open(enlaceWhatsApp, '_blank');
   }

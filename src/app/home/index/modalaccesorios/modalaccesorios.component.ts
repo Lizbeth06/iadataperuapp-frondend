@@ -20,7 +20,7 @@ import { RouterLink } from '@angular/router';
 export class ModalaccesoriosComponent {
   redirigirAWhatsApp(): void {
     // Definir el número de teléfono o enlace de WhatsApp
-    let telefono = '+51930794100'; // Aquí pon el número de teléfono o enlace de WhatsApp
+    let telefono = '+51900696971'; // Aquí pon el número de teléfono o enlace de WhatsApp
 
     // Construir el enlace de WhatsApp
     let enlaceWhatsApp = `https://wa.me/${telefono}`;
@@ -31,7 +31,7 @@ export class ModalaccesoriosComponent {
 
   realizarLlamada() {
     // Número de teléfono al que deseas llamar
-    const numeroTelefono = '+51930794100';
+    const numeroTelefono = '+51900696971';
 
     // Utiliza la API de navegación para realizar la llamada
     window.open(`tel:${numeroTelefono}`, '_self');

@@ -32,9 +32,9 @@ export const appConfig: ApplicationConfig = {
       JwtModule.forRoot({
         config: {
           tokenGetter: tokenGetter,
-          allowedDomains: ['https://iadataperu.com/bk', 'localhost:9090'], 
+          allowedDomains: ['https://api1.iadataperu.com', 'localhost:9090'], 
           disallowedRoutes: [
-            'https://iadataperu.com/bk/login/forget',
+            'https://api1.iadataperu.com/login/forget',
             'http://localhost:9090/login/forget'
           ],
         },

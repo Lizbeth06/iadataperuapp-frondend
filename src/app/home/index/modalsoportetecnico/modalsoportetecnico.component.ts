@@ -19,14 +19,14 @@ import { RouterLink } from '@angular/router';
 })
 export class ModalsoportetecnicoComponent {
   redirigirAWhatsAppST(): void {
-    let telefono = '51930794100';
+    let telefono = '51900696971';
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, estoy interesado en recibir información sobre el servicio de *Soporte Técnico a domicilio* que ofrecen`;
     window.open(enlaceWhatsApp, '_blank');
   }
 
   realizarLlamada() {
     // Número de teléfono al que deseas llamar
-    const numeroTelefono = '+51930794100';
+    const numeroTelefono = '+51900696971';
 
     // Utiliza la API de navegación para realizar la llamada
     window.open(`tel:${numeroTelefono}`, '_self');

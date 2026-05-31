@@ -27,6 +27,8 @@ register();
     schemas: [CUSTOM_ELEMENTS_SCHEMA],
 })
 export class FacturacionComponent implements OnInit{
+  darkMode = false;
+  selectedTabIndex = 0;
   producto:Producto[] = [];
   productolista!:Producto[];
   productoFiltrado: Producto[] = [];
@@ -110,21 +112,25 @@ export class FacturacionComponent implements OnInit{
     }
 
   redirigirAWhatsAppPlan1(): void {
-    let telefono = '51930794100';
+    let telefono = '51900696971';
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, ¿podrían proporcionarme información sobre el *Plan Básico* de Facturación Electrónica?`;
     window.open(enlaceWhatsApp, '_blank');
   }
 
   redirigirAWhatsAppPlan2(): void {
-    let telefono = '51930794100';
+    let telefono = '51900696971';
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, ¿podrían proporcionarme información sobre el *Plan Emprendedor* de Facturación Electrónica?`;
     window.open(enlaceWhatsApp, '_blank');
   }
 
   redirigirAWhatsAppPlan3(): void {
-    let telefono = '51930794100';
+    let telefono = '51900696971';
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, ¿podrían proporcionarme información sobre el *Plan Empresial* de Facturación Electrónica?`;
     window.open(enlaceWhatsApp, '_blank');
+  }
+
+  toggleDarkMode(): void {
+    this.darkMode = !this.darkMode;
   }
 
 }

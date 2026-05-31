@@ -5,6 +5,15 @@
     line-height: 3rem;
   }
 
+  :root {
+    --saas-accent: #0ae98a;
+    --saas-muted: #8b9dc3;
+    --saas-bg-light: rgba(246, 255, 250, 0.82); /* light mint tint, semi-transparent */
+    --saas-bg-dark: rgba(6,12,18,0.72);
+    --saas-text: #12242a;
+    --saas-radius: 12px;
+  }
+
   .Title_Title {
     color: #fff;
     font-size: 3rem;
@@ -390,6 +399,68 @@
   flex-grow: 1;
 }
 
+/* Accordion SaaS */
+.saas-accordion {
+  display: block;
+  margin-top: 18px;
+}
+
+.saas-accordion ::ng-deep .mat-expansion-panel {
+  background: var(--saas-card-bg, rgba(255,255,255,0.88));
+  border: 1px solid rgba(0,0,0,0.06);
+  border-radius: 14px !important;
+  box-shadow: 0 12px 36px rgba(6, 24, 36, 0.08);
+  overflow: hidden;
+}
+
+.saas-accordion ::ng-deep .mat-expansion-panel-header {
+  padding: 18px 20px;
+  min-height: 72px;
+  background: linear-gradient(135deg, rgba(10,233,138,0.08), rgba(11,35,64,0.02));
+}
+
+.saas-accordion ::ng-deep .mat-expansion-panel-header-title,
+.saas-accordion ::ng-deep .mat-expansion-panel-header-description {
+  color: var(--saas-text, #12242a);
+  font-weight: 600;
+}
+
+.saas-accordion ::ng-deep .mat-expansion-panel-header-title {
+  font-size: 1.05rem;
+}
+
+.saas-accordion ::ng-deep .mat-expansion-panel-header-description {
+  font-size: 0.92rem;
+  color: var(--saas-muted, #8b9dc3);
+  display: flex;
+  align-items: center;
+  gap: 8px;
+}
+
+.saas-accordion ::ng-deep .mat-expansion-panel-body {
+  padding: 18px 20px 22px;
+}
+
+@media (prefers-color-scheme: dark) {
+  .saas-accordion ::ng-deep .mat-expansion-panel {
+    background: rgba(6,12,18,0.74);
+    border: 1px solid rgba(255,255,255,0.06);
+  }
+
+  .saas-accordion ::ng-deep .mat-expansion-panel-header {
+    background: linear-gradient(135deg, rgba(10,233,138,0.08), rgba(255,255,255,0.02));
+  }
+
+  .saas-accordion ::ng-deep .mat-expansion-panel-header-title,
+  .saas-accordion ::ng-deep .mat-expansion-panel-header-description {
+    color: #e6f7ee;
+  }
+
+  .saas-accordion ::ng-deep .mat-expansion-panel-header-description {
+    color: #9fbfbe;
+  }
+}
+
 .row-equal-height > .col-lg-4 > .col > mat-card {
   flex-grow: 1;
   display: flex;
@@ -486,6 +557,243 @@
   width: 120px;
   opacity: 0.6;
   z-index: 0;
+}
+
+/* ===== Estilos SaaS Profesionales para Tabs ===== */
+.saas-tabs {
+  --mdc-tab-indicator-active-indicator-color: #0ae98a;
+}
+
+.saas-tabs ::ng-deep .mat-mdc-tab-labels {
+  background: linear-gradient(135deg, #f8f9fb 0%, #f1f3f7 100%);
+  border-bottom: 2px solid #e8eef5;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.04);
+  display: flex;
+  justify-content: center;
+  padding: 0 20px;
+  overflow: visible !important;
+}
+
+.saas-tabs ::ng-deep .mat-mdc-tab-label,
+.saas-tabs ::ng-deep .mat-mdc-tab {
+  min-width: 280px;
+  flex: 0 0 auto;
+  padding: 20px 24px;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 120px;
+  overflow: visible !important;
+}
+
+.saas-tabs ::ng-deep .mat-mdc-tab {
+  color: #5a6c7d !important;
+  font-weight: 500;
+  font-size: 15px;
+  letter-spacing: 0.3px;
+  transition: all 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.saas-tabs ::ng-deep .mat-mdc-tab:hover:not(.mat-mdc-tab-disabled) {
+  color: #2c3e50 !important;
+  background-color: rgba(10, 233, 138, 0.08);
+}
+
+.saas-tabs ::ng-deep .mat-mdc-tab.mat-mdc-tab-active {
+  color: #0ae98a !important;
+  font-weight: 600;
+  background: linear-gradient(135deg, rgba(10, 233, 138, 0.16), rgba(10, 233, 138, 0.04));
+  box-shadow: inset 0 -3px 0 var(--saas-accent), 0 10px 24px rgba(10, 233, 138, 0.12);
+  border-radius: 14px 14px 0 0;
+  transform: translateY(-2px);
+}
+
+.saas-tabs ::ng-deep .mdc-tab__text-label {
+  display: flex;
+  align-items: center;
+  gap: 12px;
+  width: 100%;
+  overflow: visible !important;
+}
+
+.tab-label-wrapper {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  justify-content: center;
+  overflow: visible !important;
+  border-radius: 14px;
+  transition: background-color 0.25s ease, box-shadow 0.25s ease, transform 0.25s ease;
+  padding: 8px 12px;
+}
+
+.tab-label-wrapper.is-selected {
+  background: linear-gradient(135deg, rgba(10, 233, 138, 0.22), rgba(10, 233, 138, 0.08));
+  box-shadow: inset 0 0 0 1px rgba(10, 233, 138, 0.18), 0 10px 24px rgba(10, 233, 138, 0.12);
+  transform: translateY(-1px);
+}
+
+.tab-content-wrapper {
+  display: flex;
+  flex-direction: column;
+  gap: 6px;
+  text-align: center;
+  white-space: normal;
+  overflow: visible !important;
+}
+
+.tab-title {
+  font-size: 18px;
+  font-weight: 700;
+  letter-spacing: 0.5px;
+  line-height: 1.3;
+  display: block;
+  word-wrap: break-word;
+  overflow: visible !important;
+}
+
+.tab-description {
+  font-size: 12px;
+  font-weight: 400;
+  color: #8b9dc3;
+  letter-spacing: 0.2px;
+  line-height: 1.3;
+  opacity: 0.85;
+  display: block;
+  word-wrap: break-word;
+  max-width: 220px;
+  overflow: visible !important;
+}
+
+/* Active indicator styling (Material underline) */
+.saas-tabs ::ng-deep .mdc-tab-indicator__content--underline {
+  background-color: var(--saas-accent) !important;
+  height: 3px !important;
+  border-radius: 2px;
+}
+
+/* Responsive: truncar descripción en pantallas pequeñas y mostrar tooltip */
+@media (max-width: 767px) {
+  .tab-description {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    max-width: 160px;
+    display: block;
+  }
+
+  .tab-label-wrapper {
+    min-height: 84px;
+    padding: 6px 4px;
+  }
+}
+
+/* Manual dark-mode class for toggling via JS */
+.dark-mode .saas-tab-content {
+  background: var(--saas-bg-dark) !important;
+  color: #e6f7ee !important;
+  box-shadow: 0 12px 40px rgba(0,0,0,0.6) !important;
+  border: 1px solid rgba(255,255,255,0.04) !important;
+}
+
+.dark-mode .saas-tabs ::ng-deep .mat-mdc-tab-labels {
+  background: linear-gradient(135deg, #071217 0%, #0b1b22 100%) !important;
+}
+
+.dark-mode .saas-tabs ::ng-deep .mat-mdc-tab {
+  color: #cfe8df !important;
+}
+
+.dark-mode .saas-tabs ::ng-deep .mat-mdc-tab.mat-mdc-tab-active {
+  color: #62f5b1 !important;
+  background: linear-gradient(135deg, rgba(98, 245, 177, 0.2), rgba(98, 245, 177, 0.05));
+  box-shadow: inset 0 -3px 0 #62f5b1, 0 10px 24px rgba(0, 0, 0, 0.35);
+  transform: translateY(-2px);
+}
+
+.saas-tabs ::ng-deep .mat-mdc-tab.mat-mdc-tab-active .tab-description {
+  color: #0ae98a;
+  opacity: 1;
+  font-weight: 600;
+}
+
+.saas-tabs ::ng-deep .mat-mdc-tab.mat-mdc-tab-active .tab-title {
+  text-shadow: 0 0 18px rgba(10, 233, 138, 0.18);
+}
+
+.dark-mode .saas-tabs ::ng-deep .mat-mdc-tab.mat-mdc-tab-active .tab-description {
+  color: #bff8e2;
+}
+
+.dark-mode .tab-label-wrapper.is-selected {
+  background: linear-gradient(135deg, rgba(98, 245, 177, 0.2), rgba(98, 245, 177, 0.06));
+  box-shadow: inset 0 0 0 1px rgba(98, 245, 177, 0.2), 0 10px 24px rgba(0, 0, 0, 0.28);
+}
+
+.saas-tab-icon {
+  font-size: 24px;
+  width: 24px;
+  height: 24px;
+  transition: transform 0.3s ease;
+  flex-shrink: 0;
+  overflow: visible !important;
+}
+
+.saas-tabs ::ng-deep .mat-mdc-tab.mat-mdc-tab-active .saas-tab-icon {
+  transform: scale(1.2);
+}
+
+.saas-tab-content {
+  padding: 24px 16px;
+  /* usar variable para permitir ajustes temáticos: menos blanco y leve tinte */
+  background: var(--saas-bg-light);
+  animation: fadeIn 0.4s ease-in;
+  text-align: center;
+  color: var(--saas-text);
+  border-radius: 8px;
+  box-shadow: 0 10px 36px rgba(6, 24, 36, 0.08);
+  border: 1px solid rgba(6,85,62,0.06);
+  backdrop-filter: blur(6px);
+  -webkit-backdrop-filter: blur(6px);
+}
+
+@keyframes fadeIn {
+  from {
+    opacity: 0;
+    transform: translateY(8px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+/* Dark mode: fondo oscuro semitransparente */
+@media (prefers-color-scheme: dark) {
+  .saas-tab-content {
+    background: rgba(6, 12, 18, 0.72); /* oscuro semitransparente */
+    color: #e6f7ee;
+    box-shadow: 0 12px 40px rgba(0, 0, 0, 0.6);
+    border: 1px solid rgba(255,255,255,0.04);
+  }
+
+  .saas-tabs ::ng-deep .mat-mdc-tab-labels {
+    background: linear-gradient(135deg, #071217 0%, #0b1b22 100%);
+    border-bottom-color: rgba(255,255,255,0.06);
+  }
+
+  .saas-tabs ::ng-deep .mat-mdc-tab {
+    color: #cfe8df !important;
+  }
+
+  .saas-tabs ::ng-deep .mat-mdc-tab.mat-mdc-tab-active {
+    color: #62f5b1 !important;
+  }
+
+  .tab-description {
+    color: #9fbfbe;
+  }
 }
 
 

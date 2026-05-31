@@ -1,209 +1,1605 @@
 <!-- ========================= seccion de planes ========================= -->
-  <section id="planes" class="page_iadata3">
+  <section id="planes" class="page_iadata3" [class.dark-mode]="darkMode">
     <div class="container"><br><br>
       <div class="section-title text-center mt-85">
-        <h1 class="Title_Title"><strong>Facturación Electrónica</strong></h1>
-        <p class="precio-regular">Emite comprobantes electrónicos de manera rápida, segura y conforme a la normativa de SUNAT. Nuestro sistema te permite gestionar boletas, facturas y otros documentos con total facilidad, desde cualquier lugar y dispositivo.</p>
+        <h1 class="Title_Title"><strong>Sistema ideal para tu Negocio</strong></h1>
+        <div style="position: absolute; right: 24px; top: 24px;">
+          <button mat-icon-button (click)="toggleDarkMode()" aria-label="Toggle dark mode">
+            <mat-icon>{{ darkMode ? 'light_mode' : 'dark_mode' }}</mat-icon>
+          </button>
+        </div>
+        <p class="precio-regular">Selecciona tu rubro y descubre los planes especializados para tu negocio. Ofrecemos softwares independientes para Farmacia, Hotel o Restaurante con facturación SUNAT y control de inventarios en un solo pago de por vida.</p>
         <h2 class="mat-h3 my-custom-heading Title_Title">Nuestros Planes</h2>
       </div>
       <p>
         <span class="custom-mark-container"><mark class="custom-mark"><strong>Un solo pago por tu sistema, sin cuotas mensuales de por vida.</strong></mark></span>
       </p>
-      <!-- Usando CSS Grid para tres columnas -->
-      <div class="card-grid">
-        <!-- Primera columna -->
-        <div class="card">
-          <mat-card>
-            <mat-card-header class="card-header card1h">
-              <mat-card-title class="plan-titulo">Plan Básico</mat-card-title>
-              <mat-card-title class="precio-regular">Precio Regular: s/. 2890.99</mat-card-title>
-            </mat-card-header>
-            <mat-card-content class="card1">
-              <p class="ideal">Ideal para quien solo quiere vender y  gestionar tu Inventario</p>
-              <p class="precio-promo">Precio SUPER PROMO</p>
-              <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>2099<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
 
-              <ul style="text-align: left; color: white;">
-                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Punto de venta para Celular, Tablet y PC (POS)</li>
-                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                 <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Gestión de inventario (1 almacén)</li>
-                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Módulo de compra</li>
-                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Reporte de ingreso y gastos</li>
-                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Movimientos</li>
-                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Impresión de comandos</li>
-                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Comando de Pedidos</li>
-                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                    <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Entrega y gestión del delivery</li>
-                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Hasta 6 usuarios</li>
-                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Hasta 1 sucursal</li>
-                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Emisión de Ticket</li>
-                  <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                    <i class="lni lni-cross-circle" style="margin-right: 10px;color:#fe672e;"></i>Emisión de Boleta y Factura</li>
+    <mat-tab-group class="saas-tabs" [selectedIndex]="selectedTabIndex" (selectedIndexChange)="selectedTabIndex = $event">
+      <mat-tab><!-- FARMACIA / BOTICA -->
+        <ng-template mat-tab-label>
+          <div class="tab-label-wrapper" [class.is-selected]="selectedTabIndex === 0">
+            <span class="mdc-tab__text-label">
+              <mat-icon class="saas-tab-icon">local_pharmacy</mat-icon>
+              <div class="tab-content-wrapper">
+                <span class="tab-title">FARMACIA/BOTICA</span>
+                <span class="tab-description" title="Para Farmacia, Botica Droguerías, Distribuidoras Farmacéuticas y Tiendas Naturistas" matTooltip="Para Farmacia, Botica Droguerías, Distribuidoras Farmacéuticas y Tiendas Naturistas" matTooltipPosition="above">Para Farmacia, Botica Droguerías, Distribuidoras Farmacéuticas y Tiendas Naturistas</span>
+              </div>
+            </span>
+          </div>
+        </ng-template>
+        <div class="saas-tab-content">
 
-                  <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+          
+          <!-- Usando CSS Grid para tres columnas FARMACIA/BOTICA-->
+          <div class="card-grid">
+            <!-- Primera columna -->
+            <div class="card">
+              <mat-card>
+                <mat-card-header class="card-header card1h">
+                  <mat-card-title class="plan-titulo">Plan Básico</mat-card-title>
+                  <mat-card-title class="precio-regular">Precio Regular: s/. 2,890.99</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="card1">
+                  <p class="ideal">Ideal para quien solo quiere vender y  gestionar tu Inventario</p>
+                  <p class="precio-promo">Precio SUPER PROMO</p>
+                  <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>2,099<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
 
-                    <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Emisión de XML, validar CDR y anular o devolución de comprobante</li>
-                <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                  <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Emisión de cotización y notas de débito</li>
+                  <ul style="text-align: left; color: white;">
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      1 sucursal
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Hasta 5 usuarios
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Venta al instante desde Celular, Tablet o PC 24/7
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Ventas por Unidad (Precio 1, 2 y 3), Blíster y Caja 
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Emisión rápida de tickets para control interno de pagos
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Facturación flexible detallada o general con descuentos por plato o total de cuenta
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Búsqueda por producto, categoría o código de barras
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Inventario inteligente (1 almacén)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Alertas de stock mínimo, agotado y productos por vencer
+                    </li>                    
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de Clientes y Proveedores
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Control de deudas y devoluciones
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Reporte de ingresos y gastos diario
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Movimientos de caja turno
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Apertura y cierre de caja con reporte de arqueo
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Facturación SUNAT (Boleta, Factura y Notas)
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Validación de XML y descarga de CDR (SUNAT)
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Envío inmediato de comprobantes SUNAT por Correo o WhatsApp
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Módulo de Órdenes de Compra y cotización
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Pagos integrados (tarjetero P.O.S): Yape, Plin y tarjetas
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Transferencias de almacenes entre sucursales
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 IA Anti-Pérdidas: Sugiere marcas alternativas o genéricos si un producto se agota
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Escáner IA: Lee la foto de la receta y carga la venta al instante
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖Carga IA: Alimenta y clasifica tu almacén desde archivos o imágenes
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖Detección temprana: Alertas de reabastecimiento por alta demanda
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖Predicción de demanda: Sugiere cuándo y cuánto comprar
+                    </li>
+                  </ul>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan1()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card-content>
+              </mat-card>
+            </div>
 
-                  <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                    <i class="lni lni-cross-circle" style="margin-right: 10px; color:#fe672e;"></i>Ranking de clientes
-                  </li>
-                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                  <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Reporte de atenciones de los trabajadores</li>
-                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                  <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Ventas por categoría y productos</li>
-                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                  <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Kardex y alertas de stock</li>
-                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                  <i class="lni lni-cross-circle" style="margin-right: 10px;color:#fe672e;"></i>Transferencia entre almacenes</li>
-              </ul>
-              <br>
-              <mat-list-item (click)="redirigirAWhatsAppPlan1()">
-                <span matListItemTitle class="d-flex justify-content-center align-items-center">
-                  <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
-                </span>
-              </mat-list-item>
-            </mat-card-content>
-          </mat-card>
+            <!-- Segunda columna -->
+            <div class="card">
+              <mat-card>
+                <mat-card-header class="card-header card2h">
+                  <mat-card-title class="plan-titulo">Plan Emprendedor</mat-card-title>
+                  <mat-card-title class="precio-regular">Precio Regular: s/. 5,400.99</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="card1">
+                  <p class="ideal">Ideal para quienes necesitan cumplir con la SUNAT, controlar su Inventario y venta</p>
+                  <p class="precio-promo">Precio SUPER PROMO</p>
+                  <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>4,902<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+
+                  <ul style="text-align: left; color: white;">
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      1 sucursal
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Hasta 5 usuarios
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Venta al instante desde Celular, Tablet o PC 24/7
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Ventas por Unidad (Precio 1, 2 y 3), Blíster y Caja 
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Emisión rápida de tickets para control interno de pagos
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Facturación flexible detallada o general con descuentos por plato o total de cuenta
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Búsqueda por producto, categoría o código de barras
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Inventario inteligente (1 almacén)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Alertas de stock mínimo, agotado y productos por vencer
+                    </li>                    
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de Clientes y Proveedores
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Control de deudas y devoluciones
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Reporte de ingresos y gastos diario
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Movimientos de caja turno
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Apertura y cierre de caja con reporte de arqueo
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Facturación SUNAT (Boleta, Factura y Notas)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Validación de XML y descarga de CDR (SUNAT)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Envío inmediato de comprobantes SUNAT por Correo o WhatsApp
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Módulo de Órdenes de Compra y cotización
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Pagos integrados (tarjetero P.O.S): Yape, Plin y tarjetas
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Transferencias de almacenes entre sucursales
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 IA Anti-Pérdidas: Sugiere marcas alternativas o genéricos si un producto se agota
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Escáner IA: Lee la foto de la receta y carga la venta al instante
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖Carga IA: Alimenta y clasifica tu almacén desde archivos o imágenes
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖Detección temprana: Alertas de reabastecimiento por alta demanda
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖Predicción de demanda: Sugiere cuándo y cuánto comprar
+                    </li>
+                  </ul>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan2()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card-content>
+              </mat-card>
+            </div>
+
+            <!-- Tercera columna -->
+            <div class="card">
+              <mat-card>
+                <mat-card-header class="card-header card3h">
+                  <mat-card-title class="plan-titulo">Plan Empresarial</mat-card-title>
+                  <mat-card-title class="precio-regular">Precio Regular: s/. 9,290.00</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="card1">
+                  <p class="ideal">Ideal para quien necesita controlar y gestionar hasta el último detalle</p>
+                  <p class="precio-promo">Precio SUPER PROMO</p>
+                  <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>8,700<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+
+                  <ul style="text-align: left; color: white;">
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Hasta 2 sucursales
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Hasta 30 usuarios
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Venta al instante desde Celular, Tablet o PC 24/7
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Ventas por Unidad (Precio 1, 2 y 3), Blíster y Caja 
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Emisión rápida de tickets para control interno de pagos
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Facturación flexible detallada o general con descuentos por plato o total de cuenta
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Búsqueda por producto, categoría o código de barras
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Inventario inteligente (1 almacén)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Alertas de stock mínimo, agotado y productos por vencer
+                    </li>                    
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de Clientes y Proveedores
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Control de deudas y devoluciones
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Reporte de ingresos y gastos diario
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Movimientos de caja turno
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Apertura y cierre de caja con reporte de arqueo
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Facturación SUNAT (Boleta, Factura y Notas)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Validación de XML y descarga de CDR (SUNAT)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Envío inmediato de comprobantes SUNAT por Correo o WhatsApp
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Módulo de Órdenes de Compra y cotización
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Pagos integrados (tarjetero P.O.S): Yape, Plin y tarjetas
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Transferencias de almacenes entre sucursales
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖 IA Anti-Pérdidas: Sugiere marcas alternativas o genéricos si un producto se agota
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖 Escáner IA: Lee la foto de la receta y carga la venta al instante
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖Carga IA: Alimenta y clasifica tu almacén desde archivos o imágenes
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖Detección temprana: Alertas de reabastecimiento por alta demanda
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖Predicción de demanda: Sugiere cuándo y cuánto comprar
+                    </li>
+                  </ul>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan3()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+
+
         </div>
+     
+        <mat-accordion class="example-headers-align saas-accordion" multi>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Planes mensuales flexibles </mat-panel-title>
+              <mat-panel-description>
+                Opciones escalables para cada etapa de tu negocio
+                <mat-icon>date_range</mat-icon> FARMACIA / BOTICA
+              </mat-panel-description>
+            </mat-expansion-panel-header>
 
-        <!-- Segunda columna -->
-        <div class="card">
-          <mat-card>
-            <mat-card-header class="card-header card2h">
-              <mat-card-title class="plan-titulo">Plan Emprendedor</mat-card-title>
-              <mat-card-title class="precio-regular">Precio Regular: s/. 3990.99</mat-card-title>
-            </mat-card-header>
-            <mat-card-content class="card1">
-              <p class="ideal">Ideal para quienes necesitan cumplir con la SUNAT, controlar su Inventario y venta</p>
-              <p class="precio-promo">Precio SUPER PROMO</p>
-              <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>3460<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+            
+            <!-- Usando CSS Grid para tres columnas -->
+            <div class="card-grid">
+              <!-- Primera columna -->
+              <div class="card">
+                <mat-card>
+                  <mat-card-header class="card-header card1h">
+                    <mat-card-title class="plan-titulo">Mensual: s/. 46.99</mat-card-title>
+                    <mat-card-title class="precio-regular">Plan Básico</mat-card-title>
+                  </mat-card-header>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan1()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card>
+              </div>
 
-              <ul style="text-align: left;color: white;">
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Punto de venta para Celular, Tablet y PC (POS)</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Gestión de inventario (2 almacenes)</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Módulo de compra</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Reporte avanzado</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Movimientos</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Impresión de comandos</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Comando de Pedidos</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Entrega y gestión del delivery</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Hasta 15 usuarios</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Hasta 2 sucursales</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Facturación electrónica SUNAT</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Emisión de Ticket, Boleta y Factura</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Emisión de XML, validar CDR y anular o devolución de comprobante</li>
-                <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                  <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Emisión de cotización y notas de débito</li>
+              <!-- Segunda columna -->
+              <div class="card">
+                <mat-card>
+                  <mat-card-header class="card-header card2h">
+                    <mat-card-title class="plan-titulo">Mensual: s/. 64.99</mat-card-title>
+                    <mat-card-title class="precio-regular">Plan Emprendedor</mat-card-title>
+                  </mat-card-header>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan2()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card>
+              </div>
 
-                  <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                    <i class="lni lni-cross-circle" style="margin-right: 10px; color:#fe672e;"></i>Ranking de clientes
-                  </li>
-                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                  <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Reporte de atenciones de los trabajadores</li>
-                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                  <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Ventas por categoría y productos</li>
-                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                  <i class="lni lni-cross-circle"  style="margin-right: 10px;color:#fe672e;"></i>Kardex y alertas de stock</li>
-                      <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
-                  <i class="lni lni-cross-circle" style="margin-right: 10px;color:#fe672e;"></i>Transferencia entre almacenes</li>
-              </ul>
-              <br>
-              <mat-list-item (click)="redirigirAWhatsAppPlan2()">
-                <span matListItemTitle class="d-flex justify-content-center align-items-center">
-                  <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
-                </span>
-              </mat-list-item>
-            </mat-card-content>
-          </mat-card>
+              <!-- Tercera columna -->
+              <div class="card">
+                <mat-card>
+                  <mat-card-header class="card-header card3h">
+                    <mat-card-title class="plan-titulo">Consultanos</mat-card-title>
+                    <mat-card-title class="precio-regular">Plan Empresarial</mat-card-title>
+                  </mat-card-header>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan3()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card>
+              </div>
+            </div>
+            <br>
+            <p><small><strong>*</strong> Instalación, configuración y soporte de red: un solo pago de S/. 250.00</small></p>
+            <p><small><strong>**</strong> Prueba el software gratis por 45 días (solo abonas los S/. 250.00 de la instalación)</small></p>
+
+
+
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="tab-label-wrapper" [class.is-selected]="selectedTabIndex === 1">
+            <span class="mdc-tab__text-label">
+              <mat-icon class="saas-tab-icon">business</mat-icon>
+              <div class="tab-content-wrapper">
+                <span class="tab-title">HOTEL</span>
+                <span class="tab-description" title="Para Hotels & Resorts, Hospedajes y Albergues" matTooltip="Para Hotels & Resorts, Hospedajes y Albergues" matTooltipPosition="above">Para Hotels & Resorts, Hospedajes y Albergues</span>
+              </div>
+            </span>
+          </div>
+        </ng-template>
+        <div class="saas-tab-content">
+
+          
+          <!-- Usando CSS Grid para tres columnas HOTEL-->
+          <div class="card-grid">
+            <!-- Primera columna -->
+            <div class="card">
+              <mat-card>
+                <mat-card-header class="card-header card1h">
+                  <mat-card-title class="plan-titulo">Plan Básico</mat-card-title>
+                  <mat-card-title class="precio-regular">Precio Regular: s/. 2,890.99</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="card1">
+                  <p class="ideal">Ideal para quien solo quiere vender y  gestionar tu Inventario</p>
+                  <p class="precio-promo">Precio SUPER PROMO</p>
+                  <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>2,599<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+
+                  <ul style="text-align: left; color: white;">
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      1 sucursal
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Hasta 7 usuarios
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Venta al instante desde Celular, Tablet o PC 24/7
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Precios de habitaciones por temporada, por noche o por hora
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Consola de recepción con check-in y check-out rápido
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Consola del personal de limpieza y de mantenimiento para gestionar el estado de las habitaciones (Movil)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Emisión rápida de tickets para control interno de pagos
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Facturación flexible detallada o general con descuentos por plato o total de cuenta
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Búsqueda por habitación, zona o código de barras
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Inventario inteligente (1 almacén)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Alertas de stock mínimo, agotado y productos por vencer
+                    </li>                    
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de Clientes y Proveedores
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Control de deudas y devoluciones
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Reporte de ingresos y gastos diario
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Movimientos de caja turno
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Apertura y cierre de caja con reporte de arqueo
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Facturación SUNAT (Boleta, Factura y Notas)
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Validación de XML y descarga de CDR (SUNAT)
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Envío inmediato de comprobantes SUNAT por Correo o WhatsApp
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Módulo de Órdenes de Compra y cotización
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Pagos integrados (tarjetero P.O.S): Yape, Plin y tarjetas
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Caja compartida con el Restaurante (si tienes ambos negocios)
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Transferencias de almacenes entre sucursales
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Precios dinámicos IA: Analiza fechas de alta demanda para subir tarifas
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Chatbot de Reservas: Atiende por WhatsApp y Web con habitaciones en tiempo real
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Limpieza Inteligente: Prioriza y organiza las habitaciones ante nuevas reservas
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Asistente Estadístico IA: Pide reportes y comparativas en un chat y genera gráficos
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖Carga IA: Alimenta y clasifica tu almacén desde archivos o imágenes
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🌐Sitio web propio del negocio con reservas para atender a tus huéspedes las 24 horas
+                    </li>
+                  </ul>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan1()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card-content>
+              </mat-card>
+            </div>
+
+            <!-- Segunda columna -->
+            <div class="card">
+              <mat-card>
+                <mat-card-header class="card-header card2h">
+                  <mat-card-title class="plan-titulo">Plan Emprendedor</mat-card-title>
+                  <mat-card-title class="precio-regular">Precio Regular: s/. 5,990.99</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="card1">
+                  <p class="ideal">Ideal para quienes necesitan cumplir con la SUNAT, controlar su Inventario y venta</p>
+                  <p class="precio-promo">Precio SUPER PROMO</p>
+                  <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>5,622<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+
+                  <ul style="text-align: left; color: white;">
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      1 sucursal
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Hasta 7 usuarios
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Venta al instante desde Celular, Tablet o PC 24/7
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Precios de habitaciones por temporada, por noche o por hora
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Consola de recepción con check-in y check-out rápido
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Consola del personal de limpieza y de mantenimiento para gestionar el estado de las habitaciones (Movil)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Emisión rápida de tickets para control interno de pagos
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Facturación flexible detallada o general con descuentos por plato o total de cuenta
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Búsqueda por habitación, zona o código de barras
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Inventario inteligente (1 almacén)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Alertas de stock mínimo, agotado y productos por vencer
+                    </li>                    
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de Clientes y Proveedores
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Control de deudas y devoluciones
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Reporte de ingresos y gastos diario
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Movimientos de caja turno
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Apertura y cierre de caja con reporte de arqueo
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Facturación SUNAT (Boleta, Factura y Notas)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Validación de XML y descarga de CDR (SUNAT)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Envío inmediato de comprobantes SUNAT por Correo o WhatsApp
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Módulo de Órdenes de Compra y cotización
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Pagos integrados (tarjetero P.O.S): Yape, Plin y tarjetas
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Caja compartida con el Restaurante (si tienes ambos negocios)
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Transferencias de almacenes entre sucursales
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Precios dinámicos IA: Analiza fechas de alta demanda para subir tarifas
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Chatbot de Reservas: Atiende por WhatsApp y Web con habitaciones en tiempo real
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Limpieza Inteligente: Prioriza y organiza las habitaciones ante nuevas reservas
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Asistente Estadístico IA: Pide reportes y comparativas en un chat y genera gráficos
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖Carga IA: Alimenta y clasifica tu almacén desde archivos o imágenes
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🌐Sitio web propio del negocio con reservas para atender a tus huéspedes las 24 horas
+                    </li>
+                  </ul>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan2()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card-content>
+              </mat-card>
+            </div>
+
+            <!-- Tercera columna -->
+            <div class="card">
+              <mat-card>
+                <mat-card-header class="card-header card3h">
+                  <mat-card-title class="plan-titulo">Plan Empresarial</mat-card-title>
+                  <mat-card-title class="precio-regular">Precio Regular: s/. 11,240.00</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="card1">
+                  <p class="ideal">Ideal para quien necesita controlar y gestionar hasta el último detalle</p>
+                  <p class="precio-promo">Precio SUPER PROMO</p>
+                  <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/ </span>9,980<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+
+                  <ul style="text-align: left; color: white;">
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Hasta 2 sucursales
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Hasta 30 usuarios
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Venta al instante desde Celular, Tablet o PC 24/7
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Precios de habitaciones por temporada, por noche o por hora
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Consola de recepción con check-in y check-out rápido
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Consola del personal de limpieza y de mantenimiento para gestionar el estado de las habitaciones (Movil)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Emisión rápida de tickets para control interno de pagos
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Facturación flexible detallada o general con descuentos por plato o total de cuenta
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Búsqueda por habitación, zona o código de barras
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Inventario inteligente (1 almacén)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Alertas de stock mínimo, agotado y productos por vencer
+                    </li>                    
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de Clientes y Proveedores
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Control de deudas y devoluciones
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Reporte de ingresos y gastos diario
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Movimientos de caja turno
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Apertura y cierre de caja con reporte de arqueo
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Facturación SUNAT (Boleta, Factura y Notas)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Validación de XML y descarga de CDR (SUNAT)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Envío inmediato de comprobantes SUNAT por Correo o WhatsApp
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Módulo de Órdenes de Compra y cotización
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Pagos integrados (tarjetero P.O.S): Yape, Plin y tarjetas
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Caja compartida con el Restaurante (si tienes ambos negocios)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Transferencias de almacenes entre sucursales
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖 Precios dinámicos IA: Analiza fechas de alta demanda para subir tarifas
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖 Chatbot de Reservas: Atiende por WhatsApp y Web con habitaciones en tiempo real
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖 Limpieza Inteligente: Prioriza y organiza las habitaciones ante nuevas reservas
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖 Asistente Estadístico IA: Pide reportes y comparativas en un chat y genera gráficos
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖Carga IA: Alimenta y clasifica tu almacén desde archivos o imágenes
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🌐Sitio web propio del negocio con reservas para atender a tus huéspedes las 24 horas
+                    </li>
+                  </ul>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan3()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+
+
         </div>
+     
+        <mat-accordion class="example-headers-align saas-accordion" multi>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Planes mensuales flexibles </mat-panel-title>
+              <mat-panel-description>
+                Opciones escalables para cada etapa de tu negocio
+                <mat-icon>date_range</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
 
-        <!-- Tercera columna -->
-        <div class="card">
-          <mat-card>
-            <mat-card-header class="card-header card3h">
-              <mat-card-title class="plan-titulo">Plan Empresarial</mat-card-title>
-              <mat-card-title class="precio-regular">Precio Regular: s/. 5290.00</mat-card-title>
-            </mat-card-header>
-            <mat-card-content class="card1">
-              <p class="ideal">Ideal para quien necesita controlar y gestionar hasta el último detalle</p>
-              <p class="precio-promo">Precio SUPER PROMO</p>
-              <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>4700<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+            
+            <!-- Usando CSS Grid para tres columnas -->
+            <div class="card-grid">
+              <!-- Primera columna -->
+              <div class="card">
+                <mat-card>
+                  <mat-card-header class="card-header card1h">
+                    <mat-card-title class="plan-titulo">Mensual: s/. 46.99</mat-card-title>
+                    <mat-card-title class="precio-regular">Plan Básico</mat-card-title>
+                  </mat-card-header>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan1()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card>
+              </div>
 
-              <ul style="text-align: left;color: white;">
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                      <i class="lni lni-checkmark-circle Title_Title__0JGzy Title_Title__0JGzy"  style="margin-right: 10px;"></i>Punto de venta para Celular, Tablet y PC (POS)</li>
-                      <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                        <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Gestión de inventario (5 almacenes)</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Módulo de compra</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Reporte avanzado</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Movimientos</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Impresión de comandos</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Comando de Pedidos</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Entrega y gestión del delivery</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Usuarios ilimitados</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Hasta 5 sucursales</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Facturación electrónica SUNAT</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Emisión de Ticket, Boleta y Factura</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Emisión de XML, validar CDR y anular o devolución de comprobante</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Emisión de cotización y notas de débito</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Ranking de clientes</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Reporte de atenciones de los trabajadores</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Ventas por categoría y productos</li>
-                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                <i class="lni lni-checkmark-circle Title_Title__0JGzy"  style="margin-right: 10px;"></i>Kardex y alertas de stock</li>
-                <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
-                  <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>Transferencia entre almacenes</li>
-              </ul>
-              <br>
-              <mat-list-item (click)="redirigirAWhatsAppPlan3()">
-                <span matListItemTitle class="d-flex justify-content-center align-items-center">
-                  <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
-                </span>
-              </mat-list-item>
+              <!-- Segunda columna -->
+              <div class="card">
+                <mat-card>
+                  <mat-card-header class="card-header card2h">
+                    <mat-card-title class="plan-titulo">Mensual: s/. 72.99</mat-card-title>
+                    <mat-card-title class="precio-regular">Plan Emprendedor</mat-card-title>
+                  </mat-card-header>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan2()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card>
+              </div>
 
-            </mat-card-content>
-          </mat-card>
+              <!-- Tercera columna -->
+              <div class="card">
+                <mat-card>
+                  <mat-card-header class="card-header card3h">
+                    <mat-card-title class="plan-titulo">Consultanos</mat-card-title>
+                    <mat-card-title class="precio-regular">Plan Empresarial</mat-card-title>
+                  </mat-card-header>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan3()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card>
+              </div>
+            </div>
+            <br>
+            <p><small><strong>*</strong> Instalación, configuración y soporte de red: un solo pago de S/. 250.00</small></p>
+            <p><small><strong>**</strong> Prueba el software gratis por 45 días (solo abonas los S/. 250.00 de la instalación)</small></p>
+
+
+
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </mat-tab>
+
+      <mat-tab>
+        <ng-template mat-tab-label>
+          <div class="tab-label-wrapper" [class.is-selected]="selectedTabIndex === 2">
+            <span class="mdc-tab__text-label">
+              <mat-icon class="saas-tab-icon">restaurant</mat-icon>
+              <div class="tab-content-wrapper">
+                <span class="tab-title">RESTAURANTE</span>
+                <span class="tab-description" title="Para Recreo, Bar, Restobares, Cafetería, Pizzería, Pollería, Chifa, Cevichería y Discotecas" matTooltip="Para Recreo, Bar, Restobares, Cafetería, Pizzería, Pollería, Chifa, Cevichería y Discotecas" matTooltipPosition="above">Para Recreo, Bar, Restobares, Cafetería, Pizzería, Pollería, Chifa, Cevichería y Discotecas</span>
+              </div>
+            </span>
+          </div>
+        </ng-template>
+        <div class="saas-tab-content">
+
+          
+          <!-- Usando CSS Grid para tres columnas RESTAURANTE-->
+          <div class="card-grid">
+            <!-- Primera columna -->
+            <div class="card">
+              <mat-card>
+                <mat-card-header class="card-header card1h">
+                  <mat-card-title class="plan-titulo">Plan Básico</mat-card-title>
+                  <mat-card-title class="precio-regular">Precio Regular: s/. 2,890.99</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="card1">
+                  <p class="ideal">Ideal para quien solo quiere vender y  gestionar tu Inventario</p>
+                  <p class="precio-promo">Precio SUPER PROMO</p>
+                  <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>2,599<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+
+                  <ul style="text-align: left; color: white;">
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      1 sucursal
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Hasta 7 usuarios
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Venta al instante desde Celular, Tablet o PC 24/7
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Emisión rápida de comprobantes con cuentas separadas por mesa o cliente
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Facturación flexible detallada o general con descuentos por plato o total de cuenta
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Consola de mosos(as) con gestión de mesas, delivery, reservas y para llevar (Movil)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Carta digital con código QR
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Consola de programación semanal de platos
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Emisión rápida de tickets para control interno de pagos
+                    </li>      
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Impresión de Tickets de comanda en la cocina y barra para agilizar la preparación de los pedidos
+                    </li>                
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de insumos y recetas para controlar el costo de tus platos e inventario de cocina
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de mesas segun zonas, turnos o áreas del local
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Inventario inteligente de platos (1 almacén) 
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Alertas de stock mínimo, agotado y insumos por vencer
+                    </li>                    
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de Clientes y Proveedores
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Control de deudas y devoluciones
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Reporte de ingresos y gastos diario
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Movimientos de caja turno
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Apertura y cierre de caja con reporte de arqueo
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Facturación SUNAT (Boleta, Factura y Notas)
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Validación de XML y descarga de CDR (SUNAT)
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Envío inmediato de comprobantes SUNAT por Correo o WhatsApp
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Consola de cocina digital para reportar al mozo(a) el estado de los platos (en preparación, listo para servir y entregado)
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Módulo de Órdenes de Compra y cotización
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Pagos integrados (tarjetero P.O.S): Yape, Plin y tarjetas
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Caja compartida con el Hotel (si tienes ambos negocios)
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Transferencias de almacenes entre sucursales
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Cocina asegurada: Te avisa qué platos se están pidiendo más para que no se agoten
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Pronóstico de insumos: Te aconseja cuánta mercadería comprar para que no te falte nada
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Chatbot de Reservas: Atiende por WhatsApp y Web la reserva de mesas
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Asistente Estadístico IA: Pide reportes y comparativas en un chat y genera gráficos
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖Carga IA: Alimenta y clasifica tu almacén desde archivos o imágenes
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Sugerencia de platos: Muestra al mozo qué recomendar al cliente según lo que compró antes
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🌐Sitio web propio del negocio con reservas para atender a tus huéspedes las 24 horas
+                    </li>
+                  </ul>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan1()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card-content>
+              </mat-card>
+            </div>
+
+            <!-- Segunda columna -->
+            <div class="card">
+              <mat-card>
+                <mat-card-header class="card-header card2h">
+                  <mat-card-title class="plan-titulo">Plan Emprendedor</mat-card-title>
+                  <mat-card-title class="precio-regular">Precio Regular: s/. 5,990.99</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="card1">
+                  <p class="ideal">Ideal para quienes necesitan cumplir con la SUNAT, controlar su Inventario y venta</p>
+                  <p class="precio-promo">Precio SUPER PROMO</p>
+                  <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/</span>5,622<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+
+                  <ul style="text-align: left; color: white;">
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      1 sucursal
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Hasta 7 usuarios
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Venta al instante desde Celular, Tablet o PC 24/7
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Emisión rápida de comprobantes con cuentas separadas por mesa o cliente
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Facturación flexible detallada o general con descuentos por plato o total de cuenta
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Consola de mosos(as) con gestión de mesas, delivery, reservas y para llevar (Movil)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Carta digital con código QR
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Consola de programación semanal de platos
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Emisión rápida de tickets para control interno de pagos
+                    </li>      
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Impresión de Tickets de comanda en la cocina y barra para agilizar la preparación de los pedidos
+                    </li>                
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de insumos y recetas para controlar el costo de tus platos e inventario de cocina
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de mesas segun zonas, turnos o áreas del local
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Inventario inteligente de platos (1 almacén) 
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Alertas de stock mínimo, agotado y insumos por vencer
+                    </li>                    
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de Clientes y Proveedores
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Control de deudas y devoluciones
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Reporte de ingresos y gastos diario
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Movimientos de caja turno
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Apertura y cierre de caja con reporte de arqueo
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Facturación SUNAT (Boleta, Factura y Notas)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Validación de XML y descarga de CDR (SUNAT)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Envío inmediato de comprobantes SUNAT por Correo o WhatsApp
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Consola de cocina digital para reportar al mozo(a) el estado de los platos (en preparación, listo para servir y entregado)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Módulo de Órdenes de Compra y cotización
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Pagos integrados (tarjetero P.O.S): Yape, Plin y tarjetas
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Caja compartida con el Hotel (si tienes ambos negocios)
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      ⚡ Transferencias de almacenes entre sucursales
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Cocina asegurada: Te avisa qué platos se están pidiendo más para que no se agoten
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Pronóstico de insumos: Te aconseja cuánta mercadería comprar para que no te falte nada
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Chatbot de Reservas: Atiende por WhatsApp y Web la reserva de mesas
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Asistente Estadístico IA: Pide reportes y comparativas en un chat y genera gráficos
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖Carga IA: Alimenta y clasifica tu almacén desde archivos o imágenes
+                    </li>
+                    <li class="wow fadeInUp p-noplan" data-wow-delay=".35s">
+                      <i class="lni lni-cross-circle" style="margin-right: 10px; color: #fe672e;"></i>
+                      🤖 Sugerencia de platos: Muestra al mozo qué recomendar al cliente según lo que compró antes
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🌐Sitio web propio del negocio con reservas para atender a tus huéspedes las 24 horas
+                    </li>
+                  </ul>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan2()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card-content>
+              </mat-card>
+            </div>
+
+            <!-- Tercera columna -->
+            <div class="card">
+              <mat-card>
+                <mat-card-header class="card-header card3h">
+                  <mat-card-title class="plan-titulo">Plan Empresarial</mat-card-title>
+                  <mat-card-title class="precio-regular">Precio Regular: s/. 11,240.00</mat-card-title>
+                </mat-card-header>
+                <mat-card-content class="card1">
+                  <p class="ideal">Ideal para quien necesita controlar y gestionar hasta el último detalle</p>
+                  <p class="precio-promo">Precio SUPER PROMO</p>
+                  <p class="precio-precio" style="color: rgb(255, 0, 0);"><span class="moneda">S/ </span>9,980<span class="datos-precio">&nbsp;&nbsp;&nbsp;/por vida</span></p>
+
+                  <ul style="text-align: left; color: white;">
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      1 sucursal
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Hasta 7 usuarios
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Venta al instante desde Celular, Tablet o PC 24/7
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Emisión rápida de comprobantes con cuentas separadas por mesa o cliente
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Facturación flexible detallada o general con descuentos por plato o total de cuenta
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Consola de mosos(as) con gestión de mesas, delivery, reservas y para llevar (Movil)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Carta digital con código QR
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Consola de programación semanal de platos
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Emisión rápida de tickets para control interno de pagos
+                    </li>      
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Impresión de Tickets de comanda en la cocina y barra para agilizar la preparación de los pedidos
+                    </li>                
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de insumos y recetas para controlar el costo de tus platos e inventario de cocina
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de mesas segun zonas, turnos o áreas del local
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Inventario inteligente de platos (1 almacén) 
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Alertas de stock mínimo, agotado y insumos por vencer
+                    </li>                    
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Gestión de Clientes y Proveedores
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Control de deudas y devoluciones
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Reporte de ingresos y gastos diario
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Movimientos de caja turno
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      Apertura y cierre de caja con reporte de arqueo
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Facturación SUNAT (Boleta, Factura y Notas)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Validación de XML y descarga de CDR (SUNAT)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      <img src="https://res.cloudinary.com/devdt1imc/image/upload/v1780151940/sunat_dnwekm.png" alt="SUNAT" style="height: 14px; vertical-align: middle;" />
+                      Envío inmediato de comprobantes SUNAT por Correo o WhatsApp
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Consola de cocina digital para reportar al mozo(a) el estado de los platos (en preparación, listo para servir y entregado)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Módulo de Órdenes de Compra y cotización
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Pagos integrados (tarjetero P.O.S): Yape, Plin y tarjetas
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Caja compartida con el Hotel (si tienes ambos negocios)
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      ⚡ Transferencias de almacenes entre sucursales
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖 Cocina asegurada: Te avisa qué platos se están pidiendo más para que no se agoten
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖 Pronóstico de insumos: Te aconseja cuánta mercadería comprar para que no te falte nada
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖 Chatbot de Reservas: Atiende por WhatsApp y Web la reserva de mesas
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖 Asistente Estadístico IA: Pide reportes y comparativas en un chat y genera gráficos
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖Carga IA: Alimenta y clasifica tu almacén desde archivos o imágenes
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🤖 Sugerencia de platos: Muestra al mozo qué recomendar al cliente según lo que compró antes
+                    </li>
+                    <li class="wow fadeInUp p-plan" data-wow-delay=".35s">
+                      <i class="lni lni-checkmark-circle Title_Title__0JGzy" style="margin-right: 10px;"></i>
+                      🌐Sitio web propio del negocio con reservas para atender a tus huéspedes las 24 horas
+                    </li>
+                  </ul>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan3()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+
+                </mat-card-content>
+              </mat-card>
+            </div>
+          </div>
+
+
         </div>
-      </div>
+     
+        <mat-accordion class="example-headers-align saas-accordion" multi>
+          <mat-expansion-panel>
+            <mat-expansion-panel-header>
+              <mat-panel-title> Planes mensuales flexibles </mat-panel-title>
+              <mat-panel-description>
+                Opciones escalables para cada etapa de tu negocio
+                <mat-icon>date_range</mat-icon>
+              </mat-panel-description>
+            </mat-expansion-panel-header>
+
+            
+            <!-- Usando CSS Grid para tres columnas -->
+            <div class="card-grid">
+              <!-- Primera columna -->
+              <div class="card">
+                <mat-card>
+                  <mat-card-header class="card-header card1h">
+                    <mat-card-title class="plan-titulo">Mensual: s/. 46.99</mat-card-title>
+                    <mat-card-title class="precio-regular">Plan Básico</mat-card-title>
+                  </mat-card-header>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan1()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card>
+              </div>
+
+              <!-- Segunda columna -->
+              <div class="card">
+                <mat-card>
+                  <mat-card-header class="card-header card2h">
+                    <mat-card-title class="plan-titulo">Mensual: s/. 72.99</mat-card-title>
+                    <mat-card-title class="precio-regular">Plan Emprendedor</mat-card-title>
+                  </mat-card-header>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan2()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card>
+              </div>
+
+              <!-- Tercera columna -->
+              <div class="card">
+                <mat-card>
+                  <mat-card-header class="card-header card3h">
+                    <mat-card-title class="plan-titulo">Consultanos</mat-card-title>
+                    <mat-card-title class="precio-regular">Plan Empresarial</mat-card-title>
+                  </mat-card-header>
+                  <br>
+                  <mat-list-item (click)="redirigirAWhatsAppPlan3()">
+                    <span matListItemTitle class="d-flex justify-content-center align-items-center">
+                      <button mat-raised-button class="mb-2" style="background-color: #083127;border-color:#0c553e;border: 2px solid #0c553e;color:#0ae98a"><span class="material-icons">touch_app</span> Adquirir</button>
+                    </span>
+                  </mat-list-item>
+                </mat-card>
+              </div>
+            </div>
+            <br>
+            <p><small><strong>*</strong> Instalación, configuración y soporte de red: un solo pago de S/. 350.00</small></p>
+            <p><small><strong>**</strong> Prueba el software gratis por 45 días (solo abonas los S/. 350.00 de la instalación)</small></p>
+
+
+
+          </mat-expansion-panel>
+        </mat-accordion>
+
+      </mat-tab>
+    </mat-tab-group>
+
+
+      
     </div><br><br>
   </section>
 

@@ -14,13 +14,13 @@ import { MatCardModule } from '@angular/material/card';
 export class ServicioTecnicoComponent {
 
   llamarNumero(): void {
-    const telefono = '51930794100'; // Número de teléfono
+    const telefono = '51900696971'; // Número de teléfono
     const enlaceTelefono = `tel:${telefono}`;
     window.location.href = enlaceTelefono;
   }
 
   redirigirAWhatsAppST(): void {
-    let telefono = '51930794100';
+    let telefono = '51900696971';
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Hola, estoy interesado en recibir información sobre el servicio de *Soporte Técnico a domicilio* que ofrecen`;
     window.open(enlaceWhatsApp, '_blank');
   }

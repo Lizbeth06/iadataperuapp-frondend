@@ -26,7 +26,7 @@ export class VentaAccesoriosComponent implements OnInit{
   redirigirAWhatsAppVA(): void {
     
     // Definir el número de teléfono o enlace de WhatsApp
-    let telefono = '51930794100'; // Aquí pon el número de teléfono o enlace de WhatsApp
+    let telefono = '51900696971'; // Aquí pon el número de teléfono o enlace de WhatsApp
 
     // Construir el enlace de WhatsApp
     let enlaceWhatsApp = `https://api.whatsapp.com/send?phone=${telefono}&text=Estoy interesado en consultar o adquirir un *accesorio*. ¿Podrían proporcionarme más detalles?`;
