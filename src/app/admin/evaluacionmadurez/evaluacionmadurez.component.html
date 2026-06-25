@@ -1,0 +1,169 @@
+<div class="page">
+  <div class="page-header">
+    <img src="../../../assets/img/logo1.png" alt="Logo empresa" class="logo">
+    <div class="title-block">
+      <h1>Evaluación de Transformación Digital</h1>
+      <p class="subtitle">Registra y consulta las evaluaciones por empresa.</p>
+    </div>
+  </div>
+
+  <mat-tab-group mat-stretch-tabs="false" animationDuration="200ms">
+    <!-- TAB 1: FORMULARIO -->
+    <mat-tab label="Formulario de evaluación">
+      <div class="tab-content">
+        <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title>Datos de la empresa</mat-card-title>
+            <mat-card-subtitle>Consulta por RUC</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <form [formGroup]="form" class="grid">
+              <!-- Campo RUC -->
+              <mat-form-field appearance="outline">
+                <mat-label>RUC</mat-label>
+                <input matInput formControlName="ruc" maxlength="11" placeholder="20123456789" />
+                <mat-error *ngIf="form.get('ruc')?.hasError('required')">RUC requerido</mat-error>
+                <mat-error *ngIf="form.get('ruc')?.hasError('pattern')">Debe tener 11 dígitos</mat-error>
+              </mat-form-field>
+
+              <!-- Botón buscar -->
+              <button mat-flat-button color="primary" type="button" (click)="buscarRuc()" [disabled]="buscando()">
+                <mat-icon>search</mat-icon>
+                <span *ngIf="!buscando()">Buscar</span>
+                <mat-spinner *ngIf="buscando()" diameter="18"></mat-spinner>
+              </button>
+
+              <!-- Mensaje de error si no se encuentra -->
+              <div *ngIf="mensajeErrorRuc" class="mensaje-error">
+                <mat-icon color="warn">error_outline</mat-icon>
+                {{ mensajeErrorRuc }}
+              </div>
+
+              <!-- Campos que se habilitan si no se encuentra RUC -->
+              <mat-form-field appearance="outline" class="full">
+                <mat-label>Razón Social</mat-label>
+                <input matInput formControlName="razonSocial" />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="full">
+                <mat-label>Dirección</mat-label>
+                <input matInput formControlName="perDireccion" />
+              </mat-form-field>
+
+              <mat-form-field appearance="outline" class="full">
+                <mat-label>SEDE</mat-label>
+                <input matInput formControlName="sede" />
+              </mat-form-field>
+            </form>
+          </mat-card-content>
+        </mat-card>
+
+        <!-- Criterios de evaluación -->
+        <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title>Criterios de evaluación</mat-card-title>
+            <mat-card-subtitle>Escala 1 (muy bajo) a 5 (excelente)</mat-card-subtitle>
+          </mat-card-header>
+          <mat-card-content>
+            <mat-accordion multi>
+              <mat-expansion-panel *ngFor="let dim of dimensiones" expanded>
+                <mat-expansion-panel-header>
+                  <mat-panel-title>{{ dim }}</mat-panel-title>
+                  <mat-panel-description>
+                    Promedio: <strong>{{ porDimension()[dim].toFixed(2) }}</strong>
+                  </mat-panel-description>
+                </mat-expansion-panel-header>
+
+                <div class="criterios">
+                  <div class="criterio" *ngFor="let c of criteriosPorDim(dim)">
+                    <span class="texto">{{ c.texto }}</span>
+                    <mat-form-field appearance="outline" class="select">
+                      <mat-label>Puntaje</mat-label>
+                      <mat-select [value]="puntajes()[c.id]" (selectionChange)="setPuntaje(c.id, $event.value)">
+                        <mat-option *ngFor="let n of escala" [value]="n">{{ n }}</mat-option>
+                      </mat-select>
+                    </mat-form-field>
+                  </div>
+                </div>
+              </mat-expansion-panel>
+            </mat-accordion>
+          </mat-card-content>
+        </mat-card>
+
+        <!-- Resumen -->
+        <mat-card class="card resumen">
+          <div class="resumen-row">
+            <div>
+              <div class="label">Criterios evaluados</div>
+              <div class="value">{{ evaluados() }} / {{ totalCriterios() }}</div>
+            </div>
+            <div>
+              <div class="label">Promedio Global</div>
+              <div class="value">{{ promedioGlobal().toFixed(2) }}</div>
+            </div>
+            <div>
+              <div class="label">Nivel</div>
+              <mat-chip color="primary" selected>{{ evalSrv.nivelMadurez(promedioGlobal()) }}</mat-chip>
+            </div>
+            <button mat-flat-button color="primary" (click)="registrar()">
+              <mat-icon>save</mat-icon> Registrar evaluación
+            </button>
+          </div>
+        </mat-card>
+      </div>
+    </mat-tab>
+
+    <!-- TAB 2: LISTA -->
+    <mat-tab [label]="'Registros (' + evalSrv.evaluaciones().length + ')'">
+      <div class="tab-content">
+        <mat-card class="card">
+          <mat-card-header>
+            <mat-card-title>Evaluaciones registradas</mat-card-title>
+          </mat-card-header>
+          <mat-card-content>
+            <div *ngIf="evalSrv.evaluaciones().length === 0" class="empty">
+              Aún no hay evaluaciones registradas.
+            </div>
+            <div class="table-wrap" *ngIf="evalSrv.evaluaciones().length > 0">
+              <table mat-table [dataSource]="evalSrv.evaluaciones()" class="mat-elevation-z1">
+                <ng-container matColumnDef="idEvaluaciontd">
+                  <th mat-header-cell *matHeaderCellDef>#</th>
+                  <td mat-cell *matCellDef="let e">{{ e.idEvaluaciontd }}</td>
+                </ng-container>
+                <ng-container matColumnDef="ruc">
+                  <th mat-header-cell *matHeaderCellDef>RUC</th>
+                  <td mat-cell *matCellDef="let e">{{ e.ruc }}</td>
+                </ng-container>
+                <ng-container matColumnDef="razonSocial">
+                  <th mat-header-cell *matHeaderCellDef>Razón Social</th>
+                  <td mat-cell *matCellDef="let e">{{ e.razonSocial }}</td>
+                </ng-container>
+                <ng-container matColumnDef="sede">
+                  <th mat-header-cell *matHeaderCellDef>Sede</th>
+                  <td mat-cell *matCellDef="let e">{{ e.sede }}</td>
+                </ng-container>
+                <ng-container matColumnDef="fecha">
+                  <th mat-header-cell *matHeaderCellDef>Fecha</th>
+                  <td mat-cell *matCellDef="let e">{{ e.fecha }}</td>
+                </ng-container>
+                <ng-container matColumnDef="promedio">
+                  <th mat-header-cell *matHeaderCellDef>Promedio</th>
+                  <td mat-cell *matCellDef="let e"><strong>{{ e.promedioGlobal.toFixed(2) }}</strong></td>
+                </ng-container>
+                <ng-container matColumnDef="nivel">
+                  <th mat-header-cell *matHeaderCellDef>Nivel</th>
+                  <td mat-cell *matCellDef="let e">
+                    <mat-chip color="accent" selected>{{ e.nivel }}</mat-chip>
+                  </td>
+                </ng-container>
+
+                <tr mat-header-row *matHeaderRowDef="columnas"></tr>
+                <tr mat-row *matRowDef="let row; columns: columnas"></tr>
+              </table>
+            </div>
+          </mat-card-content>
+        </mat-card>
+      </div>
+    </mat-tab>
+  </mat-tab-group>
+</div>

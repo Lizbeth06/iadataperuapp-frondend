@@ -1,104 +1,99 @@
 import { Routes } from '@angular/router';
-import { CursoListaComponent } from './curso/curso-lista/curso-lista.component';
-import { IndexComponent } from './index/index.component';
-import { NosotrosComponent } from './nosotros/nosotros.component';
-import { CatalogoComponent } from './catalogo/catalogo.component';
-import { ConsultoriaComponent } from './consultoria/consultoria.component';
-import { ServicioTecnicoComponent } from './servicio-tecnico/servicio-tecnico.component';
-import { VentaAccesoriosComponent } from './venta-accesorios/venta-accesorios.component';
-import { MicertificadoComponent } from './micertificado/micertificado.component';
-import { CursoDetalleComponent } from './curso/curso-detalle/curso-detalle.component';
-import { CheckoutFormComponent } from './checkout/checkout-form/checkout-form.component';
-import { TallerListaComponent } from './curso/taller-lista/taller-lista.component';
-import { VentasistemasListaComponent } from './venta-sistemas/ventasistemas-lista/ventasistemas-lista.component';
-import { VentasistemasDetalleComponent } from './venta-sistemas/ventasistemas-detalle/ventasistemas-detalle.component';
-import { CheckoutProductoComponent } from './servicio-tecnico/checkout-producto/checkout-producto.component';
-import { FacturacionComponent } from './facturacion/facturacion.component';
-import { ProfesionalListaComponent } from './profesionales/profesional-lista/profesional-lista.component';
-import { ContactoComponent } from './contacto/contacto.component';
-import { IantropiaComponent } from './iantropia/iantropia.component';
-import { ConvocatoriaListaComponent } from './convocatoria/convocatoria-lista/convocatoria-lista.component';
 
 export const HOME_ROUTES: Routes = [
+    { 
+        path: '', 
+        loadComponent: () => import('./index/index.component').then(c => c.IndexComponent),
+        title: 'principal'
+    },
     {
-    path: '',
-    children:[
-        {
-            path: '',
-            component: IndexComponent
-        },
-        {
-            path: 'nosotros',
-            component: NosotrosComponent
-        },
-        {
-            path: 'catalogo', 
-            component: CatalogoComponent
-        },
-        {
-            path: 'consultoria',
-            component: ConsultoriaComponent
-        },
-        {
-            path: 'servicio-tecnico',
-            component: ServicioTecnicoComponent
-        },
-        {
-            path: 'venta-accesorios',
-            component: VentaAccesoriosComponent
-        },
-        {
-            path: 'venta-sistemas',
-            component: VentasistemasListaComponent
-        },
-        {
-            path:'venta-sistemas/detalle/:titulo',
-            component: VentasistemasDetalleComponent
-        },
-        {
-            path: 'curso',
-            component: CursoListaComponent
-        },
-        {
-            path:'curso/detalle/:titulo',
-            component: CursoDetalleComponent
-        },
-        {
-            path:'curso/detalle-pago/checkout',
-            component: CheckoutFormComponent
-        },
-        {
-            path:'producto/detalle-pago/checkout-producto',
-            component: CheckoutProductoComponent
-        },
-        {
-            path: 'taller',
-            component: TallerListaComponent
-        },
-        {
-            path: 'micertificado',
-            component: MicertificadoComponent
-        },
-        {
-            path: 'facturacion-electronica',
-            component: FacturacionComponent
-        },
-        {
-            path: 'profesionales',
-            component: ProfesionalListaComponent
-        },
-        {
-            path: 'contacto',
-            component: ContactoComponent
-        },
-        {
-            path: 'iantropia',
-            component: IantropiaComponent
-        },
-        {
-            path: 'convocatoria',
-            component: ConvocatoriaListaComponent
-        }
-    ]
-  }
+        path: 'nosotros',
+        loadComponent: () => import('./nosotros/nosotros.component').then((c) => c.NosotrosComponent),
+        title: 'nosotros',
+    },
+    {
+        path: 'catalogo',
+        loadComponent: () => import('./catalogo/catalogo.component').then((c) => c.CatalogoComponent),
+        title: 'catalogo',
+    },
+    {
+        path: 'consultoria',
+        loadComponent: () => import('./consultoria/consultoria.component').then((c) => c.ConsultoriaComponent),
+        title: 'consultoria',
+    },
+    {
+        path: 'servicio-tecnico',
+        loadComponent: () => import('./servicio-tecnico/servicio-tecnico.component').then((c) => c.ServicioTecnicoComponent),
+        title: 'servicio tecnico',
+    },
+    {
+        path: 'venta-accesorios',
+        loadComponent: () => import('./venta-accesorios/venta-accesorios.component').then((c) => c.VentaAccesoriosComponent),
+        title: 'venta de accesorios',
+    },
+    {
+        path: 'venta-sistemas',
+        loadComponent: () => import('./venta-sistemas/ventasistemas-lista/ventasistemas-lista.component').then((c) => c.VentasistemasListaComponent),
+        title: 'venta de sistemas',
+    },
+    {
+        path: 'venta-sistemas/detalle/:titulo',
+        loadComponent: () => import('./venta-sistemas/ventasistemas-detalle/ventasistemas-detalle.component').then((c) => c.VentasistemasDetalleComponent),
+        title: 'Detalle de venta de sistemas',
+    },
+    {
+        path: 'curso',
+        loadComponent: () => import('./curso/curso-lista/curso-lista.component').then((c) => c.CursoListaComponent),
+        title: 'Cursos',
+    },
+    {
+        path: 'curso/detalle/:titulo',
+        loadComponent: () => import('./curso/curso-detalle/curso-detalle.component').then((c) => c.CursoDetalleComponent),
+        title: 'Detalle del curso',
+    },
+    {
+        path: 'curso/detalle-pago/checkout',
+        loadComponent: () => import('./checkout/checkout-form/checkout-form.component').then((c) => c.CheckoutFormComponent),
+        title: 'Checkout curso',
+    },
+    {
+        path: 'producto/detalle-pago/checkout-producto',
+        loadComponent: () => import('./servicio-tecnico/checkout-producto/checkout-producto.component').then((c) => c.CheckoutProductoComponent),
+        title: 'Checkout producto',
+    },
+    {
+        path: 'taller',
+        loadComponent: () => import('./curso/taller-lista/taller-lista.component').then((c) => c.TallerListaComponent),
+        title: 'Taller',
+    },
+    {
+        path: 'micertificado',
+        loadComponent: () => import('./micertificado/micertificado.component').then((c) => c.MicertificadoComponent),
+        title: 'Mi certificado',
+    },
+    {
+        path: 'facturacion-electronica',
+        loadComponent: () => import('./facturacion/facturacion.component').then((c) => c.FacturacionComponent),
+        title: 'facturacion electronica',
+    },
+    {
+        path: 'profesionales',
+        loadComponent: () => import('./profesionales/profesional-lista/profesional-lista.component').then((c) => c.ProfesionalListaComponent),
+        title: 'profesionales',
+    },
+    {
+        path: 'contacto',
+        loadComponent: () => import('./contacto/contacto.component').then((c) => c.ContactoComponent),
+        title: 'contacto',
+    },
+    {
+        path: 'iantropia',
+        loadComponent: () => import('./iantropia/iantropia.component').then((c) => c.IantropiaComponent),
+        title: 'IAntropia',
+    },
+    {
+        path: 'convocatoria',
+        loadComponent: () => import('./convocatoria/convocatoria-lista/convocatoria-lista.component').then((c) => c.ConvocatoriaListaComponent),
+        title: 'Convocatoria',
+    },
 ];

@@ -21,7 +21,7 @@ export class LoginService {
 
   logout(){
     sessionStorage.clear();
-    //this.router.navigate(['login']);
+    
   }
 
   isLogged(){

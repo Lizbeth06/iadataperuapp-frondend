@@ -9,3 +9,4 @@ registerLocaleData(localeEs);
 
 bootstrapApplication(AppComponent, appConfig)
   .catch((err) => console.error(err));
+ 

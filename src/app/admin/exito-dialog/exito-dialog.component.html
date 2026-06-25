@@ -1,0 +1,23 @@
+<div class="dlg">
+      <div class="head">
+        <mat-icon class="ok">check_circle</mat-icon>
+        <h2 mat-dialog-title>¡Evaluación registrada con éxito!</h2>
+      </div>
+      <mat-dialog-content>
+        <p><strong>Empresa:</strong> {{ data.razonSocial }} </p>
+        <p><strong>Sede:</strong> {{ data.sede }} </p>
+        <div class="metric">
+          <div>
+            <div class="label">Promedio Global</div>
+            <div class="value">{{ data.promedio.toFixed(2) }}</div>
+          </div>
+          <div>
+            <div class="label">Nivel de madurez</div>
+            <div class="value">{{ data.nivel }}</div>
+          </div>
+        </div>
+      </mat-dialog-content>
+      <mat-dialog-actions align="end">
+        <button mat-flat-button color="primary" (click)="ref.close()">Aceptar</button>
+      </mat-dialog-actions>
+    </div>

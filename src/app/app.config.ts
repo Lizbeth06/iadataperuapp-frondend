@@ -13,16 +13,15 @@ export function tokenGetter() {
     return sessionStorage.getItem(environment.TOKEN_NAME);
   }
   return null;
-}
+}  
+  
 
 export const appConfig: ApplicationConfig = {
   providers: [
     provideZoneChangeDetection({ eventCoalescing: true }),
     provideRouter(routes, withComponentInputBinding()),
-    provideHttpClient(),
     provideAnimationsAsync(),
-    provideHttpClient(withInterceptorsFromDi()),
-    provideHttpClient(withFetch()),
+    provideHttpClient(withInterceptorsFromDi(),withFetch()),
     {
       provide: HTTP_INTERCEPTORS,
       useClass: ServerErrorInterceptor,

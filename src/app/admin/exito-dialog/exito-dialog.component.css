@@ -1,0 +1,6 @@
+.dlg { padding: 8px; }
+    .head { display: flex; align-items: center; gap: 8px; }
+    .ok { color: #2e7d32; font-size: 32px; height: 32px; width: 32px; }
+    .metric { display: flex; gap: 24px; margin-top: 12px; }
+    .label { font-size: .75rem; color: rgba(0,0,0,.6); text-transform: uppercase; }
+    .value { font-size: 1.6rem; font-weight: 700; }

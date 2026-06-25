@@ -4,6 +4,7 @@ import { Persona } from '../model/persona';
 import { Observable, Subject } from 'rxjs';
 import { HttpClient, HttpParams } from '@angular/common/http';
 import { environment } from '../../environments/environment.development';
+import { Empresa } from '../model/evaluacion';
 
 
 
@@ -12,6 +13,10 @@ import { environment } from '../../environments/environment.development';
 })
 export class PersonaService extends GenericService<Persona>{
   private personaChange: Subject<Persona[]> = new Subject<Persona[]>
+
+  private token =
+    'eyJ0eXAiOiJKV1QiLCJhbGciOiJIUzI1NiJ9.eyJlbWFpbCI6Im5laWwuYmFuaWNvLjI3QHVuc2NoLmVkdS5wZSJ9.lXByHke5fvENCIE9GkZQNMrhz_YBaJEAB1KzJGAKwYw';
+
 
   constructor(
     protected override http: HttpClient,
@@ -44,8 +49,15 @@ export class PersonaService extends GenericService<Persona>{
     .set('correo', correo)
     .set('telefono', telefono);
 
-  return this.http.put<Persona>(`${environment.HOST}/api/persona/updatecorreotelefono`, null, { params });
-}
+    return this.http.put<Persona>(`${environment.HOST}/api/persona/updatecorreotelefono`, null, { params });
+  }
+
+
+  findPersonaRuc(ruc: string) {
+    return this.http.get<Empresa>(
+      `https://dniruc.apisperu.com/api/v1/ruc/${ruc}?token=${this.token}`
+    );
+  }
 
   
 }

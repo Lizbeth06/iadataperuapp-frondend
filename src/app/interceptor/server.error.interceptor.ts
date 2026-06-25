@@ -1,9 +1,9 @@
 import { HttpEvent, HttpHandler, HttpInterceptor, HttpRequest, HttpResponse } from "@angular/common/http";
 import { Injectable } from "@angular/core";
-import { catchError, EMPTY, Observable, retry, tap } from "rxjs";
-import { environment } from "../../environments/environment.development";
+import { catchError, throwError, EMPTY, Observable, retry, tap } from "rxjs";
 
 import {MatSnackBar} from "@angular/material/snack-bar"
+import { environment } from "../../environments/environment";
 
 @Injectable({
     providedIn: "root"
@@ -35,7 +35,8 @@ export class ServerErrorInterceptor implements HttpInterceptor{
                 }else if(err.status === 403){
                     this.snackBar.open(err.error.message,'ERROR 403', {duration:5000});
                 }else if(err.status === 409){
-                    this.snackBar.open(err.error.message,'ERROR 409', {duration:5000});
+                    // this.snackBar.open(err.error.message,'ERROR 409', {duration:5000});
+                    return throwError(() => err);
                 }else if(err.status === 500){
                     this.snackBar.open(err.error.message,'ERROR 500', {duration:5000});
                 }else{

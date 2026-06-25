@@ -7,7 +7,7 @@ import { NgClass } from '@angular/common';
 @Component({
   selector: 'app-layout',
   standalone: true,
-  imports: [RouterModule,RouterOutlet,MaterialModule, NgClass],
+  imports: [RouterModule,MaterialModule, NgClass],
   templateUrl: './layout.component.html',
   styleUrl: './layout.component.css'
 })

@@ -1,0 +1,118 @@
+.page {
+  max-width: 1100px;
+  margin: 0 auto;
+  padding: 16px;
+
+  h1 { 
+    margin: 0 0 4px; 
+    font-size: 1.6rem; 
+    color: #1abc9c;  
+  }
+
+  .subtitle { 
+    margin: 0 0 16px; 
+    color: #16a085;  
+  }
+}
+
+.tab-content { 
+  padding: 16px 0; 
+  display: flex; 
+  flex-direction: column; 
+  gap: 16px; 
+}
+
+.card { 
+  width: 100%; 
+  border-radius: 12px;
+  box-shadow: 0 4px 12px rgba(0,0,0,.08);
+  border-top: 4px solid #1abc9c;   
+}
+
+.grid {
+  display: grid;
+  grid-template-columns: 1fr auto;
+  gap: 12px;
+  align-items: start;
+
+  .full { grid-column: 1 / -1; }
+}
+
+.criterios { 
+  display: flex; 
+  flex-direction: column; 
+  gap: 12px; 
+  padding-top: 8px; 
+}
+
+.criterio {
+  display: grid;
+  grid-template-columns: 1fr 140px;
+  gap: 12px;
+  align-items: center;
+
+  .texto { font-size: .95rem; color: #1abc9c; }  
+  .select { width: 100%; }
+}
+
+.resumen-row {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 16px 24px;
+  align-items: center;
+  padding: 16px;
+
+  .label { font-size: .75rem; color: rgba(0,0,0,.6); text-transform: uppercase; }
+  .value { font-size: 1.4rem; font-weight: 600; color: #1abc9c; }
+}
+
+.table-wrap { overflow-x: auto; }
+table { width: 100%; }
+
+.empty { 
+  padding: 24px; 
+  text-align: center; 
+  color: #16a085;   
+}
+
+/* Snackbar de éxito */
+::ng-deep .snack-exito {
+  background: #1abc9c;
+  color: #fff;
+}
+.page-header {
+  display: flex;
+  align-items: center;
+  gap: 16px;  
+  margin-bottom: 24px;
+}
+
+.logo {
+  width: 60px;   
+  height: auto;
+}
+
+.title-block {
+  display: flex;
+  flex-direction: column;
+}
+
+.title-block h1 {
+  margin: 0;
+  font-size: 1.6rem;
+  font-weight: 600;
+  color: #1abc9c;   
+}
+
+.title-block .subtitle {
+  margin: 0;
+  color: rgba(0,0,0,.6);
+}
+.mensaje-error {
+  margin-top: 8px;
+  color: #d32f2f;   
+  display: flex;
+  align-items: center;
+  gap: 6px;
+  font-size: 0.9rem;
+}
